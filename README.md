@@ -32,7 +32,8 @@ If you are new to Git, please try the [15 Git minute tutorial][].  Also, the
         git add Homework01.tex
 		git commit -m "this added sentence makes the proof clearer"
 		
-    (This phrase in quotes is your comment explaining, if possible, *why* the change was made.)
+    (In quotes is your comment explaining, if possible, *why* the
+    changes were made.)
 	
 6.  [Push][] your changes to the remote GitHub repository:
 
@@ -75,3 +76,9 @@ I do!")
 [pull requests]: https://help.github.com/articles/using-pull-requests
 [Commit]: http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository#Committing-Your-Changes
 [commit]: http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository#Committing-Your-Changes
+[15 minute tutorial]: http://try.github.io/levels/1/challenges/1
+[A Beginner's Guide to LaTeX]: http://www.cs.princeton.edu/courses/archive/spr10/cos433/Latex/latex-guide.pdf
+[LaTeX Guide]: http://en.wikibooks.org/wiki/LaTeX
+[Git--the simple guide]: http://rogerdudler.github.io/git-guide/
+[GitHub help pages]: https://help.github.com/
+[15 Git minute tutorial]: http://try.github.io/levels/1/challenges/1
