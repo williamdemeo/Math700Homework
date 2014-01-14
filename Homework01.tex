@@ -1,0 +1,180 @@
+\input{macros}
+%% This is the Homework LaTeX template.  Use this file to fill in your solutions. 
+%%
+%% Notes: 
+%%    1. Write your answers inside a \begin{solution}...\end{solution} environment.
+%%
+%%    2. If you will use references, insert bibtex reference entries in the file
+%%       Math700.bib.  (Create that file if it doesn't yet exist.)
+%%
+%%    3. If you will use acronyms, please define them in the macros.tex file.
+%%
+%%    4. Please try to check that your file compiles:
+%%
+%%       Mac OS X users: you might try MacTeX. 
+%%       Windows users: you might try proTeXt. 
+%%       Linux users: most come with TeX; otherwise do a full install of TeXLive.
+%%
+%%       There is a Makefile in this directory, so on Linux you could just 
+%%       enter `make` to compile all the Homework*.tex files at once.
+%%
+%%    5. Please don't hesitate to inform the prof if you have trouble, or open
+%%       a ``New issue'' or create a new ``Wiki page'' on GitHub.  Otherwise,
+%%       send an email to williamdemeo@gmail.com.
+%%
+%%    6. It will probably be hard to keep everyone's notation consistent.
+%%       For the most basic symbols, we should have some conventions and use
+%%       LaTeX macros to keep the conventions consistent and easy to remember.
+%%       For example, to denote an algebra,
+         \newcommand\alg[1]{\ensuremath{\mathbf{#1}}}
+         \newcommand{\<}{\ensuremath{\langle}}
+         \renewcommand{\>}{\ensuremath{\rangle}}
+%%       So, an algebra in LaTeX is typed as $\alg{A} = \<A, F\>$.
+%%       Similarly, for a field, let's use:
+         \newcommand\fld[1]{\ensuremath{\mathbb{#1}}}
+%%       So, a field in LaTeX is typed as $\fld{F}$.
+
+%%
+%%    7. Replace these names with yours!!!
+         \metadata{Emmy and Emil}{Homework 1 -- 2014/01/13}
+         \author{Emil Artin and Emmy Noether}
+%%
+%%    8. Update the title and date as appropriate.
+         \title{Homework 1}
+         \date{January 13, 2014}
+
+\begin{document}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 12]
+For a field $\fld{F} = \<F,+,\cdot, -, 0, 1\dots\>$, 
+show that the function $a \mapsto a^{-1}$ is a 
+permutation of the set $F \setminus \{0_F\}$.
+\end{problem}
+\smallskip
+\begin{solution}
+
+%%TODO: Write your solution here.
+
+\end{solution}
+\probskip
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 16]
+Let $z_1$, $z_2$, and $z_3$ be complex numbers satisfying 
+$|z_i| = 1$ for $i = 1, 2, 3$. Show that 
+$|z_1 z_2 + z_1 z_3 + z_2 z_3 | = |z_1 + z_2 + z_3|$.
+\end{problem}
+\smallskip
+\begin{solution}
+
+%% Write your solution here.
+
+\end{solution}
+\probskip
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 22 {\it Abel's inequality}] 
+Let $z_1, \dots, z_n$ be a list of complex
+numbers and, for each $1 \leq k \leq n$, 
+let $s_k = \sum_{i=1}^k z_i$. For real numbers
+$a_1, \dots, a_n$ satisfying 
+$a_1 \geq a_2 \geq \cdots \geq a_n \geq 0$, 
+show that
+\begin{equation}
+\label{eq:Abels}  
+\left| \sum_{i=1}^k a_i z_i \right| 
+\leq a_1 \left( \max_{1 \leq k \leq n} |s_k|\right).
+\end{equation}
+\end{problem}
+\smallskip
+\begin{solution}
+
+%% Write your solution here.
+
+\end{solution}
+\probskip
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 24]
+If $p$ is a prime positive integer, find all subfields of $GF(p)$.
+\end{problem}
+
+
+\begin{solution}
+
+%% Write your solution here.
+
+\end{solution}
+\probskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Write down the definition of a \emph{module} as a (universal) algebra, 
+$\alg{M} = \< M, F\>$.  That is, describe the set $F$ of operations and 
+give the conditions that they should satisfy in order for $\alg{M}$ to 
+agree with the classical definition of a module over a ring.\\[4pt]
+[{\it Hint:} Let $\alg{R} = \<R, +, \cdot, -, 0, 1\>$ be a ring and,
+  for each $r\in R$, define a scalar multiply operation $f_r \in F$.]
+\end{problem}
+
+\begin{solution}
+
+%%TODO: Write your solution here.
+
+\end{solution}
+\probskip
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $\alg{R} = \<R, +, \cdot, -, 0, 1\>$ be a ring.  
+\begin{enumerate}
+\item Define \emph{left ideal} of $\alg{R}$.
+\item Let $\mathscr{A} = \{A_i : i \in \mathscr{I}\}$ be a family of left ideals
+of $\alg{R}$.  Prove that $\bigcap \mathscr{A}$ is a left ideal.
+\end{enumerate}
+\end{problem}
+\smallskip
+\begin{solution}
+
+%%TODO: Write your solution here.
+
+\end{solution}
+\probskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $\alg{R}$ be a ring and fix $a, b \in R$.  Prove that if $1 - ba$ is left
+invertible, then $1 - ab$ is also left invertible.  What is the inverse?\\[4pt]
+[{\it Hint:} Consider the left ideal $R(1 - ab)$.  It contains the left ideal
+  $Rb(1-ab) = Rb$ and therefore contains 1. Verify these statements, then
+  try to compute the inverse of $1-ab$, as follow.  (Ask for more hints as needed.)] 
+\end{problem}
+\smallskip
+\begin{solution}
+
+%%TODO: Write your solution here.
+
+\end{solution}
+\probskip
+
+
+%% If you will use references, add your refs to the Math700.bib file.
+%% and then uncomment the following lines.
+%% \bibliographystyle{plain}
+%% \bibliography{Math700}
+
+\end{document}
