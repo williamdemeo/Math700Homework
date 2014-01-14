@@ -48,22 +48,21 @@ If you are new to Git, please try the [15 Git minute tutorial][].  Also, the
 GitHub password when you push.
 
 + If you're a fan of Emacs, you will love an emacs package called magit, which
-enables you to commit and push without leaving the emacs editor.  
-(If you have any trouble setting this up, please ask me about it.) 
+enables you to commit and push without leaving the emacs editor. (If you have
+any trouble setting this up, please ask me about it.)  
 	
 + This page on recording changes to the repository is extremely informative.
 There is a lot of information on that page.  If you're new to version
 controlling, don't be scared, we'll only need the very basics.
 	
-+ Optimally, the comments you write inside the quotes during a commit 
-should indicate *why* the changes were made, and not *what* was changed. 
-Git keeps a perfect record of what was changed, so mentioning that is somewhat
-redundant. Instead, try to give some justification of the changes if you can.  
++ Optimally, your commit comments should indicate *why* changes were made, 
+and not *what* was changed. Git keeps a perfect record of what was changed, so
+comments mentioning this are somewhat redundant (although they can cometimes be
+helpful).  Instead, try to give some justification of the changes.
 This is often hard to do in just a few lines and without spending too
-long thinking about each commit, so don't worry too much about it; just
-keep it in the back of your mind that good commit comments say why and not
-what. (Personally, I am terrible at this, so please try to "do as I say, not as
-I do!") 
+long thinking about each commit, so don't worry too much; just
+keep it in the back of your mind. (Personally, I am terrible at this, so
+try to "do as I say, not as I do!") 
 		
 [New Issue]: https://github.com/williamdemeo/Math700Homework/issues
 [Clone]: http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository#Cloning-an-Existing-Repository
@@ -76,6 +75,8 @@ I do!")
 [pull requests]: https://help.github.com/articles/using-pull-requests
 [Commit]: http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository#Committing-Your-Changes
 [commit]: http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository#Committing-Your-Changes
+[Push]: https://help.github.com/articles/create-a-repo#step-3-push-your-commit
+[push]: https://help.github.com/articles/create-a-repo#step-3-push-your-commit
 [15 minute tutorial]: http://try.github.io/levels/1/challenges/1
 [A Beginner's Guide to LaTeX]: http://www.cs.princeton.edu/courses/archive/spr10/cos433/Latex/latex-guide.pdf
 [LaTeX Guide]: http://en.wikibooks.org/wiki/LaTeX
