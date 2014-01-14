@@ -1,11 +1,17 @@
+# Math700: Homework Files
+
 This is the main repository for homework problems and solutions.
 
 If you have questions, comments, or suggestions, please open a [New Issue].
 
-# How To Submit Homework
+Main course web page: https://github.com/williamdemeo/LinearAlgebra
 
-If you are new to Git, please try the [15 Git minute tutorial][].  Also, the
-[git--the simple guide][] and the [GitHub help pages][] are excellent.
+
+## How To Submit Homework
+
+If you are new to Git, please try the [15 Git minute tutorial][].  Also,
+[git--the simple guide][] and the [GitHub help pages][] are excellent.  For
+detailed comprehensive documentation see http://git-scm.com/doc.
 
 1.  First, you should tell me your GitHub username so I can add you as a
     collaborator on the Math700Homework project.  
