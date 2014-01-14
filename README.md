@@ -36,7 +36,7 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 5.  [Commit][] your changes to your local version of the repository.  I do:
 
         git add Homework01.tex
-		git commit -m "this added sentence makes the proof clearer"
+		git commit -m "added a sentence to make the proof clearer"
 		
     (In quotes is your comment explaining, if possible, *why* the
     changes were made.)
