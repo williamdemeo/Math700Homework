@@ -67,8 +67,7 @@ comments mentioning this are somewhat redundant (although they can cometimes be
 helpful).  Instead, try to give some justification of the changes.
 This is often hard to do in just a few lines and without spending too
 long thinking about each commit, so don't worry too much; just
-keep it in the back of your mind. (Personally, I am terrible at this, so
-try to "do as I say, not as I do!") 
+keep it in the back of your mind.
 		
 [New Issue]: https://github.com/williamdemeo/Math700Homework/issues
 [Clone]: http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository#Cloning-an-Existing-Repository
