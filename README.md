@@ -51,11 +51,12 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 ## Tips
 
 + If you've set up Git properly on your machine, you don't have to enter your
-GitHub password when you push.
+GitHub password when you push. (If you have
+any trouble setting up Git or GitHub please ask me about it.)
 
-+ If you're a fan of Emacs, you will love an emacs package called [magit][], which
++ If you're a fan of Emacs, you will love the emacs package called [Magit][], which
 enables you to commit and push without leaving the emacs editor. (If you have
-any trouble setting this up, please ask me about it.)  
+any trouble setting up Magit, please ask me about it.)  
 	
 + [This page][] on recording changes to the repository is extremely informative.
 There is a lot of information on that page.  If you're new to version
@@ -88,5 +89,5 @@ keep it in the back of your mind.
 [Git--the simple guide]: http://rogerdudler.github.io/git-guide/
 [GitHub help pages]: https://help.github.com/
 [15 minute Git tutorial]: http://try.github.io/levels/1/challenges/1
-[This page]: IEProps/tex/
-[magit]: http://magit.github.io/
+[This page]: http://git-scm.com/book/ch2-2.html
+[Magit]: http://magit.github.io/
