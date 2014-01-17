@@ -9,7 +9,7 @@ Main course web page: https://github.com/williamdemeo/LinearAlgebra
 
 ## How To Submit Homework
 
-If you are new to Git, please try the [15 Git minute tutorial][].  Also,
+If you are new to Git, please try the [15 minute Git tutorial][].  Also,
 [git--the simple guide][] and the [GitHub help pages][] are excellent.  For
 detailed comprehensive documentation see http://git-scm.com/doc.
 
@@ -87,6 +87,6 @@ keep it in the back of your mind.
 [LaTeX Guide]: http://en.wikibooks.org/wiki/LaTeX
 [Git--the simple guide]: http://rogerdudler.github.io/git-guide/
 [GitHub help pages]: https://help.github.com/
-[15 Git minute tutorial]: http://try.github.io/levels/1/challenges/1
+[15 minute Git tutorial]: http://try.github.io/levels/1/challenges/1
 [This page]: IEProps/tex/
 [magit]: http://magit.github.io/
