@@ -79,7 +79,7 @@ keep it in the back of your mind.
 
 
 
-[upload your public ssh key]: https://help.github.com/articles/generating-ssh-keys
+[upload a public ssh key]: https://help.github.com/articles/generating-ssh-keys
 [New Issue]: https://github.com/williamdemeo/Math700Homework/issues
 [Clone]: http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository#Cloning-an-Existing-Repository
 [clone]: http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository#Cloning-an-Existing-Repository
