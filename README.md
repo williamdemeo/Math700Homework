@@ -21,8 +21,10 @@ detailed comprehensive documentation see http://git-scm.com/doc.
     class is small, I think it will be easier if all students taking the class
     for credit are collaborators.) 
 
-2.  Next, you should [install Git][] on your computer.  And, if you are using a
-    Mac or Linux, you should [upload your public ssh key][] to your GitHub account.
+2.  Next, you should [install Git][] on your computer.  
+
+3.  If you are using a Mac or Linux, you should [upload a public ssh key][]
+    to your GitHub account.
 
 3.  Once I add you as a collaborator, you should [clone][] the Math700Homework
     repository to your computer's hard drive.  How you do this may depend on 
