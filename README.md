@@ -46,11 +46,16 @@ detailed comprehensive documentation see http://git-scm.com/doc.
     (In quotes is your comment explaining, if possible, *why* the
     changes were made.)
 	
-6.  [Push][] your changes to the remote GitHub repository:
+6.  On the due date of the assignment for which you're responsible, [Push][]
+    your changes to the remote GitHub repository: 
 
         git push origin master
 
-    If you get errors, please let me know!
+    If you get errors, please let me know!  
+	
+	As soon as you push your changes to GitHub, they will be viewable by
+    everyone.  In order to give other students a chance to solve the problems on
+    their own, please wait until the due date to push your solutions.
 	
 
 ## Tips
@@ -62,7 +67,7 @@ account by following
 Windows, this should work automatically if you use the
 [native GitHub app](https://github-windows.s3.amazonaws.com/GitHubSetup.exe).
 
-+ If you're a fan of Emacs, you might want to install the emacs package called
++ If you're a fan of emacs, you might want to install the emacs package called
 [Magit][], which enables you to commit and push without leaving the emacs
 editor--very convenient!
 	
