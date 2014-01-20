@@ -79,6 +79,7 @@ long thinking about each commit, so don't worry too much; just
 keep it in the back of your mind.
 
 + If you ever have any trouble using Git or GitHub, please let me know!
+You can [email me](mailto:williamdemeo@gmail.com) or create a [new wiki page](https://github.com/williamdemeo/Math700Homework/wiki/_new) for discussing Git, or open a [new issue](https://github.com/williamdemeo/Math700Homework/issues/new).
 
 
 [upload a public ssh key]: https://help.github.com/articles/generating-ssh-keys
