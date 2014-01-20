@@ -60,12 +60,11 @@ Mac or Linux, you should upload your public ssh key to your GitHub
 account by following
 [these instructions.](https://help.github.com/articles/generating-ssh-keys) In
 Windows, this should work automatically if you use the
-[native GitHub app](https://github-windows.s3.amazonaws.com/GitHubSetup.exe). (If
-you have any trouble, please tell me.)
+[native GitHub app](https://github-windows.s3.amazonaws.com/GitHubSetup.exe).
 
 + If you're a fan of Emacs, you might want to install the emacs package called
 [Magit][], which enables you to commit and push without leaving the emacs
-editor--very convenient! (If you have any trouble, please tell me.)
+editor--very convenient!
 	
 + [This page][] on recording changes to the repository is extremely informative.
 There is a lot of information on that page.  If you're new to version
@@ -79,6 +78,7 @@ This is often hard to do in just a few lines and without spending too
 long thinking about each commit, so don't worry too much; just
 keep it in the back of your mind.
 
++ If you ever have any trouble using Git or GitHub, please let me know!
 
 
 [upload a public ssh key]: https://help.github.com/articles/generating-ssh-keys
