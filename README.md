@@ -46,7 +46,7 @@ detailed comprehensive documentation see http://git-scm.com/doc.
     (In quotes is your comment explaining, if possible, *why* the
     changes were made.)
 	
-6.  On the due date of the assignment for which you're responsible, [Push][]
+6.  On the due date of the assignment for which you're responsible, [push][]
     your changes to the remote GitHub repository: 
 
         git push origin master
@@ -55,7 +55,7 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 	
 	As soon as you push your changes to GitHub, they will be viewable by
     everyone.  In order to give other students a chance to solve the problems on
-    their own, please wait until the due date to push your solutions.
+    their own, please wait until the due date of the assignment to push your solutions.
 	
 
 ## Tips
