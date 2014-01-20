@@ -55,15 +55,17 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 
 ## Tips
 + If you've set up Git and your GitHub account properly, you won't have to enter
-your GitHub password every time you push changes to the repository. In Windows, this
-should work automatically if you use the [native GitHub app](https://github-windows.s3.amazonaws.com/GitHubSetup.exe).  If you use a 
-a Mac or Linux, you should upload your public ssh key to your GitHub
-account by following [these instructions.](https://help.github.com/articles/generating-ssh-keys)
-
-(If you have trouble with this, please ask me about it.)
+your GitHub password every time you push changes to the repository. If you use a 
+Mac or Linux, you should upload your public ssh key to your GitHub
+account by following
+[these instructions.](https://help.github.com/articles/generating-ssh-keys) In
+Windows, this should work automatically if you use the
+[native GitHub app](https://github-windows.s3.amazonaws.com/GitHubSetup.exe). (If
+you have any trouble, please tell me.)
 
 + If you're a fan of Emacs, you will love the emacs package called [Magit][], which
-enables you to commit and push without leaving the emacs editor. (If you have trouble with this, please ask me about it.)
+enables you to commit and push without leaving the emacs editor. (If you have
+any trouble, please tell me.)
 	
 + [This page][] on recording changes to the repository is extremely informative.
 There is a lot of information on that page.  If you're new to version
