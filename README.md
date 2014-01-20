@@ -63,9 +63,9 @@ Windows, this should work automatically if you use the
 [native GitHub app](https://github-windows.s3.amazonaws.com/GitHubSetup.exe). (If
 you have any trouble, please tell me.)
 
-+ If you're a fan of Emacs, you will love the emacs package called [Magit][], which
-enables you to commit and push without leaving the emacs editor. (If you have
-any trouble, please tell me.)
++ If you're a fan of Emacs, you might want to install the emacs package called
+[Magit][], which enables you to commit and push without leaving the emacs
+editor--very convenient! (If you have any trouble, please tell me.)
 	
 + [This page][] on recording changes to the repository is extremely informative.
 There is a lot of information on that page.  If you're new to version
