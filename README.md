@@ -46,7 +46,7 @@ detailed comprehensive documentation see http://git-scm.com/doc.
     (In quotes is your comment explaining, if possible, *why* the
     changes were made.)
 	
-6.  On the due date of the assignment for which you're responsible, [push][]
+6.  On the [due date][] of the assignment for which you're responsible, [push][]
     your changes to the remote GitHub repository: 
 
         git push origin master
@@ -86,7 +86,7 @@ keep it in the back of your mind.
 + If you ever have any trouble using Git or GitHub, please let me know!
 You can [email me](mailto:williamdemeo@gmail.com) or create a [new wiki page](https://github.com/williamdemeo/Math700Homework/wiki/_new) for discussing Git, or open a [new issue](https://github.com/williamdemeo/Math700Homework/issues/new).
 
-
+[due date]: https://github.com/williamdemeo/Math700Homework/wiki/Homework-Schedule
 [upload a public ssh key]: https://help.github.com/articles/generating-ssh-keys
 [New Issue]: https://github.com/williamdemeo/Math700Homework/issues
 [Clone]: http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository#Cloning-an-Existing-Repository
