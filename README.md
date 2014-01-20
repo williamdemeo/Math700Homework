@@ -21,7 +21,8 @@ detailed comprehensive documentation see http://git-scm.com/doc.
     class is small, I think it will be easier if all students taking the class
     for credit are collaborators.) 
 
-2.  Next, you should [install Git][] on your computer.
+2.  Next, you should [install Git][] on your computer.  And, if you are using a
+    Mac or Linux, you should [upload your public ssh key][] to your GitHub account.
 
 3.  Once I add you as a collaborator, you should [clone][] the Math700Homework
     repository to your computer's hard drive.  How you do this may depend on 
@@ -30,6 +31,8 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 	    cd ~/git
 		git clone git@github.com:williamdemeo/Math700Homework.git
 
+	But see the [first Tip](#tips) below for more info.
+	
 4.  Make some changes to the files in the repository.  For example, you might
     edit the file called Homework01.tex.
 	
@@ -49,14 +52,16 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 	
 
 ## Tips
++ If you've set up Git and your GitHub account properly, you won't have to enter
+your GitHub password every time you push changes to the repository. In Windows, this
+should work automatically if you use the [native GitHub app](https://github-windows.s3.amazonaws.com/GitHubSetup.exe).  If you use a 
+a Mac or Linux, you should upload your public ssh key to your GitHub
+account by following [these instructions.](https://help.github.com/articles/generating-ssh-keys)
 
-+ If you've set up Git properly on your machine, you don't have to enter your
-GitHub password when you push. (If you have
-any trouble setting up Git or GitHub please ask me about it.)
+(If you have trouble with this, please ask me about it.)
 
 + If you're a fan of Emacs, you will love the emacs package called [Magit][], which
-enables you to commit and push without leaving the emacs editor. (If you have
-any trouble setting up Magit, please ask me about it.)  
+enables you to commit and push without leaving the emacs editor. (If you have trouble with this, please ask me about it.)
 	
 + [This page][] on recording changes to the repository is extremely informative.
 There is a lot of information on that page.  If you're new to version
@@ -69,7 +74,10 @@ helpful).  Instead, try to give some justification of the changes.
 This is often hard to do in just a few lines and without spending too
 long thinking about each commit, so don't worry too much; just
 keep it in the back of your mind.
-		
+
+
+
+[upload your public ssh key]: https://help.github.com/articles/generating-ssh-keys
 [New Issue]: https://github.com/williamdemeo/Math700Homework/issues
 [Clone]: http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository#Cloning-an-Existing-Repository
 [clone]: http://git-scm.com/book/en/Git-Basics-Getting-a-Git-Repository#Cloning-an-Existing-Repository
