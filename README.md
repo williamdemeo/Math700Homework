@@ -6,7 +6,7 @@ If you have questions, comments, or suggestions, please open a [New Issue].
 
 Main course web page: https://github.com/williamdemeo/LinearAlgebra
 
-
+Hello
 ## How To Submit Homework
 
 If you are new to Git, please try the [15 minute Git tutorial][].  Also,
