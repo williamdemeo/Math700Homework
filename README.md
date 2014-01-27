@@ -7,6 +7,16 @@ If you have questions, comments, or suggestions, please open a [New Issue].
 Main course web page: https://github.com/williamdemeo/LinearAlgebra
 
 
+## How To Typeset Homework Solutions
+
+When it is your week to submit the "official" homework solutions, you must use
+the [LaTeX document preparation system](http://www.latex-project.org/).  If you
+don't already know how to use LaTeX, there is
+[plenty of online documentation](#latex-resources) to help you get started, but
+please *feel free to ask me if you need help!*  At the bottom of this page are
+some [links to LaTeX resources](#latex-resources). 
+
+
 ## How To Submit Homework
 
 If you are new to Git, please try the [15 minute Git tutorial][].  Also,
@@ -58,7 +68,7 @@ detailed comprehensive documentation see http://git-scm.com/doc.
     their own, please wait until the due date of the assignment to push your solutions.
 	
 
-## Tips
+## Git Tips
 + If you've set up Git and your GitHub account properly, you won't have to enter
 your GitHub password every time you push changes to the repository. If you use a 
 Mac or Linux, you should upload your public ssh key to your GitHub
@@ -86,6 +96,35 @@ keep it in the back of your mind.
 + If you ever have any trouble using Git or GitHub, please let me know!
 You can [email me](mailto:williamdemeo@gmail.com) or create a [new wiki page](https://github.com/williamdemeo/Math700Homework/wiki/_new) for discussing Git, or open a [new issue](https://github.com/williamdemeo/Math700Homework/issues/new).
 
+
+## LaTeX Resources
+
++ **Downloading/Installing LaTeX**
+  - [TeXLive](http://www.tug.org/texlive/) is for Linux users.
+  - [MacTeX](http://www.tug.org/mactex/) is for Mac users.
+  - [proTeXt](http://www.tug.org/protext/) is for Windows users.
+
++ **Using LaTeX**
+  - [LaTeX project site](http://www.latex-project.org/)
+  - [LaTeX WikiBook](https://en.wikibooks.org/wiki/LaTeX)
+  - [The not-so-short guide to LaTeX](http://mirror.ctan.org/info/lshort/english/lshort.pdf)
+  - [George Gratzer's short course](http://www.ctan.org/tex-archive/info/Math_into_LaTeX-4/)
+  - [Introduction to Using TeX](http://www.math.harvard.edu/texman/texman.html) (Harvard)
+  - [Some useful tips, esp. for linux users](http://people.virginia.edu/~ll2bf/docs/quickref/latex.html) (Virginia)
+  - [Video tutorials](http://www.spoken-tutorial.org/list_videos?view=1&foss=LaTeX&language=English)
+	
++ **Finding Math Symbols**
+  - [Comprehensive Symbol List](http://mirrors.ctan.org/info/symbols/comprehensive/symbols-letter.pdf)
+  - [Brief Symbol List](http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Symbols)
+  - [Cheat Sheet (pdf)](http://ctan.math.washington.edu/tex-archive/info/latexcheat/latexcheat/latexsheet.pdf)	
+  - [Cheat Sheet (html)](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
+  - [detexify][] If there's a math symbol you know how draw by hand, but you don't
+    know the LaTeX command for it, check out [detexify][]!
+
+Lots more links at: http://www.tug.org/begin.html
+
+
+
 [due date]: https://github.com/williamdemeo/Math700Homework/wiki/Homework-Schedule
 [upload a public ssh key]: https://help.github.com/articles/generating-ssh-keys
 [New Issue]: https://github.com/williamdemeo/Math700Homework/issues
@@ -109,3 +148,4 @@ You can [email me](mailto:williamdemeo@gmail.com) or create a [new wiki page](ht
 [15 minute Git tutorial]: http://try.github.io/levels/1/challenges/1
 [This page]: http://git-scm.com/book/ch2-2.html
 [Magit]: http://magit.github.io/
+[detexify]: http://detexify.kirelabs.org/classify.html
