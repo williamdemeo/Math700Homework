@@ -40,11 +40,6 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 1.  First, you should tell me your GitHub username so I can add you as a
     collaborator on the Math700Homework project.  
 
-    (Actually, this isn't absolutely necessary, and you could still contribute
-    using [forks][] and [pull requests][] if you weren't a collaborator, but since the
-    class is small, I think it will be easier if all students taking the class
-    for credit are collaborators.) 
-
 2.  Next, you should [install Git][] on your computer.  
 
 3.  If you are using a Mac or Linux, you should [upload a public ssh key][]
