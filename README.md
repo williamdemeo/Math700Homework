@@ -6,8 +6,6 @@ If you have questions, comments, or suggestions, please open a [New Issue].
 
 Main course web page: https://github.com/williamdemeo/LinearAlgebra
 
-Hello, world!
-
 ## How To Typeset Homework Solutions
 
 When it is your week to submit the "official" homework solutions, you must use
