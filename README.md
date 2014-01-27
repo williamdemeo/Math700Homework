@@ -35,7 +35,7 @@ If you are new to Git, please try the [15 minute Git tutorial][].  Also,
 [git--the simple guide][] and the [GitHub help pages][] are excellent.  For
 detailed comprehensive documentation see http://git-scm.com/doc.
 
-**Detailed Steps**
+**Details**
 
 1.  First, you should tell me your GitHub username so I can add you as a
     collaborator on the Math700Homework project.  
