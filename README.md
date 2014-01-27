@@ -43,16 +43,26 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 2.  Next, you should [install Git][] on your computer.  
 
 3.  If you are using a Mac or Linux, you should [upload a public ssh key][]
-    to your GitHub account.
+    to your GitHub account. (If you are using [GitHub for Windows][] 
+	you can skip this step.)
 
 3.  Once I add you as a collaborator, you should [clone][] the Math700Homework
     repository to your computer's hard drive.  How you do this may depend on 
-	your operating system. In Linux I invoke the following at the command line
-	
-	    cd ~/git
-		git clone git@github.com:williamdemeo/Math700Homework.git
+	your operating system. 
 
-	But see the [first Tip](#tips) below for more info.
+	+ **Linux:** I invoke the following at the command line:
+	
+	    mkdir -p ~/git
+		cd ~/git
+	    git clone git@github.com:williamdemeo/Math700Homework.git
+
+	  the same commands should work on a Mac in a terminal window.
+	  See also the [first Tip](#tips) below.
+	
+	+ **Windows:** I have never used the [GitHub for Windows][] app, so I don't know
+      how to clone a repository using Windows.  However, according to
+  	  [this help.github.com page][], it's easy. Please let me know if you have
+      problems. 
 	
 4.  Make some changes to the files in the repository.  For example, you might
     edit the file called Homework01.tex.
@@ -156,3 +166,5 @@ Lots more links at: http://www.tug.org/begin.html
 [This page]: http://git-scm.com/book/ch2-2.html
 [Magit]: http://magit.github.io/
 [detexify]: http://detexify.kirelabs.org/classify.html
+[GitHub for Windows]: https://help.github.com/articles/set-up-git#platform-windows
+[this help.github.com page]: https://help.github.com/articles/adding-repositories-with-github-for-windows
