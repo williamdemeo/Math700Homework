@@ -37,16 +37,16 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 
 **Details**
 
-1.  First, you should tell me your GitHub username so I can add you as a
+1.  First, tell me your GitHub username so I can add you as a
     collaborator on the Math700Homework project.  
 
-2.  Next, you should [install Git][] on your computer.  
+2.  Next, [install Git][] on your computer.  
 
-3.  If you are using a Mac or Linux, you should [upload a public ssh key][]
+3.  If you are using a Mac or Linux, [upload a public ssh key][]
     to your GitHub account. (If you are using [GitHub for Windows][] 
 	you can skip this step.)
 
-3.  Once I add you as a collaborator, you should [clone][] the Math700Homework
+3.  Once I add you as a collaborator, you can [clone][] the Math700Homework
     repository to your computer's hard drive.  How you do this may depend on 
 	your operating system. 
 
@@ -64,10 +64,10 @@ detailed comprehensive documentation see http://git-scm.com/doc.
   	  [this help.github.com page][], it's easy. If you have problems,
       please consult http://windows.github.com/help.html
 	
-4.  Make some changes to the files in the repository.  For example, you might
-    edit the file called Homework01.tex.
+4.  Next, make some changes to the files in the repository.  For example, you might
+    edit the file Homework01.tex in the Math700Homework/tex directory.
 	
-5.  [Commit][] your changes to your local version of the repository.  I do:
+5.  [Commit][] your changes to your local version of the repository:
 
         git add Homework01.tex
 		git commit -m "added a sentence to make the proof clearer"
