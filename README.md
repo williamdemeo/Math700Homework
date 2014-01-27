@@ -59,10 +59,10 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 	  the same commands should work on a Mac in a terminal window.
 	  See also the [first Tip](#tips) below.
 	
-	+ **Windows:** I have never used the [GitHub for Windows][] app, so I don't know
-      how to clone a repository using Windows.  However, according to
-  	  [this help.github.com page][], it's easy. Please let me know if you have
-      problems. 
+	+ **Windows:** I have never used the [GitHub for Windows][] app, so I don't
+      know how to use it to clone a repository.  However, according to
+  	  [this help.github.com page][], it's easy. If you have problems,
+      please consult http://windows.github.com/help.html
 	
 4.  Make some changes to the files in the repository.  For example, you might
     edit the file called Homework01.tex.
