@@ -87,8 +87,8 @@ account by following
 Windows, this should work automatically if you use the
 [native GitHub app](https://github-windows.s3.amazonaws.com/GitHubSetup.exe).
 
-+ If you're a fan of emacs, you might want to install the emacs package called
-[Magit][], which enables you to commit and push without leaving the emacs
++ If you're a fan of Emacs, you might want to install the Emacs package called
+[Magit][], which enables you to commit and push without leaving the Emacs
 editor--very convenient!
 	
 + [This page][] on recording changes to the repository is extremely informative.
@@ -97,7 +97,7 @@ controlling, don't be scared, we'll only need the very basics.
 	
 + Optimally, your commit comments should indicate *why* changes were made, 
 and not *what* was changed. Git keeps a perfect record of what was changed, so
-comments mentioning this are somewhat redundant (although they can cometimes be
+comments mentioning this are somewhat redundant (although they can sometimes be
 helpful).  Instead, try to give some justification of the changes.
 This is often hard to do in just a few lines and without spending too
 long thinking about each commit, so don't worry too much; just
