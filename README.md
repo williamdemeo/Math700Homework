@@ -17,7 +17,17 @@ please *feel free to ask me if you need help!*  At the bottom of this page are
 some [links to LaTeX resources](#latex-resources). 
 
 
-## How To Submit Homework
+## How To Submit Homework Solutions
+
+We will use Git and GitHub to manage the homework files for this class.
+Here is a rough overview of what you will do when it is your turn to submit
+official solutions (more details below):
+
+First you will download our Math700Homework Git repository to your hard drive.
+Then you will edit the Homework.tex file, inserting your solutions (using
+LaTeX).  Then you will commit your changes to your local version of our
+repository.  Then you will push these changes to the online version of the
+repository. 
 
 If you are new to Git, please try the [15 minute Git tutorial][].  Also,
 [git--the simple guide][] and the [GitHub help pages][] are excellent.  For
@@ -110,16 +120,14 @@ You can [email me](mailto:williamdemeo@gmail.com) or create a [new wiki page](ht
   - [The not-so-short guide to LaTeX](http://mirror.ctan.org/info/lshort/english/lshort.pdf)
   - [George Gratzer's short course](http://www.ctan.org/tex-archive/info/Math_into_LaTeX-4/)
   - [Introduction to Using TeX](http://www.math.harvard.edu/texman/texman.html) (Harvard)
-  - [Some useful tips, esp. for linux users](http://people.virginia.edu/~ll2bf/docs/quickref/latex.html) (Virginia)
+  - [Some useful tips, esp. for Linux users](http://people.virginia.edu/~ll2bf/docs/quickref/latex.html) (Virginia)
   - [Video tutorials](http://www.spoken-tutorial.org/list_videos?view=1&foss=LaTeX&language=English)
 	
 + **Finding Math Symbols**
   - [Comprehensive Symbol List](http://mirrors.ctan.org/info/symbols/comprehensive/symbols-letter.pdf)
   - [Brief Symbol List](http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Symbols)
-  - [Cheat Sheet (pdf)](http://ctan.math.washington.edu/tex-archive/info/latexcheat/latexcheat/latexsheet.pdf)	
-  - [Cheat Sheet (html)](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
-  - [detexify][] If there's a math symbol you know how draw by hand, but you don't
-    know the LaTeX command for it, check out [detexify][]!
+  - [Cheat Sheet (pdf)](http://ctan.math.washington.edu/tex-archive/info/latexcheat/latexcheat/latexsheet.pdf) [(html)](http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html)
+  - [detexify][] If you can draw the symbol with your mouse, try [detexify][]!
 
 Lots more links at: http://www.tug.org/begin.html
 
