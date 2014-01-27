@@ -24,10 +24,10 @@ Here is a rough overview of what you will do when it is your turn to submit
 official solutions (more details below):
 
 First you will download our Math700Homework Git repository to your hard drive.
-Then you will edit the Homework.tex file, inserting your solutions (using
-LaTeX).  Then you will commit your changes to your local version of our
-repository.  Then you will push these changes to the online version of the
-repository. 
+Then you will type your solutions in the tex/Homework*.tex file corresponding to the
+assignment for which you are responsible. You will commit your changes to
+your local version of our repository.  Finally, on the assignment due date, you
+will sync your version of our repository with the online version.
 
 If you are new to Git, please try the [15 minute Git tutorial][].  Also,
 [git--the simple guide][] and the [GitHub help pages][] are excellent.  For
