@@ -52,9 +52,9 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 
 	+ **Linux:** I invoke the following at the command line:
 	
-	    mkdir -p ~/git
-		cd ~/git
-	    git clone git@github.com:williamdemeo/Math700Homework.git
+	      mkdir -p ~/git
+		  cd ~/git
+	      git clone git@github.com:williamdemeo/Math700Homework.git
 
 	  the same commands should work on a Mac in a terminal window.
 	  See also the [first Tip](#tips) below.
