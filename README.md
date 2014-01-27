@@ -50,7 +50,7 @@ detailed comprehensive documentation see http://git-scm.com/doc.
     repository to your computer's hard drive.  How you do this may depend on 
 	your operating system. 
 
-	+ **Linux:** I invoke the following at the command line:
+	+ **Linux.** Invoke the following at the command line:
 	
 	        mkdir -p ~/git
 		    cd ~/git
@@ -59,8 +59,8 @@ detailed comprehensive documentation see http://git-scm.com/doc.
 	  the same commands should work on a Mac in a terminal window.
 	  See also the [first Tip](#tips) below.
 	
-	+ **Windows:** I have never used the [GitHub for Windows][] app, so I don't
-      know how to use it to clone a repository.  However, according to
+	+ **Windows.** I have never used the [GitHub for Windows][] app, so I don't
+      know how to clone a repo in Windows.  However, according to
   	  [this help.github.com page][], it's easy. If you have problems,
       please consult http://windows.github.com/help.html
 	
