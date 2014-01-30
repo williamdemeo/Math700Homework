@@ -1,0 +1,110 @@
+\input{macros}
+%%test This is the Homework LaTeX template.  Use this file to fill in your solutions. 
+%%
+%% Notes: 
+%%    1. Write your answers inside a \begin{solution}...\end{solution} environment.
+%%
+%%    2. If you will use references, insert bibtex reference entries in the file
+%%       Math700.bib.  (Create that file if it doesn't yet exist.)
+%%
+%%    3. If you will use acronyms, please define them in the macros.tex file.
+%%
+%%    4. Please try to check that your file compiles:
+%%
+%%       Mac OS X users: you might try MacTeX. 
+%%       Windows users: you might try proTeXt. 
+%%       Linux users: most come with TeX; otherwise do a full install of TeXLive.
+%%
+%%       There is a Makefile in this directory, so on Linux you could just 
+%%       enter `make` to compile all the Homework*.tex files at once.
+%%
+%%    5. Please don't hesitate to inform the prof if you have trouble, or open
+%%       a ``New issue'' or create a new ``Wiki page'' on GitHub.  Otherwise,
+%%       send an email to williamdemeo@gmail.com.
+%%
+%%    6. It will probably be hard to keep everyone's notation consistent.
+%%       For the most basic symbols, we should have some conventions and use
+%%       LaTeX macros to keep the conventions consistent and easy to remember.
+%%       For example, to denote an algebra,
+         \newcommand\alg[1]{\ensuremath{\mathbf{#1}}}
+         \newcommand{\<}{\ensuremath{\langle}}
+         \renewcommand{\>}{\ensuremath{\rangle}}
+%%       So, an algebra in LaTeX is typed as $\alg{A} = \<A, F\>$.
+%%       Similarly, for a field, let's use:
+         \newcommand\fld[1]{\ensuremath{\mathbb{#1}}}
+%%       So, a field in LaTeX is typed as $\fld{F}$.
+
+%%
+%%    7. Replace these names with yours!!!
+         \metadata{}{Homework 1 hints -- 2014/01/13}
+         \author{}
+%%
+%%    8. Update the title and date as appropriate.
+         \title{Homework 1 hints}
+         \date{January 30, 2014}
+
+\begin{document}
+
+\maketitle
+
+You need not make use of these hints. There may be other, simpler ways to solve
+the problems.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{prob}[Golan 16]
+Let $z_1$, $z_2$, and $z_3$ be complex numbers satisfying 
+$|z_i| = 1$ for $i = 1, 2, 3$. Show that 
+$|z_1 z_2 + z_1 z_3 + z_2 z_3 | = |z_1 + z_2 + z_3|$.
+\end{prob}
+
+\smallskip
+\begin{hint}
+Let $w =  z_1 z_2 z_3$. Note that the modulus of $w$ is $|w| = 1$, since each $z_i$ has modulus 1.
+The left hand side of the equality we want to establish is
+$| w/z_3 + w/z_2 + w/z_1 |$.
+Factoring out $|w|$, we have $|w| |1/z_3 + 1/z_2 + 1/z_1|$.
+Note that since $|z_i|=1$, the conjugate of $z_i$ is $1/z_i$.
+\end{hint}
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{prob}[Golan 22 {\it Abel's inequality}] 
+Let $z_1, \dots, z_n$ be a list of complex
+numbers and, for each $1 \leq k \leq n$, 
+let $s_k = \sum_{i=1}^k z_i$. For real numbers
+$a_1, \dots, a_n$ satisfying 
+$a_1 \geq a_2 \geq \cdots \geq a_n \geq 0$, 
+show that
+\begin{equation}
+\label{eq:Abels}  
+\left| \sum_{i=1}^n a_i z_i \right| 
+\leq a_1 \left( \max_{1 \leq k \leq n} |s_k|\right).
+\end{equation}
+\end{prob}
+\smallskip
+\begin{hint}
+The $k$th term of $\sum_{i=1}^n a_i z_i$ is 
+\[
+a_k z_k = a_k (z_1+\cdots + z_k) - a_k (z_1+\cdots + z_{k-1}),
+\]
+so
+\begin{align*}
+\left| \sum_{i=1}^n a_i z_i \right|  
+&= \left|a_n (z_1+\cdots + z_n) - a_n (z_1+\cdots + z_{n-1}) \right.\\
+&+ a_{n-1} (z_1+\cdots + z_{n-1}) - a_{n-1} (z_1+\cdots + z_{n-2}) \\
+& \vdots\\
+&+ a_2 (z_1+z_2) - a_2 z_1 + \left.a_1 z_1\right|.
+\end{align*}
+Collecting like terms in the expression on the right, we have
+\[
+\left| z_1(a_1-a_2)+ (z_1+ z_2)(a_2-a_3) + \cdots + (z_1+\cdots +
+  z_{n-1})(a_{n-1}-a_n) + (z_1+\cdots + z_{n})a_n \right|. \]
+Consider bounding this expression by a term like
+$(a_j - a_{j+1})|z_1+\cdots+ z_k|$ (take the maximum such term as $j$ and $k$
+vary).  Finally, note that $a_j - a_{j+1} < a_1$.  Use all of these facts
+together to establish the claim.  
+\end{hint}
+\probskip
+
+
+\end{document}
