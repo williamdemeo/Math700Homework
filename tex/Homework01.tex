@@ -61,13 +61,9 @@ In order to show that $f:F\setminus \{0_F\}\rightarrow F\setminus \{0_F\}$, $f(a
 
 Well-defined: For each $a\in F\setminus \{0_F\}$, there is an element $x\in F\setminus \{0_F\}$ such that $ax=xa=1$ because $F$ is a field. In other words, $x=a^{-1}$. Now suppose there exists $y\in  F\setminus \{0_F\}$ such that $ay=ya=1$. Then $y = 1y = xay = x1 = xax = 1x = x$. Therefore inverses in $F$ are unique. 
 
-%Now suppose there exists $y\in  F\setminus \{0_F\}$, $y\neq x$, such that $ay=ya=1$. Then $ay=ax$ which implies $y=x$ because $F$ is an integral domain. Therefore inverses in $F$ are unique. 
-
-Surjective: For any $b\in F\setminus \{0_F\}$, we have $f(b)=b^{-1}\in F\setminus \{0_f\}$ because $F$ is a field. Observe that $bb^{-1}=b^{-1}b=1$. Therefore, $b$ is the unique inverse of $b^{-1}$. So $f(b^{-1}) = b$. % making $f$ surjective. 
-%there exists $a\in F\setminus \{0_F\}$ such that $a=b^{-1}$ because $F$ is a field.
+Surjective: For any $b\in F\setminus \{0_F\}$, we have $f(b)=b^{-1}\in F\setminus \{0_f\}$ because $F$ is a field. Observe that $bb^{-1}=b^{-1}b=1$. Therefore, $b$ is the unique inverse of $b^{-1}$. So $f(b^{-1}) = b$. 
 
 Injective: For any $a,b\in F\setminus \{0_F\}$, suppose $f(a) = c = f(b)$ for some $c\in F\setminus \{0_F\}$. Then $ac = 1 =bc $, so $a = a1 = acc^{-1} = 1c^{-1} = bcc^{-1} = b1 = b$.
-%Again, because $F$ is an integral domain, this implies $a=b$. Therefore $f$ is injective. 
 
 [Note: ``If $c\neq 0$, then $ac = bc$ implies $a=b$'' is a general property of integral domains. You can alternatively use the fact that every field is an integral domain to prove that $f$ is well-defined and injective.]
 
@@ -155,7 +151,7 @@ Write down the definition of a \emph{module} as a (universal) algebra,
 $\alg{M} = \< M, F\>$.  That is, describe the set $F$ of operations and 
 give the conditions that they should satisfy in order for $\alg{M}$ to 
 agree with the classical definition of a module over a ring.\\[4pt]
-%[{\it Hint:} Let $\alg{R} = \<R, +, \cdot, -, 0, 1\>$ be a ring and, for each $r\in R$, define a scalar multiply operation $f_r \in F$.]
+[{\it Hint:} Let $\alg{R} = \<R, +, \cdot, -, 0, 1\>$ be a ring and, for each $r\in R$, define a scalar multiply operation $f_r \in F$.]
 \end{problem}
 
 \begin{solution}
@@ -192,7 +188,7 @@ $\left.\right.$\\
 \begin{enumerate}
 \item A left ideal $I$ of $\alg{R}$ is a subset of $R$ which forms a subgroup under addition and for any $a\in I$ and $r\in R$, we have $ra\in I$. 
 \item Clearly $\bigcap \mathscr{A}$ is a subset of $R$ since each $A_i\in \mathscr{A}$ is a subset of $R$. Let $a,b\in \bigcap \mathscr{A}$ and $r\in R$. By definition of intersection, $a,b\in A_i$ for all $A_i \in \mathscr{A}$. Therefore $ra, a+b\in A_i$ for all $A_i \in \mathscr{A}$ because each $A_i$ is a left ideal. But this implies that $ra,a+b\in \bigcap \mathscr{A}$, proving that $\bigcap \mathscr{A}$ is a left ideal. 
-%Additionally if $a,b\in \bigcap \mathscr{A}$ then $a,b \in A_i$ for all $A_i \in \mathscr{A}$. Because each $A_i$ is a left ideal, $a+b\in A_i$ for all $i$ and hence $a+b\in   \bigcap \mathscr{A}$, 
+
 \end{enumerate}
 \end{solution}
 %\probskip
@@ -202,8 +198,7 @@ $\left.\right.$\\
 \begin{problem}
 Let $\alg{R}$ be a ring and fix $a, b \in R$.  Prove that if $1 - ba$ is left
 invertible, then $1 - ab$ is also left invertible.  What is the inverse?\\[4pt]
-%[{\it Danny Hint:} Show that $b \in R(1-ab)$ and therefore $ab \in R(1-ab)$. Then try to compute the left inverse of $1-ab$.] 
-%[{\it Hint:} Consider the left ideal $R(1 - ab)$.  It contains the left ideal $Rb(1-ab) = Rb$ and therefore contains 1. Verify these statements, then try to compute the inverse of $1-ab$. (Ask for more hints as needed.)] 
+[{\it Hint:} Consider the left ideal $R(1 - ab)$.  It contains the left ideal $Rb(1-ab) = Rb$ and therefore contains 1. Verify these statements, then try to compute the inverse of $1-ab$. (Ask for more hints as needed.)] 
 \end{problem}
 \smallskip
 \begin{solution}
@@ -211,6 +206,8 @@ We can show existence as follows:
 Observe $Rb(1-ab)\subseteq R(1-ab)$ since $Rb\subseteq R$.  Because $(1-ba)$ is left invertible, $R = R(1-ba)$ and
 \[Rb=R(1-ba)b=R(b-bab)=Rb(1-ab).\] Therefore $Rb\subseteq R(1-ab)$. Observe $ab\in Rb$ and $(1-ab)\in R(1-ab)$ so \[1=(1-ab)+ab\in R(1-ab),\] which implies that $(1-ab)$ is invertible.
 
+
+%[{\it Danny Hint:} Show that $b \in R(1-ab)$ and therefore $ab \in R(1-ab)$. Then try to compute the left inverse of $1-ab$.] 
 To explicitly find the left inverse of $(1-ab)$, let $c \in R$ be such that $c(1-ba) = 1$. Then
 \begin{eqnarray*}
 1 & = & 1 - ab + ab\\
