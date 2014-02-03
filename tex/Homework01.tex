@@ -36,12 +36,12 @@
 
 %%
 %%    7. Replace these names with yours!!!
-         \metadata{Emmy and Emil}{Homework 1 -- 2014/01/13}
-         \author{Emil Artin and Emmy Noether}
+         \metadata{Danny and Heather}{Homework 1 -- 2014/02/03}
+         \author{Danny Rorabaugh and Heather Smith}
 %%
 %%    8. Update the title and date as appropriate.
          \title{Homework 1}
-         \date{January 13, 2014}
+         \date{03 February 2014}
 
 \begin{document}
 
@@ -57,7 +57,19 @@ permutation of the set $F \setminus \{0_F\}$.
 \smallskip
 \begin{solution}
 
-%%TODO: Write your solution here.
+In order to show that $f:F\setminus \{0_F\}\rightarrow F\setminus \{0_F\}$, $f(a)=a^{-1}$ is a permutation, we prove that $f$ is a well-defined bijection. 
+
+Well-defined: For each $a\in F\setminus \{0_F\}$, there is an element $x\in F\setminus \{0_F\}$ such that $ax=xa=1$ because $F$ is a field. In other words, $x=a^{-1}$. Now suppose there exists $y\in  F\setminus \{0_F\}$ such that $ay=ya=1$. Then $y = 1y = xay = x1 = xax = 1x = x$. Therefore inverses in $F$ are unique. 
+
+%Now suppose there exists $y\in  F\setminus \{0_F\}$, $y\neq x$, such that $ay=ya=1$. Then $ay=ax$ which implies $y=x$ because $F$ is an integral domain. Therefore inverses in $F$ are unique. 
+
+Surjective: For any $b\in F\setminus \{0_F\}$, we have $f(b)=b^{-1}\in F\setminus \{0_f\}$ because $F$ is a field. Observe that $bb^{-1}=b^{-1}b=1$. Therefore, $b$ is the unique inverse of $b^{-1}$. So $f(b^{-1}) = b$. % making $f$ surjective. 
+%there exists $a\in F\setminus \{0_F\}$ such that $a=b^{-1}$ because $F$ is a field.
+
+Injective: For any $a,b\in F\setminus \{0_F\}$, suppose $f(a) = c = f(b)$ for some $c\in F\setminus \{0_F\}$. Then $ac = 1 =bc $, so $a = a1 = acc^{-1} = 1c^{-1} = bcc^{-1} = b1 = b$.
+%Again, because $F$ is an integral domain, this implies $a=b$. Therefore $f$ is injective. 
+
+[Note: ``If $c\neq 0$, then $ac = bc$ implies $a=b$'' is a general property of integral domains. You can alternatively use the fact that every field is an integral domain to prove that $f$ is well-defined and injective.]
 
 \end{solution}
 \probskip
@@ -73,8 +85,15 @@ $|z_1 z_2 + z_1 z_3 + z_2 z_3 | = |z_1 + z_2 + z_3|$.
 \end{problem}
 \smallskip
 \begin{solution}
-
-%% Write your solution here.
+For each $j \in [3]$, since $|z_i|=1$, note that for some real $\theta_j$,
+$$\frac{1}{z_j}  = \frac{1}{e^{i\theta_j}} = e^{-i\theta_j}= \overline{z_j}.$$
+Therefore,
+\begin{eqnarray*}
+|z_1 z_2 + z_1 z_3 + z_2 z_3 | & = & |z_1| \cdot |z_2| \cdot |z_3| \cdot \left|\frac{1}{z_3} + \frac{1}{z_2} + \frac{1}{z_1}\right|\\
+& = & 1 \cdot 1 \cdot 1 \cdot | \overline{z_3} + \overline{z_2} + \overline{z_1} | \\
+& = &  | \overline{z_1 + z_2 + z_3} | \\
+& = & |z_1 + z_2 + z_3 |.
+\end{eqnarray*}
 
 \end{solution}
 \probskip
@@ -99,8 +118,18 @@ show that
 \smallskip
 \begin{solution}
 
-%% Write your solution here.
+Define $s_0:=0$. Observe $a_iz_i = a_is_i - a_is_{i-1}$ for $1\leq i\leq n$. Therefore
 
+
+\begin{align*}
+\left|\sum_{i=1}^n a_iz_i \right| & = \left|\sum_{i=1}^n  a_i s_i - a_i s_{i-1}\right|\\
+&= \left|\sum_{i=1}^{n-1} s_i(a_i-a_{i+1}) + s_n a_n \right|\\
+&\leq \sum_{i=1}^{n-1} \left|s_i (a_i-a_{i+1})\right| + \left|s_n a_n\right|  \tag*{by the Triangle Inequality}\\
+&= \sum_{i=1}^{n-1} \left(a_i-a_{i+1})|s_i\right| + a_n\left|s_n\right| \\
+&\leq \sum_{i=1}^{n-1}(a_i-a_{i+1}) \max_{1 \leq k \leq n} |s_k| +  a_n\max_{1 \leq k \leq n} |s_k| \\
+&= \left(\sum_{i=1}^{n-1} (a_i-a_{i+1}) + a_n\right) \max_{1 \leq k \leq n} |s_k| \\
+&= a_1 \max_{1 \leq k \leq n}  |s_k|. \tag*{by telescoping sums}
+\end{align*}
 \end{solution}
 \probskip
 
@@ -111,27 +140,38 @@ show that
 If $p$ is a prime positive integer, find all subfields of $GF(p)$.
 \end{problem}
 
-
 \begin{solution}
+Since every field is a unital ring, every subfield of $GF(p)$ contains the unit 1. The order of 1 is $p$, since $\underbrace{1 + 1 + \cdots + 1}_{p} = 0$, but $\underbrace{1 + 1 + \cdots + 1}_{k} \neq 0$ for positive $k<p$.
 
-%% Write your solution here.
+Suppose  $\underbrace{1 + 1 + \cdots + 1}_{a} = \underbrace{1 + 1 + \cdots + 1}_{b}$ for some positive $a,b <p$. Then $a=b$. Thus, any subfield with 1 contains at least $p$ distinct elements. Since $|GF(p)|=p$, it is itself the only subfield.
 
 \end{solution}
-\probskip
+%\probskip
+\newpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
 Write down the definition of a \emph{module} as a (universal) algebra, 
 $\alg{M} = \< M, F\>$.  That is, describe the set $F$ of operations and 
 give the conditions that they should satisfy in order for $\alg{M}$ to 
 agree with the classical definition of a module over a ring.\\[4pt]
-[{\it Hint:} Let $\alg{R} = \<R, +, \cdot, -, 0, 1\>$ be a ring and,
-  for each $r\in R$, define a scalar multiply operation $f_r \in F$.]
+%[{\it Hint:} Let $\alg{R} = \<R, +, \cdot, -, 0, 1\>$ be a ring and, for each $r\in R$, define a scalar multiply operation $f_r \in F$.]
 \end{problem}
 
 \begin{solution}
-
-%%TODO: Write your solution here.
-
+Let $\alg{A} = \< V, +, -, 0\>$ be an Abelian group. 
+Let $\alg{R}$ be the unital ring 
+\[\alg{R} = \<R, +, \cdot, -, 0, 1\>\]
+Define module $\alg{V}$ as follows: 
+\[\alg{V}=\<V, +, -, 0, \{f_r: r\in R\}\>\] 
+where the addition, additive inverse, and zero are defined on $V$ as they are in the Abelian group $\alg{A}$.
+Each $f_r$ is a function $f_r: V\rightarrow V$ so that for any $r, r_1, r_2\in R$ and any $v, v_1, v_2\in V$ each of the following is satisfied: 
+	\begin{itemize}
+	\item $f_r(v_1+v_2)=f_r(v_1) + f_r(v_2)$
+	\item $f_{r_1+r_2}(v) = f_{r_1}(v) + f_{r_2}(v)$
+	\item $f_{r_1}\left(f_{r_2}(v)\right) = f_{r_1r_2} (v)$
+	\item $f_1(v) = v$
+	\end{itemize}
 \end{solution}
 \probskip
 
@@ -139,7 +179,7 @@ agree with the classical definition of a module over a ring.\\[4pt]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
-Let $\alg{R} = \<R, +, \cdot, -, 0, 1\>$ be a ring.  
+Let $\alg{R} = \<R, +, -, \cdot, 0, 1\>$ be a ring.  
 \begin{enumerate}
 \item Define \emph{left ideal} of $\alg{R}$.
 \item Let $\mathscr{A} = \{A_i : i \in \mathscr{I}\}$ be a family of left ideals
@@ -147,26 +187,43 @@ of $\alg{R}$.  Prove that $\bigcap \mathscr{A}$ is a left ideal.
 \end{enumerate}
 \end{problem}
 \smallskip
-\begin{solution}
-
-%%TODO: Write your solution here.
-
+\begin{solution} 
+$\left.\right.$\\
+\begin{enumerate}
+\item A left ideal $I$ of $\alg{R}$ is a subset of $R$ which forms a subgroup under addition and for any $a\in I$ and $r\in R$, we have $ra\in I$. 
+\item Clearly $\bigcap \mathscr{A}$ is a subset of $R$ since each $A_i\in \mathscr{A}$ is a subset of $R$. Let $a,b\in \bigcap \mathscr{A}$ and $r\in R$. By definition of intersection, $a,b\in A_i$ for all $A_i \in \mathscr{A}$. Therefore $ra, a+b\in A_i$ for all $A_i \in \mathscr{A}$ because each $A_i$ is a left ideal. But this implies that $ra,a+b\in \bigcap \mathscr{A}$, proving that $\bigcap \mathscr{A}$ is a left ideal. 
+%Additionally if $a,b\in \bigcap \mathscr{A}$ then $a,b \in A_i$ for all $A_i \in \mathscr{A}$. Because each $A_i$ is a left ideal, $a+b\in A_i$ for all $i$ and hence $a+b\in   \bigcap \mathscr{A}$, 
+\end{enumerate}
 \end{solution}
-\probskip
-
+%\probskip
+\newpage 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}
 Let $\alg{R}$ be a ring and fix $a, b \in R$.  Prove that if $1 - ba$ is left
 invertible, then $1 - ab$ is also left invertible.  What is the inverse?\\[4pt]
-[{\it Hint:} Consider the left ideal $R(1 - ab)$.  It contains the left ideal
-  $Rb(1-ab) = Rb$ and therefore contains 1. Verify these statements, then
-  try to compute the inverse of $1-ab$, as follow.  (Ask for more hints as needed.)] 
+%[{\it Danny Hint:} Show that $b \in R(1-ab)$ and therefore $ab \in R(1-ab)$. Then try to compute the left inverse of $1-ab$.] 
+%[{\it Hint:} Consider the left ideal $R(1 - ab)$.  It contains the left ideal $Rb(1-ab) = Rb$ and therefore contains 1. Verify these statements, then try to compute the inverse of $1-ab$. (Ask for more hints as needed.)] 
 \end{problem}
 \smallskip
 \begin{solution}
+We can show existence as follows: 
+Observe $Rb(1-ab)\subseteq R(1-ab)$ since $Rb\subseteq R$.  Because $(1-ba)$ is left invertible, $R = R(1-ba)$ and
+\[Rb=R(1-ba)b=R(b-bab)=Rb(1-ab).\] Therefore $Rb\subseteq R(1-ab)$. Observe $ab\in Rb$ and $(1-ab)\in R(1-ab)$ so \[1=(1-ab)+ab\in R(1-ab),\] which implies that $(1-ab)$ is invertible.
 
-%%TODO: Write your solution here.
+To explicitly find the left inverse of $(1-ab)$, let $c \in R$ be such that $c(1-ba) = 1$. Then
+\begin{eqnarray*}
+1 & = & 1 - ab + ab\\
+& = & 1 - ab + a1b\\
+& = & 1 - ab + ac(1-ba)b\\
+& = & (1 - ab) + ac(b-bab)\\
+& = & 1(1 - ab) + acb(1-ab)\\
+& = & (1+acb)(1-ab)
+\end{eqnarray*}
+
+Therefore, the left inverse of $(1-ab)$ is $(1+acb)$, where $c$ is the left inverse of $(1-ba)$.
+
+
 
 \end{solution}
 \probskip
