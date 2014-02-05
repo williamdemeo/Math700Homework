@@ -25,6 +25,12 @@
 \newtheorem*{solution}{{\bf Solution}}
 \newtheorem*{hint}{{\it Hint}}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Surround the problem and solution with 
+%% \begin{ProbBox}  and   \end{ProbBox}
+%% to prevent pagebreaks.
+\newenvironment{ProbBox}{\noindent\begin{minipage}{\linewidth}}{\end{minipage}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Acronyms
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -68,3 +74,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Space between problems
 \newrobustcmd*{\probskip}{\vskip1cm}
+
+
