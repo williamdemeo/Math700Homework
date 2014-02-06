@@ -96,7 +96,7 @@ Windows, this should work automatically if you use the
 
 + If you're a fan of Emacs, you might want to install the Emacs package called
 [Magit][], which enables you to commit and push without leaving the Emacs
-editor--very convenient!  ([Magit cheetsheet](http://daemianmack.com/magit-cheatsheet.html))
+editor--very convenient!  ([Magit cheatsheet](http://daemianmack.com/magit-cheatsheet.html))
 	
 + [This page][] on recording changes to the repository is extremely informative.
 There is a lot of information on that page.  If you're new to version
