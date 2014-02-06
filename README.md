@@ -30,9 +30,11 @@ assignment for which you are responsible. You will commit your changes to
 your local version of our repository.  Finally, on the assignment due date, you
 will sync your version of our repository with the online version.
 
-If you are new to Git, please try the [15 minute Git tutorial][].  Also,
-[git--the simple guide][] and the [GitHub help pages][] are excellent.  For
-detailed comprehensive documentation see http://git-scm.com/doc.
+If you are new to Git, check out the
+[5 Easy Guides to Help You Get Started](http://cjbrock.github.io/blog/2012/10/23/5-easy-guides-to-help-you-get-started-with-github/).
+In particular, the [15 minute Git tutorial][], the
+[git--the simple guide][], and the [GitHub help pages][] are excellent.
+For detailed comprehensive documentation see http://git-scm.com/doc.  
 
 **Details**
 
