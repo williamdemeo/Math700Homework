@@ -1,0 +1,324 @@
+\input{macros}
+%%test This is the Homework LaTeX template.  Use this file to fill in your solutions. 
+%%
+%% Notes: 
+%%    1. Write your answers inside a \begin{solution}...\end{solution} environment.
+%%
+%%    2. If you will use references, insert bibtex reference entries in the file
+%%       Math700.bib.  (Create that file if it doesn't yet exist.)
+%%
+%%    3. If you will use acronyms, please define them in the macros.tex file.
+%%
+%%    4. Please try to check that your file compiles:
+%%
+%%       Mac OS X users: you might try MacTeX. 
+%%       Windows users: you might try proTeXt. 
+%%       Linux users: most come with TeX; otherwise do a full install of TeXLive.
+%%
+%%       There is a Makefile in this directory, so on Linux you could just 
+%%       enter `make` to compile all the Homework*.tex files at once.
+%%
+%%    5. Please don't hesitate to inform the prof if you have trouble, or open
+%%       a ``New issue'' or create a new ``Wiki page'' on GitHub.  Otherwise,
+%%       send an email to williamdemeo@gmail.com.
+%%
+%%    6. It will probably be hard to keep everyone's notation consistent.
+%%       For the most basic symbols, we should have some conventions and use
+%%       LaTeX macros to keep the conventions consistent and easy to remember.
+%%       For example, to denote an algebra,
+         \newcommand\alg[1]{\ensuremath{\mathbf{#1}}}
+         \newcommand{\<}{\ensuremath{\langle}}
+         \renewcommand{\>}{\ensuremath{\rangle}}
+%%       So, an algebra in LaTeX is typed as $\alg{A} = \<A, F\>$.
+%%       Similarly, for a field, let's use:
+         \newcommand\fld[1]{\ensuremath{\mathbb{#1}}}
+%%       So, a field in LaTeX is typed as $\fld{F}$.
+%%       Example: We denote the integers, and the real, complex, and rational 
+%%                numbers by \fld{Z}, \fld{R}, \fld{C}, \fld{Q}. 
+%%                These come up often enough that it's useful to define
+         \newcommand\Z{\fld{Z}}
+         \newcommand\R{\fld{R}}
+         \newcommand\C{\fld{C}}
+         \newcommand\Q{\fld{Q}}
+         % The natural numbers do not comprise a field, but we still use:
+         \newcommand\N{\fld{N}}
+%%
+%%       For the Galois field, we use:
+         \newcommand\GF{\ensuremath{\operatorname{GF}}}
+%%
+%%    7. Replace these names with yours:
+         \metadata{Your first names go here}{Homework 3 -- 2014/03/05}
+         \author{Your full names go here}
+%%
+%%    8. Update the title and date as appropriate.
+         \title{Homework 3}
+         \date{due date: 2014/03/05}
+
+\begin{document}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+\begin{problem}[Golan 124]
+Let $F$ be a field and let $(K, \bullet)$ be an associative unital
+$F$-algebra.  If $A$ and $B$ are subsets of $K$, we let $A\bullet B$ be the set
+of all elements of $K$ of the form $a \bullet b$, with $a \in A$ and $b \in B$
+(in particular, $\emptyset \bullet B = A \bullet \emptyset = \emptyset$).
+We know that the set $V$ of all subsets of $K$ is a vector space over $\GF(2)$.
+Is $(V, \bullet)$ a $\GF(2)$-algebra?  If so, is it associative?  Is it unital?
+\end{problem}
+\smallskip
+\begin{solution}
+(type your solution here)
+\end{solution}
+\end{ProbBox}
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+\begin{problem}[Golan 132]
+Let $F$ be a field and let $L$ be the set of all polynomials $f(X) \in F[X]$
+satisfying the condition that $f(-a) = -f(a)$ for all $a\in F$.  Is $L$ a
+subspace of $F[X]$?
+\end{problem}
+\smallskip
+\begin{solution}
+(type your solution here)
+\end{solution}
+\end{ProbBox}
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+\begin{problem}[Golan 133]
+Let $F$ be a field and let $L$ be the set of all polynomials $f(X) \in F[X]$
+satisfying the condition that $\deg(f)$ is even.  Is $L$ a subspace of $F[X]$?
+\end{problem}
+\smallskip
+\begin{solution}
+(type your solution here)
+\end{solution}
+\end{ProbBox}
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+\begin{problem}[Golan 142]
+For a field $F$, compare the subsets $F[X^2]$ and $F[X^2+1]$ of $F[X]$.
+\end{problem}
+\smallskip
+\begin{solution}
+(type your solution here)
+\end{solution}
+\end{ProbBox}
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+\begin{problem}[Golan 154]
+Let $F$ be a field and let $K = F^\N$.  Define operations $+$ and $\bullet$ on
+$K$ by setting $f+g : i \mapsto f(i) + g(i)$ and 
+$f \bullet g: i \mapsto \sum_{j+k=i}f(j) g(k)$.  
+Show that $K$ is a an associative and commutative unital $F$-algebra.  Is it
+entire? 
+\end{problem}
+\smallskip
+\begin{solution}
+(type your solution here)
+\end{solution}
+\end{ProbBox}
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+\begin{problem}[Golan 157]
+A \emph{trigonometric polynomial} in $\R^\R$ is a function of the form 
+$t \mapsto a_0 + \sum_{h=1}^k [a_h \cos(ht) + b_h \sin(ht)]$, where
+$a_0, \dots, a_k, b_1, \dots, b_k \in \R$.  Show that the subset of $\R^\R$
+consisting of all trigonometric polynomials is an entire $\R$-algebra.
+\end{problem}
+\smallskip
+\begin{solution}
+(type your solution here)
+\end{solution}
+\end{ProbBox}
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% I decided to remove Problem 160 from the assignment.  
+%% Of course, you are welcomed to do it if you want. 
+%% \begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+%% \begin{problem}[Golan 160]
+%% Let $F$ be a field and let $V$ be the subspace of $F[X]$ consisting of all
+%% polynomials of degree at most $4$.  Let $p_1(X), \dots, p_5(X)$ be distinct
+%% polynomials in $V$ satisfying the condition that $p_i(0) = 1$ for each 
+%% $1\leq i \leq 5$. Is the set $\{p_1(X), \dots, p_5(X)\}$ necessarily linearly
+%% independent? 
+%% \end{problem}
+%% \smallskip
+%% \begin{solution}
+%% (type your solution here)
+%% \end{solution}
+%% \end{ProbBox}
+%% \probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+\begin{problem}[Golan 163]
+Let $F = \Q$.  Is the subset
+\[
+\left\{ 
+\begin{bmatrix}
+  4\\[0.3em] 2\\[0.3em] 1
+\end{bmatrix},
+\begin{bmatrix}
+  1\\[0.3em] 0\\[0.3em] 0
+\end{bmatrix},
+\begin{bmatrix}
+  1\\[0.3em] 3\\[0.3em] 4
+\end{bmatrix}
+\right\}
+\]
+of $F^3$ linearly independent?  What happens if $F = \GF(5)$?
+\end{problem}
+\smallskip
+\begin{solution}
+(type your solution here)
+\end{solution}
+\end{ProbBox}
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% I decided to remove Problem 160 from the assignment.  
+%% Of course, you are welcomed to do it if you want. 
+%% \begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+%% \begin{problem}[Golan 171*]
+%% Let $t \leq n$ be positive integers and, for all $1\leq i \leq t$, let 
+%% $v_i = 
+%% \begin{bmatrix}
+%%   a_{i1}\\ \vdots \\a_{in}
+%% \end{bmatrix}
+%% $
+%% be a vector in $\R$ chosen so that $2|a_{jj}| > \sum_{i=1}^t|a_{ij}|$ for all 
+%% $1\leq j \leq n$.  Show that $\{v_1, \dots, v_t\}$ is linearly independent.
+
+%% \end{problem}
+%% \smallskip
+%% \begin{solution}
+%% (type your solution here)
+%% \end{solution}
+%% \end{ProbBox}
+%% \probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+\begin{problem}[Golan 177]
+Show that the subset
+\[
+\left\{ 
+\begin{bmatrix}
+  1\\[0.3em] 2\\[0.3em] 0
+\end{bmatrix},
+\begin{bmatrix}
+  0\\[0.3em] 1\\[0.3em] 2
+\end{bmatrix},
+\begin{bmatrix}
+  2\\[0.3em] 0\\[0.3em] 1
+\end{bmatrix}
+\right\}
+\]
+is a linearly independent subset of $\GF(p)^3$ if and only if $p\neq 3$.
+\end{problem}
+\smallskip
+\begin{solution}
+(type your solution here)
+\end{solution}
+\end{ProbBox}
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ProbBox} % Prevents breaking problem across pages (remove if you want)
+\noindent {\bf Clarification/amplification of Props 5.12 and 5.13.} 
+Let $V$ be a vector space, and let
+$\{W_\omega : \omega \in \Omega\}$ be a collection of subspaces of $V$.
+Recall that $\sum_{\omega \in \Omega}W_\omega$ denotes the subspace of all
+(finite) linear combinations of vectors in $\{W_\omega : \omega \in \Omega\}$,
+which is equivalent to the subspace of vectors $w$ of the form
+$w = \sum_{\lambda \in \Lambda}w_\lambda$, where $w_\lambda \in W_\lambda$ and
+$\Lambda$ is a finite subset of $\Omega$.
+
+We call the set $\{W_\omega : \omega \in \Omega\}$ \emph{independent} if and
+only if it satisfies the following condition:
+If $\Lambda$ is a finite subset of $\Omega$, if $w_\lambda \in W_\lambda$ for
+each $\lambda \in \Lambda$, and if $\sum_{\lambda\in \Lambda} w_\lambda = 0_V$,
+then $w_\lambda = 0_V$ for all $\lambda \in \Lambda$.
+
+
+\begin{problem}
+Let 
+\[W_1 = \left\{\begin{bmatrix}  a \\ 0\end{bmatrix} : a\in \R \right\},  \;
+W_2 = \left\{\begin{bmatrix}  b \\ b\end{bmatrix} : b\in \R\right\}, \; 
+W_3 = \left\{\begin{bmatrix}  0 \\ c\end{bmatrix} : a\in \R\right\}.
+\]  
+
+\begin{enumerate}
+\item Would our textbook author describe $\{W_1, W_2, W_3\}$ as ``pairwise disjoint?'' (explain)
+%% That is, do we have $W_i \cap W_j = \left\{\begin{bmatrix}  0 \\ 0\end{bmatrix} \right\}$ for each pair $i\neq j$ in $\{1,2,3\}$.  
+\item 
+Describe the space $W_1 + W_2 + W_3$.
+\item Describe the space $W_i + W_j$ for each pair $i\neq j$ in $\{1,2,3\}$.  
+\item Is the set $\{W_1, W_2, W_3\}$ independent?
+\end{enumerate}
+\end{problem}
+\end{ProbBox}
+\smallskip
+\begin{solution}
+(type your solution here)
+\end{solution}
+
+\probskip
+
+\begin{problem}
+Below is an alleged theorem that attempts to combine Propositions 5.12 and 5.13
+of the textbook.  Prove it, or disprove it by providing a counterexample.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{prop}
+Suppose $\{W_\omega : \omega \in \Omega\}$ is a collection of subspaces of a vector
+space, and suppose, for each $\omega \in \Omega$, the set $B_\omega$ is a
+basis for $W_\omega$.  Then the following are equivalent: \\[-0.5em]
+\begin{enumerate}
+\item The set $\{W_\omega : \omega \in \Omega\}$ is independent.\\[-0.5em]
+\item Every $w \in \sum_{\omega \in \Omega}W_\omega$ can be written as 
+$w  = \sum_{\lambda \in \Lambda}w_\lambda$ in exactly one way.\\[-0.5em]
+% (Here $\Lambda$ is a finite subset of $\Omega$.)
+\item For every $\lambda \in \Omega$, 
+$W_\lambda \cap \sum_{\omega \neq\lambda}W_\omega = \{0_V\}$.\\[-0.5em]
+\item The set $B = \bigcup_{\omega \in \Omega} B_\omega$ is a basis for 
+$\sum_{\omega \in \Omega}W_\omega$.
+\end{enumerate}
+\end{prop}
+\smallskip
+
+(type your proof or counterexample here)
+\end{problem}
+
+\probskip
+
+\noindent {\it Final remark.} We use 
+% $\bigoplus \{W_\omega : \omega \in \Omega\}$ or
+$\bigoplus_{\omega \in \Omega} W_\omega$ to denote 
+$\sum_{\omega \in \Omega} W_\omega$ \emph{only when} the set
+$\{W_\omega : \omega \in \Omega\}$ is independent.  
+When I mentioned this in class, instead of \emph{only when}, I used
+the phrase \emph{when and only when}. This is incorrect since the expression
+$\sum_{\omega \in \Omega} W_\omega$ does not necessarily imply that the set
+$\{W_\omega : \omega \in \Omega\}$ is dependent. 
+
+
+%% If you will use references, add your refs to the Math700.bib file.
+%% and then uncomment the following lines.
+%% \bibliographystyle{plain}
+%% \bibliography{Math700}
+
+\end{document}
