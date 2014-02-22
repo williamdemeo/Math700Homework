@@ -70,7 +70,11 @@ $\Z/(4)$?\\
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+Assume toward a contradiction that $\Z/(4)$ is a vector space over GF(2), with vector addition defined as the usual modular addition. Then for any $v \in \Z/(4)$,
+\begin{eqnarray*}
+0 & = & (0)v \\ & = & (1+1)v \\ & = & 1 \cdot v + 1 \cdot v \\ & = & v + v
+\end{eqnarray*}
+Now, let $v = 3$ to see that $3 + 3 = 2\mod{4} \neq 0$. Thus we have a contradiction. The answer is no, it is not possible with the usual modular vector addition.
 \end{solution}
 \probskip
 
@@ -89,7 +93,20 @@ multiplication make $V$ into a vector space over $\R$?
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+We must show that the $\boxplus$ operation is closed in V, that is, $f \boxplus g \in C(0,1)$. We will prove that $f \boxplus g$ is continuous by the "delta-epsilon" method from real analysis. 
+
+Let $\epsilon > 0$. As $f$,$g$ continuous on $(0,1)$, there exist $\delta_f > 0$ and $\delta_g > 0$ such that
+
+$$ |x - x_0| < \delta_f \implies |f(x)-f(x_0)| < \frac{\epsilon}{2}$$ $$|x - x_0| < \delta_g \implies |g(x)-g(x_0)| < \frac{\epsilon}{2}$$
+Let $h(x) = max\{f(x),g(x)\}$. Let $\delta_h = \min\{\delta_f,\delta_g\}$. Then
+\begin{eqnarray*}
+|x - x_0| < \delta_h & \implies & |h(x) - h(x_0)| \\ & = & \left|\frac{f(x)+g(x)+|f(x)-g(x)|-f(x_0)-g(x_0)-|f(x_0)-g(x_0)|}{2}\right| \\
+& \leq & \left|\frac{f(x)-f(x_0)}{2}\right| + \left|\frac{g(x)-g(x_0)}{2}\right|
++ \left|\frac{f(x)-f(x_0)-(g(x)-g(x_0))}{2}\right| \\
+& < & \frac{\epsilon}{2} + \left|\frac{f(x)-f(x_0)-(g(x)-g(x_0))}{2}\right| \\
+& < & \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\end{eqnarray*}
+Therefore $f \boxplus g$ is continuous for $x_0 \in (0,1)$, so vector addition is closed in $V$. With the usual scalar multiplication, $V$ is a vector space over $\R$.
 \end{solution}
 \probskip
 
@@ -109,7 +126,7 @@ such a way as to turn it into a vector space over $\GF(2)$.\\
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+Let us define vector addition in a "bitwise xor" fashion such that $v + v = 0$ and $v + w = 1$ for all $v,w \in V, w \neq v$. Furthermore, let us define scalar multiplication in the natural way such that $1\cdot v = v$ and $0\cdot v = 0$.  Then we can see that vector addition is closed as $0,1 \in V$, as well as being associative and commutative. And every $v$ has an additive inverse, namely $v$. Scalar multiplication is also closed in $V$, as the product is always $0 \in V$ or $v \in V$. So $V$ is a vector space over $\GF(2)$. 
 \end{solution}
 \probskip
 
@@ -117,12 +134,27 @@ such a way as to turn it into a vector space over $\GF(2)$.\\
 %%%% split across multiple pages.
 \begin{ProbBox}  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\F}{\fld{F}}
 \begin{problem}[Golan 70]
 Show that $\Z$ is not a vector space over any field.
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+Let $\fld{F} = \GF(2)$. Assume $\Z$ is a vector space over $\F$. Then
+\begin{eqnarray*}
+0 & = & 1_Z(1_F + 1_F) \\
+  & = & 1_Z(1_{F})+_Z 1_Z(1_F) \\
+  & = & 2 
+\end{eqnarray*}
+But $0 \neq 2$, so $\Z$ is not a vector space over $\GF(2)$. Now let $\F$ be a field with characteristic greater than 2. Assume $\Z$ a vector space over $\F$. Then we know
+$$ 1_F + 1_F = 2_F \implies 1_F = \frac{1}{2_F} + \frac{1}{2_F}$$
+Therefore
+\begin{eqnarray*}
+1_Z & = & 1_F(1_Z) \\
+	& = & (\frac{1}{2_F} + \frac{1}{2_F})1_Z \\
+	& = & \frac{1}{2_F}(1_Z) +_Z \frac{1}{2_F}(1_Z) \\
+\end{eqnarray*}
+Now let $\frac{1}{2_F}(1_Z) = n \in \Z$.  But there is no element in $n \in \Z$ that satisfies $n + n = 1$. So $\Z$ is not a vector space over any field with characteristic greater than 2. Thus $\Z$ is not a vector space over any field. 
 \end{solution}
 \probskip
 \end{ProbBox}
@@ -140,9 +172,7 @@ $W$ a subspace of $V$.\\
 \end{problem}
 \smallskip
 \begin{solution}
-
-(type your solution here)
-
+Let us assume toward a contradiction that $W$ is a subspace of $V$. Let $p(x), g(x), h(x)$ be distinct functions in $W$, such that $p(x) = g(x) + h(x)$ and $g(x) = 0$ for $x = b_0,\dots ,b_l \in \R$ and $h(x) = 0$ for $x = c_0, \dots , c_m \in \R$.  Then $p(x) = 0$ when $g(x) = h(x) = 0$ or when $g(x) = -h(x)$.  The former happens when $b_i = c_j$ for $1 \leq i \leq l, 1 \leq j \leq m$.  We can see this is a finite set of points.  The latter, however, could happen for an infinite number of points (e.g. define $g(x) = -h(x)$ for $x > max(b_l,c_m) \in \R$). In that case, $p(a) = 0$ for an infinitely many real numbers $a$, but it is not the constant function $x \mapsto 0$. So vector addition is not closed and therefore $W$ is not a subspace in $V$.
 \end{solution}
 \probskip
 
