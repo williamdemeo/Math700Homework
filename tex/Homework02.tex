@@ -199,7 +199,25 @@ space $\R^\R$ over $\R$?
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+
+Let $W$ denote the set in question. $W$ is clearly a subset of $\R^{\R}$. Let $r \in \R$ and $k_i = rc_i$. Then
+\[
+rf : x \mapsto 
+\begin{cases}
+  k_0 & \text{ if $x < a_1$,}\\
+  k_i & \text{ if $a_i\leq x < a_i$ for $1\leq i < n$,}\\
+  k_n & \text{ if $a_n\leq x$.}
+\end{cases}
+\]
+So $W$ is closed under scalar multiplication.
+
+Let us describe $f(x),g(x) \in W$ using the characteristic function $\chi$:
+$$f(x) = \sum_{i=1}^n f(a_i)\chi_{[a_i,a_{i+1}]}(x)$$
+$$g(x) = \sum_{i=1}^n f(b_i)\chi_{[b_i,b_{i+1}]}(x)$$
+Now let $\{z_0,z_1,\dots \}$ be the reordering of $\{a_0,a_1,\dots ,a_n,b_0,b_1,\dots ,b_n\}$. Then we can describe the sum $f(x) + g(x)$ as follows:
+$$(f+g)(x) =  \sum_{i=1}^n (f(z_i)+g(z_i))\chi_{[z_i,z_{i+1}]}(x)$$
+
+Thus $f(x) + g(x)$ is a piecewise constant function and so $W$ is closed under vector addition.  Therefore $W$ is a subspace of $\R^{\R}$.
 \end{solution}
 \probskip
 
@@ -213,9 +231,23 @@ $(a_1, \dots, a_5)$ satisfying $\sum_{i=1}^5 a_i = 0$.  Is $W$ a subspace of $V$
 \end{problem}
 \smallskip
 \begin{solution}
+(We assume the problem means "subset" not "subspace" in the first line.  Otherwise trivial.)
 
-(type your solution here)
+We know $W$ is a subset of $V$ and $O_V \in V$. Let $x \in V, x = <a_1,a_2,a_3,a_4,a_5>$ and $\sum_{i=1}^{5}a_i = 0$. Let $b \in F$. Then 
+$$bx = <b(a_1),b(a_2),b(a_3),b(a_4),b(a_5)>$$
+And
+$$\sum_{i=1}^{5}(ba_i) = b\left(\sum_{i=1}^{5}a_i\right) = b(0) = 0$$
+So $W$ is closed under scalar multiplication.
 
+Let $y \in V$, $y = <c_1,c_2,c_3,c_4,c_5>$ such that $\sum_{i=1}^{5}c_i = 0$.  Then
+$$x+y = <a_1+c_1,a_2+c_2,a_3+c_3,a_4+c_4,a_5+c_5>$$
+Now let $d_i = a_i + c_i$.
+\begin{eqnarray*}
+\sum_{i=1}^{5}d_i & = & \sum_{i=1}^{5}(a_i + c_i) \\
+				  & = & \sum_{i=1}^{5}a_i + \sum_{i=1}^{5}c_i \\
+				  & = & 0 + 0 = 0
+\end{eqnarray*}
+Therefore $W$ is closed under vector addition and scalar multiplication so it is a subspace.
 \end{solution}
 \probskip
 
@@ -231,8 +263,33 @@ Is $W$ a subspace of $V$?
 \smallskip
 \begin{solution}
 
-(type your solution here)
+We know $W$ is a subset of $V$. Let $g(x) \in W$. There exists a $c_1 \in \R$ such that $\forall x \in \R$  $|h(x)| \leq c|x|$.
+Let $b \in \R$. Let $h(x) = b(g(x))$. Then
 
+\begin{eqnarray*}
+|h(x)| & = & |b(g(x))| \\
+	   & \leq & |b| |g(x)| \\
+	   & \leq & |b|(c_1|x|) \\
+	   & = & c|x|
+\end{eqnarray*}
+Where $c = |b|c_1$. So $\exists c \in \R$ such that $\forall x \in \R$ we have
+$$|h(x)| \leq c|x|$$
+Therefore $W$ is closed under scalar multiplication.  
+
+Let $p(x),g(x) \in W$.  There exist $c_1,c_2 \in \R$ such that $\forall x \in \R$
+$$|p(x)| \leq c_1|x|$$
+$$|q(x)| \leq c_2|x|$$
+Let $t(x) = p(x) + g(x)$. Then
+\begin{eqnarray*}
+t(x) & = & |p(x) + g(x)| \\ 
+	 & \leq & |p(x)| + |g(x)| \\
+	 & \leq & c_1|x| + c_2|x| \\
+	 & = & (c_1+c_2)|x| \\
+	 = c_3|x|  
+\end{eqnarray*}
+where $c_3 = c_1 + c_2$. Therefore $\exists c \in \R$ such that $\forall x \in \R$ we have
+$$t(x) \leq c|x|$$
+Thus $W$ is closed under addition and scalar multiplication so $W$ is a subspace of $V$.
 \end{solution}
 \probskip
 
@@ -249,8 +306,25 @@ collection of all subpaces of $V$ a subspace of $P$?
 \smallskip
 \begin{solution}
 
-(type your solution here)
+$P$ is the collection of all subset of $V$. Let $U$ be the collection of all subspaces of $V$. As all subspaces of $V$ must be subsets of $V$, we know that $U \subseteq V$. We want to show that $U$ is a subspace of $P$.
 
+Let $X \in U$. Then $X \in P$. Let $a \in F$. Let $y,z \in X$.  Then $ay, az \in aX$. $ay + az = a(x+y)$.  As $X$ is a subspace, $(x+y) \in X$ so $a(x+y) \in aX$. Thus $aX$ is closed under addition. Let $b \in F$. 
+\begin{eqnarray*}
+b(ay) & = & (ba)y \\
+	  & = & (ab)y \\
+	  & = & a(by) \\
+\end{eqnarray*}
+So $by \in X \implies a(by) \in aX$. $aX is closed under scalar multplication.$ And $X \subseteq V \implies aX \subseteq V$. Then $aX$ is a subspace, so $U$ is closed under scalar multplication.
+
+Let $Y \in U, x \in X, y \in Y$. $X + Y = \fld{F}\{x,y\}$. Let $[,q \in X + Y$ such that for $x_1,x_2 \in X, y_1,y_2 \in Y, a,b \in F$
+$$p = ax_1 + by_1$$
+$$q = cx_2 + dy_2$$
+Now we add $p + q$
+\begin{eqnarray}
+p + q & = &(ax_1 + by_1) + (cx_2 + dy_2) \\
+	  & = &(ax_1 + cx_2) + (by_1 + dy_2) 
+\end{eqnarray}
+Since we know $(ax_1 + cx_2) \in X$ and $(by_1 + dy_2) \in Y$, we can deduce that $p + q \in X + Y$. Then $U$ is closed under addition.  So $U$ is a subspace of $P$.
 \end{solution}
 \probskip
 
@@ -267,8 +341,17 @@ satisfying $F\{v, w\} = F\{v, aw\}$.
 \smallskip
 \begin{solution}
 
-(type your solution here)
+$$F\{v,w\} = \{bv + cw | b,c \in \fld{F} \} $$
+$$F\{v,aw\} = \{dv + e(aw) | d,e \in \fld{F}\}$$
 
+$F$ is a field, so it is closed under multiplication. $v$ is not a scalar multiple of $w$. We know $1 \in G$. Thus $\fld{F}\{v,aw\} \leq \fld{F}\{v,w\} \forall a \in \fld{F}$. Let $x \in \fld{F}\{v,w\}.$. Then for $s,t \in \fld{F}$
+
+\begin{eqnarray*}
+x & = & sv + tw  \\
+  & = & sv + \frac{t}{a}(aw) \\
+\end{eqnarray*}
+
+So $\frac{t}{a} = ta^-1$, and $t \in \fld{F}, a^-1 \in \fld{F}$ so $ta^-1 \in \fld{F}$ as long as $a \neq 0$. So $G = \fld{F} \backslash 0_V$.
 \end{solution}
 \probskip
 
