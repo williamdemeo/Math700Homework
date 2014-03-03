@@ -47,8 +47,8 @@
          \newcommand\GF{\ensuremath{\operatorname{GF}}}
 %%
 %%    7. Replace these names with yours:
-         \metadata{Your first names go here}{Homework 3 -- 2014/03/05}
-         \author{Your full names go here}
+         \metadata{Matt and John}{Homework 3 -- 2014/03/05}
+         \author{Matt Swartz and John Tippie}
 %%
 %%    8. Update the title and date as appropriate.
          \title{Homework 3}
@@ -84,7 +84,7 @@ subspace of $F[X]$?
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+$L$ is the set of odd polynomials (i.e. only odd powers of $x$). To show that $L$ is a subspace of $F[X]$, we need to show that $L$ is a vector space in its own right with respect to the addition and scalar multiplication defined on $F$. Let $f,g \in L$, then $f(X)+g(X)=\sum\limits_{i=0}^\infty a_{2i+1}X^{2i+1} + \sum\limits_{i=0}^\infty b_{2i+1}X^{2i+1} = \sum\limits_{i=0}^\infty (a_{2i+1} + b_{2i+1})X^{2i+1} = \sum\limits_{i=0}^\infty c_{2i+1}X^{2i+1} \in L$. Let $c \in F$, then $cf(X) = c\sum\limits_{i=0}^\infty a_{2i+1}X^{2i+1} = \sum\limits_{i=0}^\infty ca_{2i+1}X^{2i+1} = \sum\limits_{i=0}^\infty b_{2i+1}X^{2i+1} \in L$. Thus, $L$ is a subspace of $F[X]$.
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -97,7 +97,7 @@ satisfying the condition that $\deg(f)$ is even.  Is $L$ a subspace of $F[X]$?
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+$L$ is the set of polynomials with the highest power of even order. To show that $L$ is a subspace of $F[X]$, we need to show that $L$ is a vector space in its own right with respect to the addition and scalar multiplication defined on $F$. Let $f,g \in L$, then $f(X)+g(X)=\sum\limits_{i=0}^\infty a_{2i}X^{2i} + \sum\limits_{i=0}^\infty b_{2i}X^{2i} = \sum\limits_{i=0}^\infty (a_{2i} + b_{2i})X^{2i} = \sum\limits_{i=0}^\infty c_{2i}X^{2i} \in L$. Let $c \in F$, then $cf(X) = c\sum\limits_{i=0}^\infty a_{2i}X^{2i} = \sum\limits_{i=0}^\infty ca_{2i}X^{2i} = \sum\limits_{i=0}^\infty b_{2i}X^{2i} \in L$. Thus, $L$ is a subspace of $F[X]$.
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -109,7 +109,7 @@ For a field $F$, compare the subsets $F[X^2]$ and $F[X^2+1]$ of $F[X]$.
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+$f(X) \in F[X]$ is defined as $\sum\limits_{i=0}^\infty a_{i}X^{i}$, $f(X) \in F[X^2]$ is defined as $\sum\limits_{i=0}^\infty a_{2i}X^{2i}$, and $f(X) \in F[X^2+1]$ is defined as $\sum\limits_{i=0}^\infty a_{2i}(X^{2}+1)^i$. So, $F[X^2]=\{1,X^2,X^4,X^6,...\}$ and $F[X^2+1]=\{1,X^2+1,(X^2+1)^2,(X^2+1)^3,...\} = \{1,X^2+1,X^4+2X^2+1,X^6+3X^4+3X^2+1,...\}$. $F[X^2] \subseteq F[X^2+1]$ since every element of $F[X^2+1]$ is of the form $\sum\limits_{i=0}^\infty a_{2i}X^{2i}$ (e.g. $X^4+2X^2+1 = n_3+2n_2+n_1$ for $n_i \in F[X^2]$). Similarly, $F[X^2+1] \subseteq F[X^2]$ (e.g. $X^6=m_4-3m_3+3m_2-m_1$ for $m_i \in F[X^2+1]$). Thus, $F[X^2]=F[X^2+1]$.
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -125,7 +125,16 @@ entire?
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+To show that $K$ is an associative commutative unital F-algebra, we want to show the following conditions hold: let $u,v,w \in K, a \in F$\\
+\begin{enumerate}
+  \item $u \bullet (v+w) = u \bullet x = \sum\limits_{j+k=i} u(j)x(k) = \sum\limits_{j+k=i} u(j)[v(k)+w(k)] = \sum\limits_{j+k=i} u(j)v(k) + \sum\limits_{j+k=i} u(j)w(k) = u \bullet v + u \bullet w$,
+  \item $(u+v) \bullet w = x \bullet w = \sum\limits_{j+k=i} x(j)w(k) = \sum\limits_{j+k=i} [u(j)+v(j)]w(k) = \sum\limits_{j+k=i} u(j)w(k) + \sum\limits_{j+k=i} v(j)w(k) = u \bullet w + v \bullet w$,
+  \item $a(v \bullet w) = a\sum\limits_{j+k=i} v(j)w(k) = \sum\limits_{j+k=i} [av(j)]w(k) = (av) \bullet w = \sum\limits_{j+k=i} v(j)[aw(k)] = v \bullet (aw)$,
+  \item $v \bullet (w \bullet y) = $
+  \item $v \bullet e = $
+  \item $v \bullet w = \sum\limits_{j+k=i} v(j)w(k) = \sum\limits_{k+j=i} w(k)v(j) = w \bullet v$,
+\end{enumerate}
+ If $v,w \neq 0$, then $v \bullet w = \sum\limits_{j+k=i} v(j)w(k)$ could be equal to $0$ if the vectors $v$ and $w$ are orthogonal. Therefore, $K$ is not entire.
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -135,12 +144,24 @@ entire?
 \begin{problem}[Golan 157]
 A \emph{trigonometric polynomial} in $\R^\R$ is a function of the form 
 $t \mapsto a_0 + \sum_{h=1}^k [a_h \cos(ht) + b_h \sin(ht)]$, where
-$a_0, \dots, a_k, b_1, \dots, b_k \in \R$.  Show that the subset of $\R^\R$
+$a_0, \dots, a_k, b_1, \dots, b_k \in \R$.  Show that the subset, $K$, of $\R^\R$
 consisting of all trigonometric polynomials is an entire $\R$-algebra.
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+Let $u,v,w \in K$ and $a \in \R^\R$. To show that $K$ is an entire $\R$-algebra, we want to show the following:
+\begin{enumerate}
+  \item $u \bullet (v+w) = u \bullet x = \sum\limits_{j+k=i} u(j)x(k) = \sum\limits_{j+k=i} u(j)[v(k)+w(k)] = \sum\limits_{j+k=i} u(j)v(k) + \sum\limits_{j+k=i} u(j)w(k) = u \bullet v + u \bullet w$,
+  \item $(u+v) \bullet w = x \bullet w = \sum\limits_{j+k=i} x(j)w(k) = \sum\limits_{j+k=i} [u(j)+v(j)]w(k) = \sum\limits_{j+k=i} u(j)w(k) + \sum\limits_{j+k=i} v(j)w(k) = u \bullet w + v \bullet w$,
+  \item $a(v \bullet w) = a\sum\limits_{j+k=i} v(j)w(k) = \sum\limits_{j+k=i} [av(j)]w(k) = (av) \bullet w = \sum\limits_{j+k=i} v(j)[aw(k)] = v \bullet (aw)$.
+\end{enumerate}
+Let $f_i = a_0 + \sum_{h=1}^k [a_h \cos(ht) + b_h \sin(ht)] = a_0+b_0$ and $g_i = c_0 + \sum_{h=1}^k [c_h \cos(ht) + d_h \sin(ht)] = a_0+d_0$. If $f_i,g_i \neq 0$, then $f_i \bullet g_i = (a_0+b_0)(c_0+d_0) = a_0c_0 + a_0d_0 + b_0c_0 + b_0d_0$. Here, we have 4 cases:
+\begin{enumerate}
+  \item $a_0=0, b_0 \neq 0 c_0=0, d_0 \neq 0$
+  \item $a_0=0, b_0 \neq 0 c_0 \neq 0, d_0=0$
+  \item $a_0 \neq 0, b_0=0 c_0=0, d_0 \neq 0$
+  \item $a_0 \neq 0, b_0=0 c_0 \neq 0, d_0=0$
+\end{enumerate}
 \end{solution}
 \end{ProbBox}
 \probskip
