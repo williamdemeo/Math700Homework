@@ -205,7 +205,78 @@ of $F^3$ linearly independent?  What happens if $F = \GF(5)$?
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+To see if the subset 
+\{ 
+$\begin{bmatrix}
+  4\\[0.3em] 2\\[0.3em] 1
+\end{bmatrix},
+\begin{bmatrix}
+  1\\[0.3em] 0\\[0.3em] 0
+\end{bmatrix},
+\begin{bmatrix}
+  1\\[0.3em] 3\\[0.3em] 4
+\end{bmatrix}$
+\}
+of $F^3$ is linearly independent, we can perform row operations to reach a RREF form of the matrix
+
+\[ \left[ \begin{array}{ccc}
+4 & 1 & 1 \\
+2 & 0 & 3 \\
+1 & 0 & 4 
+\end{array} \right]
+\].
+
+We proceed as follows:
+
+\[ \left[ \begin{array}{ccc}
+4 & 1 & 1 \\
+2 & 0 & 3 \\
+1 & 0 & 4 
+\end{array} \right]
+%
+\rightarrow
+%
+\left[ \begin{array}{ccc}
+1 & 0 & 4 \\
+4 & 1 & 1 \\
+2 & 0 & 3 
+\end{array} \right]
+%
+\rightarrow
+%
+\left[ \begin{array}{ccc}
+1 & 0 & 4 \\
+0 & 1 & -15 \\
+0 & 0 & 5
+\end{array} \right]
+%
+\rightarrow
+%
+\left[ \begin{array}{ccc}
+1 & 0 & 4 \\
+0 & 1 & -15 \\
+0 & 0 & 1
+\end{array} \right]
+%
+\rightarrow
+%
+\left[ \begin{array}{ccc}
+1 & 0 & 4 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array} \right]
+%
+\rightarrow
+%
+\left[ \begin{array}{ccc}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{array} \right]
+\]
+
+Thus, the subset is linearly independent.
+
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -253,7 +324,47 @@ is a linearly independent subset of $\GF(p)^3$ if and only if $p\neq 3$.
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+Let $p=3$. Perform row reductions as follows:
+
+\[ \left[ \begin{array}{ccc}
+1 & 0 & 2 \\
+2 & 1 & 0 \\
+0 & 2 & 1
+\end{array} \right]
+%
+\rightarrow
+%
+\left[ \begin{array}{ccc}
+1 & 0 & 2 \\
+0 & 1 & 2 \\
+0 & 2 & 1
+\end{array} \right]
+%
+\rightarrow
+%
+\left[ \begin{array}{ccc}
+1 & 0 & 2 \\
+0 & 1 & 2 \\
+0 & 0 & 0
+\end{array} \right]
+\]
+
+Thus, The set is linearly dependent if $p=3$. \\ \\
+
+Let $p \neq 3$. Then if we set 
+
+$a\begin{bmatrix}
+  1\\[0.3em] 2\\[0.3em] 0
+\end{bmatrix}
++
+b\begin{bmatrix}
+  0\\[0.3em] 1\\[0.3em] 2
+\end{bmatrix}
+=
+c\begin{bmatrix}
+  2\\[0.3em] 0\\[0.3em] 1
+\end{bmatrix}$, we get the system of equations $a=2c, 2a+b=0, 2b=c$. Substituting, we then get $2(2c)+b=0 \Rightarrow 4c+b=0 \Rightarrow 4(2b)+b=0 \Rightarrow 9b=0$, which only happens if $p=3$. Thus, if $p \neq 3$, then the set is linearly independent. 
+
 \end{solution}
 \end{ProbBox}
 \probskip
