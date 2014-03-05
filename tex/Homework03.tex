@@ -70,7 +70,17 @@ Is $(V, \bullet)$ a $\GF(2)$-algebra?  If so, is it associative?  Is it unital?
 \end{problem}
 \smallskip
 \begin{solution}
-(type your solution here)
+Let $u,v,w,x \in V$. The first two conditions we need to satisfy, 
+\begin{enumerate}
+  \item $u \bullet (v+w) = u \bullet v + u \bullet w$, and
+  \item $(u+v) \bullet w = u \bullet w + v \bullet w$ 
+\end{enumerate}
+come from the fact that $(K, \bullet)$ is an associative F-algebra. The third condition, \\
+3. $a(v \bullet w) = (av) \bullet w = v \bullet (aw)$, \\
+is satisfied since $a\in\{0_F,1_F\}$. (This works in either case). It is indeed associative from the definition of $\bullet$ given: \\
+4. $v \bullet (w \bullet y) = (v \bullet w) \bullet y$ \\
+And it is also unital: \\
+5. $v \bullet 1_F = v = 1_F \bullet v$
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -125,13 +135,13 @@ entire?
 \end{problem}
 \smallskip
 \begin{solution}
-To show that $K$ is an associative commutative unital F-algebra, we want to show the following conditions hold: let $u,v,w \in K, a \in F$\\
+To show that $K$ is an associative commutative unital F-algebra, we want to show the following conditions hold: let $u,v,w,x \in K, a \in F$\\
 \begin{enumerate}
   \item $u \bullet (v+w) = u \bullet x = \sum\limits_{j+k=i} u(j)x(k) = \sum\limits_{j+k=i} u(j)[v(k)+w(k)] = \sum\limits_{j+k=i} u(j)v(k) + \sum\limits_{j+k=i} u(j)w(k) = u \bullet v + u \bullet w$,
   \item $(u+v) \bullet w = x \bullet w = \sum\limits_{j+k=i} x(j)w(k) = \sum\limits_{j+k=i} [u(j)+v(j)]w(k) = \sum\limits_{j+k=i} u(j)w(k) + \sum\limits_{j+k=i} v(j)w(k) = u \bullet w + v \bullet w$,
   \item $a(v \bullet w) = a\sum\limits_{j+k=i} v(j)w(k) = \sum\limits_{j+k=i} [av(j)]w(k) = (av) \bullet w = \sum\limits_{j+k=i} v(j)[aw(k)] = v \bullet (aw)$,
-  \item $v \bullet (w \bullet y) = $
-  \item $v \bullet e = $
+  \item $v \bullet (w \bullet y) = \sum\limits_{j+k+l=i} v(j)(w(k)y(l)) = \sum\limits_{j+k+l=i} (v(j)w(k))y(l) = (v \bullet w) \bullet y$
+  \item $v \bullet 1_F = \sum\limits_{j=i} v(j) 1_F = v(i) = v = \sum\limits_{k=i} 1_F v(k) = 1_F \bullet v$
   \item $v \bullet w = \sum\limits_{j+k=i} v(j)w(k) = \sum\limits_{k+j=i} w(k)v(j) = w \bullet v$,
 \end{enumerate}
  If $v,w \neq 0$, then $v \bullet w = \sum\limits_{j+k=i} v(j)w(k)$ could be equal to $0$ if the vectors $v$ and $w$ are orthogonal. Therefore, $K$ is not entire.
@@ -149,19 +159,20 @@ consisting of all trigonometric polynomials is an entire $\R$-algebra.
 \end{problem}
 \smallskip
 \begin{solution}
-Let $u,v,w \in K$ and $a \in \R^\R$. To show that $K$ is an entire $\R$-algebra, we want to show the following:
+Let $f,g,h,l \in K$ and $a \in \R^\R$. To show that $K$ is an entire $\R$-algebra, we want to show the following:
 \begin{enumerate}
-  \item $u \bullet (v+w) = u \bullet x = \sum\limits_{j+k=i} u(j)x(k) = \sum\limits_{j+k=i} u(j)[v(k)+w(k)] = \sum\limits_{j+k=i} u(j)v(k) + \sum\limits_{j+k=i} u(j)w(k) = u \bullet v + u \bullet w$,
-  \item $(u+v) \bullet w = x \bullet w = \sum\limits_{j+k=i} x(j)w(k) = \sum\limits_{j+k=i} [u(j)+v(j)]w(k) = \sum\limits_{j+k=i} u(j)w(k) + \sum\limits_{j+k=i} v(j)w(k) = u \bullet w + v \bullet w$,
-  \item $a(v \bullet w) = a\sum\limits_{j+k=i} v(j)w(k) = \sum\limits_{j+k=i} [av(j)]w(k) = (av) \bullet w = \sum\limits_{j+k=i} v(j)[aw(k)] = v \bullet (aw)$.
+  \item $f \bullet (g+h) = (a_0 + \sum_{h=1}^k a_h \cos(ht) + \sum_{h=1}^k b_h \sin(ht))[(c_0 + \sum_{h=1}^k c_h \cos(ht) + \sum_{h=1}^k d_h \sin(ht)) + (e_0 + \sum_{h=1}^k e_h \cos(ht) + \sum_{h=1}^k f_h \sin(ht))]= (a_0 + \sum_{h=1}^k a_h \cos(ht) + \sum_{h=1}^k b_h \sin(ht))(c_0 + \sum_{h=1}^k c_h \cos(ht) + \sum_{h=1}^k d_h \sin(ht)) + (a_0 + \sum_{h=1}^k a_h \cos(ht) + \sum_{h=1}^k b_h \sin(ht))(e_0 + \sum_{h=1}^k e_h \cos(ht) + \sum_{h=1}^k f_h \sin(ht)) = f \bullet g + f \bullet h$,
+  \item $(f+g) \bullet h = [(a_0 + \sum_{h=1}^k a_h \cos(ht) + \sum_{h=1}^k b_h \sin(ht)) + (c_0 + \sum_{h=1}^k c_h \cos(ht) + \sum_{h=1}^k d_h \sin(ht))](e_0 + \sum_{h=1}^k e_h \cos(ht) + \sum_{h=1}^k f_h \sin(ht)) = (a_0 + \sum_{h=1}^k a_h \cos(ht) + \sum_{h=1}^k b_h \sin(ht))(e_0 + \sum_{h=1}^k e_h \cos(ht) + \sum_{h=1}^k f_h \sin(ht)) + (c_0 + \sum_{h=1}^k c_h \cos(ht) + \sum_{h=1}^k d_h \sin(ht))(e_0 + \sum_{h=1}^k e_h \cos(ht) + \sum_{h=1}^k f_h \sin(ht)) = f \bullet h + g \bullet h$,
+  \item $a(f \bullet g) = a(a_0 + \sum_{h=1}^k a_h \cos(ht) + \sum_{h=1}^k b_h \sin(ht))(c_0 + \sum_{h=1}^k c_h \cos(ht) + \sum_{h=1}^k d_h \sin(ht)) = (a a_0 + a\sum_{h=1}^k a_h \cos(ht) + \sum_{h=1}^k b_h \sin(ht)) = (af) \bullet g = (a_0 + \sum_{h=1}^k a_h \cos(ht) + \sum_{h=1}^k b_h \sin(ht))(a c_0 + a\sum_{h=1}^k c_h \cos(ht) + \sum_{h=1}^k d_h \sin(ht)) = f \bullet (ag)$.
 \end{enumerate}
-Let $f_i = a_0 + \sum_{h=1}^k [a_h \cos(ht) + b_h \sin(ht)] = a_0+b_0$ and $g_i = c_0 + \sum_{h=1}^k [c_h \cos(ht) + d_h \sin(ht)] = a_0+d_0$. If $f_i,g_i \neq 0$, then $f_i \bullet g_i = (a_0+b_0)(c_0+d_0) = a_0c_0 + a_0d_0 + b_0c_0 + b_0d_0$. Here, we have 4 cases:
+Let $f = a_0 + \sum_{h=1}^k [a_h \cos(ht) + b_h \sin(ht)] = a_0+b_0$ and $g = c_0 + \sum_{h=1}^k [c_h \cos(ht) + d_h \sin(ht)] = a_0+d_0$. If $f,g \neq 0$, then $f \bullet g = (a_0+b_0)(c_0+d_0) = a_0c_0 + a_0d_0 + b_0c_0 + b_0d_0$. Here, we have 4 cases:
 \begin{enumerate}
-  \item $a_0=0, b_0 \neq 0 c_0=0, d_0 \neq 0$
-  \item $a_0=0, b_0 \neq 0 c_0 \neq 0, d_0=0$
-  \item $a_0 \neq 0, b_0=0 c_0=0, d_0 \neq 0$
-  \item $a_0 \neq 0, b_0=0 c_0 \neq 0, d_0=0$
+  \item $a_0=0, b_0 \neq 0, c_0=0, d_0 \neq 0 \Rightarrow (a_0+b_0)(c_0+d_0) = b_0 d_0 \neq 0$
+  \item $a_0=0, b_0 \neq 0, c_0 \neq 0, d_0=0 \Rightarrow (a_0+b_0)(c_0+d_0) = b_0 c_0 \neq 0$
+  \item $a_0 \neq 0, b_0=0, c_0=0, d_0 \neq 0 \Rightarrow (a_0+b_0)(c_0+d_0) = a_0 d_0 \neq 0$
+  \item $a_0 \neq 0, b_0=0, c_0 \neq 0, d_0=0 \Rightarrow (a_0+b_0)(c_0+d_0) = a_0 c_0 \neq 0$
 \end{enumerate}
+Thus, $K$ is an entire $\R$-algebra.
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -205,19 +216,7 @@ of $F^3$ linearly independent?  What happens if $F = \GF(5)$?
 \end{problem}
 \smallskip
 \begin{solution}
-To see if the subset 
-\{ 
-$\begin{bmatrix}
-  4\\[0.3em] 2\\[0.3em] 1
-\end{bmatrix},
-\begin{bmatrix}
-  1\\[0.3em] 0\\[0.3em] 0
-\end{bmatrix},
-\begin{bmatrix}
-  1\\[0.3em] 3\\[0.3em] 4
-\end{bmatrix}$
-\}
-of $F^3$ is linearly independent, we can perform row operations to reach a RREF form of the matrix
+To see if the given subset of $F^3$ is linearly independent, we can perform row operations to reach a RREF form of the matrix
 
 \[ \left[ \begin{array}{ccc}
 4 & 1 & 1 \\
@@ -397,8 +396,7 @@ W_3 = \left\{\begin{bmatrix}  0 \\ c\end{bmatrix} : a\in \R\right\}.
 \begin{enumerate}
 \item Would our textbook author describe $\{W_1, W_2, W_3\}$ as ``pairwise disjoint?'' (explain)
 %% That is, do we have $W_i \cap W_j = \left\{\begin{bmatrix}  0 \\ 0\end{bmatrix} \right\}$ for each pair $i\neq j$ in $\{1,2,3\}$.  
-\item 
-Describe the space $W_1 + W_2 + W_3$.
+\item Describe the space $W_1 + W_2 + W_3$.
 \item Describe the space $W_i + W_j$ for each pair $i\neq j$ in $\{1,2,3\}$.  
 \item Is the set $\{W_1, W_2, W_3\}$ independent?
 \end{enumerate}
@@ -406,7 +404,12 @@ Describe the space $W_1 + W_2 + W_3$.
 \end{ProbBox}
 \smallskip
 \begin{solution}
-(type your solution here)
+\begin{enumerate} 
+  \item Our book would not describe $\{W_1, W_2, W_3\}$ as ``pairwise disjoint'' since $W_1 \cap W_2 \neq 0_V$ and $W_2 \cap W_3 \neq 0_V$.
+  \item $W_1 + W_2 + W_3 =  \left\{\begin{bmatrix}  d \\ e\end{bmatrix} : d,e \in \R \right\}$
+  \item $W_1 + W_2 = \left\{\begin{bmatrix}  d \\ b\end{bmatrix} : d,b \in \R \right\} = W_2 + W_3 = \left\{\begin{bmatrix}  b \\ d\end{bmatrix} : b,d \in \R \right\} = W_1 + W_3 = \left\{\begin{bmatrix}  a \\ c\end{bmatrix} : a,c \in \R \right\}$.
+  \item The set $\{W_1, W_2, W_3\}$ is independent since it obeys the definition of independence. If we choose elements $w_h \in \{W_h : h \in \{1, 2, 3\}\}$, then for every $h$ in a finite sbuset of $\Lambda = \{1, 2, 3\}$ we get $\sum_{h \in \Lambda} w_h = 0_V$ when and only when $w_h = 0_V$ for each $h \in \Lambda$.
+\end{enumerate}
 \end{solution}
 
 \probskip
@@ -433,7 +436,7 @@ $\sum_{\omega \in \Omega}W_\omega$.
 \end{prop}
 \smallskip
 
-(type your proof or counterexample here)
+The proof of Proposition 5.12 in the book covers $(1) \Rightarrow (2), (2) \Rightarrow (3),$ and $(3) \Rightarrow (1)$. As for showing that $(4)$ is equivalent to any of $(1), (2),$ or $(3)$, we will show that $(3) \Rightarrow (4)$. From $(3)$, we see that the set $\{W_i : i \in \Omega\}$ is a pairwise disjoint collection of subspaces of $V$. For each $i \in \Omega$, let $B_i$ be a basis of $W_i$. Then $V=\sum_{\omega \in \Omega}W_\omega \Rightarrow B = \bigcup_{\omega \in \Omega} B_\omega$ is a basis for $\sum_{\omega \in \Omega}W_\omega$, as can be seen in the book's proof of Proposition 5.13. 
 \end{problem}
 
 \probskip
