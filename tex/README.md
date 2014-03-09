@@ -11,9 +11,3 @@ Feel free to edit this README.md page and add News/Status items below.
 
 (Tip: remember to end your entry with two blank spaces as this will produce a newline.)
 
-## News/Status
-+ Feb 4: Homework 2 posted.  Due date not yet set.  
-+ Feb 4: Homework 1 checked by prof.  Comments: Looks great!  No mistakes found
-so far.  Only one minor typo (fixed). Good job Danny and Heather.  
-+ Feb 3: Homework 1 due.  
-+ Jan 1: Homework 1 posted.  
