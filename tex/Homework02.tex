@@ -99,7 +99,7 @@ usual scalar multiplication, make $V$ into a vector space over $\R$?
 \end{problem}
 \smallskip
 \begin{solution}
-It is true that $C(0,1)$ is closed under $\join$ (see the
+It is true that $C(0,1)$ is closed uder $\join$ (see the
 \hyperref[appendix]{Appendix \ref*{appendix}} for a
 proof), and we can easily verify that $\join$ is a commutative associative
 binary operation on the set $C(0,1)$, so $\<C(0,1), \join\>$ is a 
@@ -347,7 +347,7 @@ Thus $W$ is closed under addition and scalar multiplication so $W$ is a subspace
 
 Let $V$ be a vector space over a field $F$ and let $P$ be the collection of all
 subsets of $V$, which we know is a vector space over $\GF(2)$.  Is the
-collection of all subpaces of $V$ a subspace of $P$?
+collection of all subspaces of $V$ a subspace of $P$?
 
 \end{problem}
 \smallskip
@@ -361,7 +361,9 @@ b(ay) & = & (ba)y \\
 	  & = & (ab)y \\
 	  & = & a(by) \\
 \end{eqnarray*}
-So $by \in X \implies a(by) \in aX$. $aX is closed under scalar multplication.$ And $X \subseteq V \implies aX \subseteq V$. Then $aX$ is a subspace, so $U$ is closed under scalar multplication.
+So $by \in X \implies a(by) \in aX$. Therefore $aX$ is closed under scalar
+multiplication. And $X \subseteq V \implies aX \subseteq V$. Then $aX$ is a
+subspace, so $U$ is closed under scalar multiplication. 
 
 Let $Y \in U, x \in X, y \in Y$. $X + Y = \fld{F}\{x,y\}$. Let $p,q \in X + Y$ such that for $x_1,x_2 \in X, y_1,y_2 \in Y, a,b \in F$
 $$p = ax_1 + by_1$$
@@ -430,14 +432,16 @@ Therefore $f \boxplus g$ is continuous for $x_0 \in (0,1)$, so vector addition i
 
 \bigskip
 
-\noindent {\it Remarks.} This proof is correct.  Alternatively, you could simply note that
+\noindent {\it Remarks.} The proof above is correct.  Alternatively, you could simply note that
 the sum (and difference) of two continuous functions is continuous, and the
-function the function $x \mapsto |x|$ is continuous.  Therefore, the function
-$f \join g = \frac{1}{2}(f+g+|f-g|)$ is continuous.  Also, while
-$\epsilon-\delta$ proofs are find, when proving continuity it is often easier to
-use open sets.  For this example, $g \in C(0,1)$ if and only if for all $-\infty\leq a <
-b \leq \infty$ the set $g^{-1}(a, b) = \{x \in (0,1) \mid a< g(x) < b\}$ is an open
-subset of $(0,1)$.  Note that  
+functions  $x \mapsto |x|$ and $x \mapsto x/2$ are continuous.  Therefore, since
+function composition preserves continuity, it is clear that
+$f \join g = \frac{1}{2}(f+g+|f-g|)$ is continuous. 
+
+Yet another alternative is to use the fact that
+$h \in C(0,1)$ if and only if for all $-\infty\leq a < b \leq \infty$ the set
+$h^{-1}(a, b) = \{x \in (0,1) \mid a< h(x) < b\}$ is open in $(0,1)$.
+Note that
 \[
 (f\join g)^{-1}(a, b) =
 \left(\{x : a< f(x)\}\cup \{x : a< g(x)\}\right) \cap
@@ -463,7 +467,7 @@ $v$. Scalar multiplication is also closed in $V$, as the product is always $0
 \bigskip
 
 \noindent {\it Remarks.} Having an addition that works as ``xor'' is the right idea.
-However, this proof is incorrect.  First, note that you need an
+However, this proof is incorrect.  In particular, you need an
 additive identity, that is, an $e\in V$ such that $v + e = v$ for
 all $v \in V$.  In the proposed solution, $0$ cannot serve as the additive identity
 because $v+w = 1$ for all $w\neq v$; in particular, $v + 0 = 1$
