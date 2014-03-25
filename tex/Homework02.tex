@@ -470,7 +470,7 @@ whenever $v \neq 0$. (See the correct solution given above.)
 \probskip
 
 \noindent {\it Notes on on \hyperref[prob:9]{Problem \ref*{prob:9}}.}
-The originally proposed began as follows:
+The originally proposed solution began as follows:
 \begin{quote}
 $P$ is the collection of all subset of $V$. Let $U$ be the collection of all subspaces of $V$. As all subspaces of $V$ must be subsets of $V$, we know that $U \subseteq P$. We want to show that $U$ is a subspace of $P$.
 
@@ -482,14 +482,15 @@ aX$. Thus $aX$ is closed under addition.
 Here we have fallen into the trap of considering the wrong field.  It is true
 that we should fix some $X \in U$, and then try to show that for each field
 element $a$, we have $aX \in U$.  However, we must take $a$ from $\GF(2)$, since
-that the field over which $P$ is defined, and we are trying to prove $U\leq P$.
+that is the field over which $P$ is defined, and we are trying to prove $U\leq P$.
 
 Now, you might then argue that now it is even easier because we only have to
-consider $0X$ and $1X$. The latter is simply $X$.  However, what is $0X$?  It
+consider $0X$ and $1X$. The latter is simply $X$, but what is $0X$?  It
 would be nice if it were $\{0_V\}$, because then we would have $0X= \{0_V\} \in
 U$.  Unfortunately, in $P$, scalar multiplication by 0 gives the empty set (or
-the binary string consisting of $|V|$ zeros, if you prefer to think of the
-elements of $P$ as binary strings).  The empty set is not a subspace.
+the length-$|V|$ string of zeros, if you prefer to think of the
+elements of $P$ as binary strings).  The empty set is not a subspace, so $U$ is
+not closed under the scalar multiplication of $P$.
 
 
 
