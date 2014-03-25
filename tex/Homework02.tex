@@ -340,7 +340,7 @@ Thus $W$ is closed under addition and scalar multiplication so $W$ is a subspace
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}[Golan 93]
-
+\label{prob:9}
 Let $V$ be a vector space over a field $F$ and let $P$ be the collection of all
 subsets of $V$, which we know is a vector space over $\GF(2)$.  Is the
 collection of all subspaces of $V$ a subspace of $P$?
@@ -348,28 +348,26 @@ collection of all subspaces of $V$ a subspace of $P$?
 \end{problem}
 \smallskip
 \begin{solution}
+Let $U$ be the collection of all subspaces of $V$. As all subspaces of $V$ must
+be subsets of $V$, we know that $U \subseteq P$. We will prove that 
+$U\nleq P$---that is, $U$ is not a \emph{subspace} of $P$---by showing that it
+is not closed under the scalar multiplication of $P$.  
 
-$P$ is the collection of all subset of $V$. Let $U$ be the collection of all subspaces of $V$. As all subspaces of $V$ must be subsets of $V$, we know that $U \subseteq P$. We want to show that $U$ is a subspace of $P$.
+Indeed, fix a subspace $X \in U$, and recall that 
+scalar multiplication $0 \in \GF(2)$ in $P$ always  
+results in the empty set. (See the example on page 24 of our textbook.)  
+That is, $0X = \emptyset$, which is not a subspace.
+Since $0X\notin U$, we see that $U$ is not closed under the scalar
+multiplication in $P$, so it is not a subspace of $P$.
 
-Let $X \in U$. Then $X \in P$. Let $a \in F$. Let $y,z \in X$.  Then $ay, az \in aX$. $ay + az = a(x+y)$.  As $X$ is a subspace, $(x+y) \in X$ so $a(x+y) \in aX$. Thus $aX$ is closed under addition. Let $b \in F$. 
-\begin{eqnarray*}
-b(ay) & = & (ba)y \\
-	  & = & (ab)y \\
-	  & = & a(by) \\
-\end{eqnarray*}
-So $by \in X \implies a(by) \in aX$. Therefore $aX$ is closed under scalar
-multiplication. And $X \subseteq V \implies aX \subseteq V$. Then $aX$ is a
-subspace, so $U$ is closed under scalar multiplication. 
+\bigskip
 
-Let $Y \in U, x \in X, y \in Y$. $X + Y = \fld{F}\{x,y\}$. Let $p,q \in X + Y$ such that for $x_1,x_2 \in X, y_1,y_2 \in Y, a,b \in F$
-$$p = ax_1 + by_1$$
-$$q = cx_2 + dy_2$$
-Now we add $p + q$
-\begin{eqnarray}
-p + q & = &(ax_1 + by_1) + (cx_2 + dy_2) \\
-	  & = &(ax_1 + cx_2) + (by_1 + dy_2) 
-\end{eqnarray}
-Since we know $(ax_1 + cx_2) \in X$ and $(by_1 + dy_2) \in Y$, we can deduce that $p + q \in X + Y$. Then $U$ is closed under addition.  So $U$ is a subspace of $P$.
+\noindent {\it Followup question:} Could you fix the foregoing, perhaps by
+letting $P$ be all subsets containing $0_V$ and defining $0X = \{0_V\}$ for
+all $X \in P$?  It might not work if we take addition to be symmetric
+difference, but what if we use the binary string interpretation, where the
+string of all zeros corresponds to $\{0_V\}$?  Note that $P$ would then correspond to
+the set of all binary strings of length $|V|-1$.
 \end{solution}
 \probskip
 
@@ -468,6 +466,31 @@ additive identity, that is, an $e\in V$ such that $v + e = v$ for
 all $v \in V$.  In the proposed solution, $0$ cannot serve as the additive identity
 because $v+w = 1$ for all $w\neq v$; in particular, $v + 0 = 1$
 whenever $v \neq 0$. (See the correct solution given above.)
+
+\probskip
+
+\noindent {\it Notes on on \hyperref[prob:9]{Problem \ref*{prob:9}}.}
+The originally proposed began as follows:
+\begin{quote}
+$P$ is the collection of all subset of $V$. Let $U$ be the collection of all subspaces of $V$. As all subspaces of $V$ must be subsets of $V$, we know that $U \subseteq P$. We want to show that $U$ is a subspace of $P$.
+
+Let $X \in U$. Then $X \in P$. Let $a \in F$. Let $y,z \in X$.  Then $ay, az \in
+aX$. $ay + az = a(x+y)$.  As $X$ is a subspace, $(x+y) \in X$ so $a(x+y) \in
+aX$. Thus $aX$ is closed under addition.
+\end{quote}
+
+Here we have fallen into the trap of considering the wrong field.  It is true
+that we should fix some $X \in U$, and then try to show that for each field
+element $a$, we have $aX \in U$.  However, we must take $a$ from $\GF(2)$, since
+that the field over which $P$ is defined, and we are trying to prove $U\leq P$.
+
+Now, you might then argue that now it is even easier because we only have to
+consider $0X$ and $1X$. The latter is simply $X$.  However, what is $0X$?  It
+would be nice if it were $\{0_V\}$, because then we would have $0X= \{0_V\} \in
+U$.  Unfortunately, in $P$, scalar multiplication by 0 gives the empty set (or
+the binary string consisting of $|V|$ zeros, if you prefer to think of the
+elements of $P$ as binary strings).  The empty set is not a subspace.
+
 
 
 %% If you will use references, add your refs to the Math700.bib file.
