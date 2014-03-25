@@ -53,6 +53,9 @@
 \maketitle
 
 
+\newcommand\join{\ensuremath{\vee}}
+\newcommand\meet{\ensuremath{\wedge}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}[Golan 56]
 
@@ -76,37 +79,40 @@ Assume toward a contradiction that $\Z/(4)$ is a vector space over GF(2), with v
 \end{eqnarray*}
 Now, let $v = 3$ to see that $3 + 3 = 2\mod{4} \neq 0$. Thus we have a contradiction. The answer is no, it is not possible with the usual modular vector addition.
 \end{solution}
+
 \probskip
-
-
 
 \newcommand\R{\fld{R}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}[Golan 60]
-
-Let $V = C(0,1)$. Define an operation $\boxplus$ on $V$ by setting 
-$f \boxplus g : x \mapsto \max \{f(x), g(x)\}$.  
-Does this operation of vector addition, together with the usual scalar
-multiplication make $V$ into a vector space over $\R$?
+\begin{problem}[Golan 60]\hskip-2mm\protect\footnotemark
+\label{prob:1}
+\footnotetext{In the original problem, the notation
+ $f \boxplus g$ was used.  We use $f \join g$ instead, since this 
+ is fairly standard notation for the function $\max\{f, g\}$.}
+\renewcommand\boxplus{\ensuremath{\join}}
+Let $V = C(0,1)$. Define the relation $\boxplus$ on $V$ by setting 
+$(f \boxplus g)(x)= \max \{f(x), g(x)\}$.  
+If we think of $\boxplus$ as a ``vector addition,'' does this, together with the
+usual scalar multiplication, make $V$ into a vector space over $\R$?
 
 \end{problem}
 \smallskip
 \begin{solution}
-We must show that the $\boxplus$ operation is closed in V, that is, $f \boxplus g \in C(0,1)$. We will prove that $f \boxplus g$ is continuous by the "delta-epsilon" method from real analysis. 
+It is true that $C(0,1)$ is closed under $\join$ (see the
+\hyperref[appendix]{Appendix \ref*{appendix}} for a
+proof), and we can easily verify that $\join$ is a commutative associative
+binary operation on the set $C(0,1)$, so $\<C(0,1), \join\>$ is a 
+commutative semigroup.  In fact, letting  
+$f \meet g = \min\{f, g\}$, we can check that $\<C(0,1), \join,
+\meet\>$  is a lattice.\footnote{See~\cite[Sec.~30]{Aliprantis:1998} for a
+  discussion of vector lattices, such as $\< C(0,1), \join, \meet\>$.}
 
-Let $\epsilon > 0$. As $f$,$g$ continuous on $(0,1)$, there exist $\delta_f > 0$ and $\delta_g > 0$ such that
+However, recall that a vector space is built up from an additive abelian group.
+Is it possible for $\join$ to serve as vector addition?  If so, what would be
+the additive identity?  We need a function $e \in C(0,1)$ such that for all $f
+\in C(0,1)$ we have $f \join e = f$.  It is clear that no such $e$ exists.
 
-$$ |x - x_0| < \delta_f \implies |f(x)-f(x_0)| < \frac{\epsilon}{2}$$ $$|x - x_0| < \delta_g \implies |g(x)-g(x_0)| < \frac{\epsilon}{2}$$
-Let $h(x) = max\{f(x),g(x)\}$. Let $\delta_h = \min\{\delta_f,\delta_g\}$. Then
-\begin{eqnarray*}
-|x - x_0| < \delta_h & \implies & |h(x) - h(x_0)| \\ & = & \left|\frac{f(x)+g(x)+|f(x)-g(x)|-f(x_0)-g(x_0)-|f(x_0)-g(x_0)|}{2}\right| \\
-& \leq & \left|\frac{f(x)-f(x_0)}{2}\right| + \left|\frac{g(x)-g(x_0)}{2}\right|
-+ \left|\frac{f(x)-f(x_0)-(g(x)-g(x_0))}{2}\right| \\
-& < & \frac{\epsilon}{2} + \left|\frac{f(x)-f(x_0)-(g(x)-g(x_0))}{2}\right| \\
-& < & \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
-\end{eqnarray*}
-Therefore $f \boxplus g$ is continuous for $x_0 \in (0,1)$, so vector addition is closed in $V$. With the usual scalar multiplication, $V$ is a vector space over $\R$.
 \end{solution}
 \probskip
 
@@ -126,7 +132,7 @@ such a way as to turn it into a vector space over $\GF(2)$.\\
 \end{problem}
 \smallskip
 \begin{solution}
-Let us define vector addition in a "bitwise xor" fashion such that $v + v = 0$ and $v + w = 1$ for all $v,w \in V, w \neq v$. Furthermore, let us define scalar multiplication in the natural way such that $1\cdot v = v$ and $0\cdot v = 0$.  Then we can see that vector addition is closed as $0,1 \in V$, as well as being associative and commutative. And every $v$ has an additive inverse, namely $v$. Scalar multiplication is also closed in $V$, as the product is always $0 \in V$ or $v \in V$. So $V$ is a vector space over $\GF(2)$. 
+Let us define vector addition in a ``bitwise xor'' fashion such that $v + v = 0$ and $v + w = 1$ for all $v,w \in V, w \neq v$. Furthermore, let us define scalar multiplication in the natural way such that $1\cdot v = v$ and $0\cdot v = 0$.  Then we can see that vector addition is closed as $0,1 \in V$, as well as being associative and commutative. And every $v$ has an additive inverse, namely $v$. Scalar multiplication is also closed in $V$, as the product is always $0 \in V$ or $v \in V$. So $V$ is a vector space over $\GF(2)$. 
 \end{solution}
 \probskip
 
@@ -231,7 +237,7 @@ $(a_1, \dots, a_5)$ satisfying $\sum_{i=1}^5 a_i = 0$.  Is $W$ a subspace of $V$
 \end{problem}
 \smallskip
 \begin{solution}
-(We assume the problem means "subset" not "subspace" in the first line.  Otherwise trivial.)
+(We assume the problem means ``subset'' not ``subspace'' in the first line.  Otherwise trivial.)
 
 We know $W$ is a subset of $V$ and $O_V \in V$. Let $x \in V, x = <a_1,a_2,a_3,a_4,a_5>$ and $\sum_{i=1}^{5}a_i = 0$. Let $b \in F$. Then 
 $$bx = <b(a_1),b(a_2),b(a_3),b(a_4),b(a_5)>$$
@@ -356,12 +362,47 @@ So $\frac{t}{a} = ta^-1$, and $t \in \fld{F}, a^-1 \in \fld{F}$ so $ta^-1 \in \f
 \probskip
 
 
+\section*{Appendix}
+\label{appendix}
 
+{\it Notes on \hyperref[prob:1]{Problem \ref*{prob:1}}.}
+Here we show how one could prove that $V$ is closed under $\boxplus$, that is, 
+for all $f, g \in C(0,1)$, we have $f \boxplus g \in C(0,1)$. (Though, as we
+noted in the solution to
+\hyperref[prob:1]{Problem \ref*{prob:1}}, closure is not sufficient
+to conclude that $\boxplus$ can serve as vector addition for $C(0,1)$.)
 
+Let $\epsilon > 0$. Assume $f$,$g$ are continuous on $(0,1)$. Then, there exist $\delta_f > 0$ and $\delta_g > 0$ such that
+
+$$ |x - x_0| < \delta_f \implies |f(x)-f(x_0)| < \frac{\epsilon}{2}$$ $$|x - x_0| < \delta_g \implies |g(x)-g(x_0)| < \frac{\epsilon}{2}$$
+Let $h(x) = (f\join g)(x) = \max\{f(x),g(x)\}$. Let $\delta_h = \min\{\delta_f,\delta_g\}$. Then
+\begin{eqnarray*}
+|x - x_0| < \delta_h & \implies & |h(x) - h(x_0)| \\ & = & \left|\frac{f(x)+g(x)+|f(x)-g(x)|-f(x_0)-g(x_0)-|f(x_0)-g(x_0)|}{2}\right| \\
+& \leq & \left|\frac{f(x)-f(x_0)}{2}\right| + \left|\frac{g(x)-g(x_0)}{2}\right|
++ \left|\frac{f(x)-f(x_0)-(g(x)-g(x_0))}{2}\right| \\
+& < & \frac{\epsilon}{2} + \left|\frac{f(x)-f(x_0)-(g(x)-g(x_0))}{2}\right| \\
+& < & \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\end{eqnarray*}
+Therefore $f \boxplus g$ is continuous for $x_0 \in (0,1)$, so vector addition is closed in $V$. With the usual scalar multiplication, $V$ is a vector space over $\R$.
+
+{\it Remarks.} This proof is correct.  Alternatively, you could simply note that
+the sum (and difference) of two continuous functions is continuous, and the
+function the function $x \mapsto |x|$ is continuous.  Therefore, the function
+$f \join g = \frac{1}{2}(f+g+|f-g|)$ is continuous.  Also, while
+$\epsilon-\delta$ proofs are find, when proving continuity it is often easier to
+use open sets.  For this example, $f \in C(0,1)$ if and only if for all $0\leq a <
+b \leq 1$ the set $f^{-1}(a, b) = \{x \in (0,1) \mid a< f(x) < b\}$ is an open
+subset of $(0,1)$.  Note that  
+\[
+(f\join g)^{-1}(a, b) =
+\left(\{x \mid a< f(x)\}\cup \{x \mid a< g(x)\}\right) \cap
+\{x \mid f(x)< b\} \cap \{x \mid g(x)<b\}.
+\]
+If $f$ and $g$ are continuous, all of the sets on the right are open.
 
 %% If you will use references, add your refs to the Math700.bib file.
 %% and then uncomment the following lines.
-%% \bibliographystyle{plain}
-%% \bibliography{Math700}
+\bibliographystyle{plainurl}
+\bibliography{Math700}
 
 \end{document}
