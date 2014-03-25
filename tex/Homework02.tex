@@ -308,32 +308,30 @@ Is $W$ a subspace of $V$?
 \smallskip
 \begin{solution}
 
-We know $W$ is a subset of $V$. Let $g(x) \in W$. There exists a $c_1 \in \R$ such that $\forall x \in \R$  $|h(x)| \leq c|x|$.
-Let $b \in \R$. Let $h(x) = b(g(x))$. Then
+We know $W$ is a subset of $V$. Let $g \in W$. There exists a $c_1 \in \R$ such that $\forall x \in \R$  $|g(x)| \leq c_1|x|$.
+Let $b \in \R$. Let $h = b g$. Then
 
-\begin{eqnarray*}
-|h(x)| & = & |b(g(x))| \\
-	   & \leq & |b| |g(x)| \\
-	   & \leq & |b|(c_1|x|) \\
-	   & = & c|x|
-\end{eqnarray*}
-Where $c = |b|c_1$. So $\exists c \in \R$ such that $\forall x \in \R$ we have
-$$|h(x)| \leq c|x|$$
+\begin{align*}
+|h(x)| & = |b(g(x))| \\
+       & = |b| |g(x)| \\
+       & \leq  |b|(c_1|x|) \\
+       & =  c|x|,
+\end{align*}
+where $c = |b|c_1$. So $\exists c \in \R$ such that $\forall x \in \R$ we have $|h(x)| \leq c|x|$.
 Therefore $W$ is closed under scalar multiplication.  
 
-Let $p(x),g(x) \in W$.  There exist $c_1,c_2 \in \R$ such that $\forall x \in \R$
-$$|p(x)| \leq c_1|x|$$
-$$|q(x)| \leq c_2|x|$$
-Let $t(x) = p(x) + g(x)$. Then
-\begin{eqnarray*}
-t(x) & = & |p(x) + g(x)| \\ 
-	 & \leq & |p(x)| + |g(x)| \\
-	 & \leq & c_1|x| + c_2|x| \\
-	 & = & (c_1+c_2)|x| \\
-	 = c_3|x|  
-\end{eqnarray*}
+Let $p, g \in W$.  There exist $c_1,c_2 \in \R$ such that $\forall x \in \R$
+$|p(x)| \leq c_1|x|$ and $|q(x)| \leq c_2|x|$.
+If $t(x) = p(x) + g(x)$, then
+\begin{align*}
+t(x) & =  |p(x) + g(x)| \\
+     & \leq  |p(x)| + |g(x)| \\
+     & \leq c_1|x| + c_2|x| \\
+     & =  (c_1+c_2)|x| \\
+     & = c_3|x|,
+\end{align*}
 where $c_3 = c_1 + c_2$. Therefore $\exists c \in \R$ such that $\forall x \in \R$ we have
-$$t(x) \leq c|x|$$
+$t(x) \leq c|x|$.
 Thus $W$ is closed under addition and scalar multiplication so $W$ is a subspace of $V$.
 \end{solution}
 \probskip
