@@ -384,17 +384,15 @@ satisfying $F\{v, w\} = F\{v, aw\}$.
 \smallskip
 \begin{solution}
 
-$$F\{v,w\} = \{bv + cw | b,c \in \fld{F} \} $$
-$$F\{v,aw\} = \{dv + e(aw) | d,e \in \fld{F}\}$$
+$$F\{v,w\} = \{bv + cw | b,c \in F \} $$
+$$F\{v,aw\} = \{dv + e(aw) | d,e \in F\}$$
 
-$F$ is a field, so it is closed under multiplication. $v$ is not a scalar multiple of $w$. We know $1 \in G$. Thus $\fld{F}\{v,aw\} \leq \fld{F}\{v,w\} \forall a \in \fld{F}$. Let $x \in \fld{F}\{v,w\}.$. Then for $s,t \in \fld{F}$
-
-\begin{eqnarray*}
-x & = & sv + tw  \\
-  & = & sv + \frac{t}{a}(aw) \\
-\end{eqnarray*}
-
-So $\frac{t}{a} = ta^-1$, and $t \in \fld{F}, a^-1 \in \fld{F}$ so $ta^-1 \in \fld{F}$ as long as $a \neq 0$. So $G = \fld{F} \setminus 0_V$.
+Since $F$ is a field, it is closed under multiplication. We know $1 \in G$. Thus $F\{v,aw\} \leq F\{v,w\} \forall a \in F$. Let $x \in F\{v,w\}$. Then for some $s,t \in F$,
+\begin{align*}
+x & =  sv + tw  \\
+  & =  sv + \frac{t}{a}(aw),
+\end{align*}
+where $\frac{1}{a}=a^{-1} \in F$ so $ta^{-1} \in F$ as long as $a \neq 0$. So $G = F \setminus \{0\}$.
 \end{solution}
 \probskip
 
