@@ -1,0 +1,321 @@
+\input{macros}
+%%test This is the Homework LaTeX template.  Use this file to fill in your solutions. 
+%%
+%% Notes: 
+%%    1. Write your answers inside a \begin{solution}...\end{solution} environment.
+%%
+%%    2. If you will use references, insert bibtex reference entries in the file
+%%       Math700.bib.  (Create that file if it doesn't yet exist.)
+%%
+%%    3. If you will use acronyms, please define them in the macros.tex file.
+%%
+%%    4. Please try to check that your file compiles:
+%%
+%%       Mac OS X users: you might try MacTeX. 
+%%       Windows users: you might try proTeXt. 
+%%       Linux users: most come with TeX; otherwise do a full install of TeXLive.
+%%
+%%       There is a Makefile in this directory, so on Linux you could just 
+%%       enter `make` to compile all the Homework*.tex files at once.
+%%
+%%    5. Please don't hesitate to inform the prof if you have trouble, or open
+%%       a ``New issue'' or create a new ``Wiki page'' on GitHub.  Otherwise,
+%%       send an email to williamdemeo@gmail.com.
+%%
+%%    6. It will probably be hard to keep everyone's notation consistent.
+%%       For the most basic symbols, we should have some conventions and use
+%%       LaTeX macros to keep the conventions consistent and easy to remember.
+%%       For example, to denote an algebra,
+         \newcommand\alg[1]{\ensuremath{\mathbf{#1}}}
+         \newcommand{\<}{\ensuremath{\langle}}
+         \renewcommand{\>}{\ensuremath{\rangle}}
+%%       So, an algebra in LaTeX is typed as $\alg{A} = \<A, F\>$.
+%%       Similarly, for a field, let's use:
+         \newcommand\fld[1]{\ensuremath{\mathbb{#1}}}
+%%       So, a field in LaTeX is typed as $\fld{F}$.
+%%       Example: We denote the integers by \fld{Z}. 
+%%                This comes up often enough that it's useful to define
+         \newcommand\Z{\fld{Z}}
+%%
+%%       For the Galois field, we use:
+         \newcommand\GF{\ensuremath{\operatorname{GF}}}
+%%
+%%    7. Replace these names with yours!!!
+         \metadata{Michael and Taylor}{Homework 2 -- 2014/04/09}
+         \author{Michael Laughlan and Taylor Short}
+%%
+%%    8. Update the title and date as appropriate.
+         \title{Homework 4}
+         \date{due date: 2014/04/09}
+
+\begin{document}
+
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 199]
+Let $V$ be a vector space of finite dimension $n>0$ over $\R$ and, for each
+positive integer $i$, let $U_i$ be a proper subspace of $V$.  
+Show that $V \neq \bigcup_{i=1}^\infty U_i$.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 210]
+Let $V$ be a vector space over a field $F$ and assume $V$ is not finitely
+generated.  Show that there exists an infinite sequence $W_1, W_2, \dots$ of
+proper subspaces of $V$ satisfying $\bigcup_{i=1}^\infty W_i = V$.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 239]
+Let $V$ and $W$ be a vector space over $\fld{Q}$ and let 
+$\alpha: V \rightarrow W$ be a function satisfying 
+$\alpha(x+y) = \alpha(x) + \alpha(y)$ for all $x, y \in V$.
+Is $\alpha$ necessarily a linear transformation?
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 240]
+Let $\alpha: \R \rightarrow \R$ be a continuous function satisfying
+$\alpha (x + y) = \alpha(x) + \alpha(y)$ for all $a, b \in \R$.  Show that
+$\alpha$ is a linear transformation.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 241]
+Let $W_1$ and $W_2$ be subspaces of a vector space $V$ over a field $F$ and assume
+we have linear transformations 
+$\alpha_1: W_1 \rightarrow V$ and 
+$\alpha_2: W_2 \rightarrow V$ satisfying the coondition that $\alpha_1(v) = \alpha_2(v)$
+for all $v \in W_1 \cap W_2$.  Find a linear transformation 
+$\theta: W_1 + W_2 \rightarrow V$ such that the restriction of $\theta$ to $W_i$
+equals $\alpha_i$ $(i=1, 2)$, or show why no such linear transformation exists.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 251]
+Let $V$, $W$ and $Y$ be vector spaces finitely generated over a field $F$ and let 
+$\alpha \in \Hom(V, W)$.  Let $\ann{\alpha}$ denote the set of those 
+$\beta \in \Hom(W,Y)$ satisfying the condition that $\beta\alpha$ is the 0-transformation.
+That is, 
+\[
+\ann{\alpha} = \{ \beta\in \Hom(W,Y) \mid \forall v \in V \; \beta\alpha(v) = 0_Y\}.
+\]
+Prove that $\ann{\alpha}$ is a subspace of  $\Hom(W,Y)$ and compute its
+dimension.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 253]
+Let $V$ and $W$ be vector spaces over a field $F$ and assume that there are
+subspaces $V_1$ and $V_2$ of $V$, both of positive dimension, satisfying
+$V = V_1 \bigoplus V_2$.  For  $i=1, 2$, let 
+$U_i = \{\alpha \in \Hom(V,W) \mid V_i \subseteq \ker{\alpha}\}$.
+Show that $\{U_1, U_2\}$ is an independed set of subspaces of $\Hom(V,W)$.
+Is it necessarily true that $\Hom(V,W) = U_1 \bigoplus U_2$?
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 256]
+Let $V$ and $W$ be vector spaces over a field $F$.
+Define a function $\phi : \Hom(V, W) \rightarrow \Hom(V\times W, V\times W)$
+by setting
+$\phi(\alpha): 
+\begin{bmatrix} v\\ w \end{bmatrix} 
+\mapsto 
+\begin{bmatrix} 0_V\\ \alpha(v) \end{bmatrix}$.
+Is $\phi$ a linear transformation of vector spaces over $F$? Is it a monomorphism?
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 293 \& 294]
+Let $V$, $W$ and $Y$ be vector spaces over a field $F$, let 
+$\alpha \in \Hom(V, W)$, and 
+let $\beta \in \Hom(V,Y)$. Prove the following:
+\begin{enumerate}
+\item  If $\alpha$ is an epimorphism, then 
+there exists $\theta \in \Hom(W,Y)$ such that $\beta = \alpha \theta$.
+\item  If $\alpha$ is a monomorphism, then 
+there exists $\theta \in \Hom(W,Y)$ such that $\beta = \theta \alpha$.
+\end{enumerate}
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 296]\hskip-2mm\protect\footnotemark
+\label{prob:296}
+\footnotetext{I believe the statement of this problem is incorrect. 
+  If you agree, give a counter-example and explain how to fix the statement so
+  that it is correct.  If you disagree, and you believe the statement is
+  correct, then prove it as stated.}
+Let $V$, $W$ be vector spaces over a field $F$, let 
+$\alpha \in \Hom(V, W)$, and let $D$ be a nonempty linearly independent subset
+of $\im{\alpha}$.  Show that there exists a basis $B$ of $V$ satisfying
+$\{\alpha(v)\mid v \in B\} = D$.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 306]
+Let $V$, $W$ and $Y$ be vector spaces over a field $F$.  Let 
+$\{\alpha_1, \dots, \alpha_n\}$ be a finite subset of $\Hom(V, W)$
+and let $\beta \in \Hom(V,Y)$ be a linear transformation satisfying
+$\bigcap_{i=1}^n \ker{\alpha_i} \subseteq \ker{\beta}$.  Show that there exist
+linear transformations $\gamma_1, \dots, \gamma_n$ in $\Hom(W,Y)$ satisfying
+$\beta = \sum_{i=1}^n \gamma_i \alpha_i$.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 307]
+Let $V$ be a vector space over a field $F$ and let $W$ be a subspace of $V$.  
+For each $v \in V$, let $v + W = \{v+w \mid w \in W\}$.  Let 
+$V/W = \{v+W \mid v \in V\}$ be the collection of all sets of the form $v+W$,
+and define operations of addition and scalar multiplication on $V/W$ by 
+setting $(v+W) + (v'+W) = (v+v')+W$ and $c(v+W) = (cv)+W$ for all $v, v' \in V$
+and $c\in F$.  Show that
+\begin{enumerate}
+\item $v+W = v'+W$ if and only if $v-v'\in W$;
+\item $V/W$, with the given operations, is a vector space over $F$;
+\item The function $v\mapsto v+W$ is an epimorphism from $V$ to $W$,
+the kernel of which equals $W$;
+\item Every complement of $W$ in $V$ is isomorphic to $V/W$;
+\item If $(v+W)\cap (v'+W) \neq \emptyset$, then $v+W = v'+W$.
+\end{enumerate}
+The space $V/W$ is called the \emph{factor space} of $V$ by $W$.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 325]
+Let $\alpha \in \Aut(\R^2)$ be defined by 
+$\alpha: 
+\begin{bmatrix} a\\ b \end{bmatrix} 
+\mapsto 
+\begin{bmatrix} -b\\ a \end{bmatrix}$.
+Show that $\R\{\alpha, \sigma_1\}$ is a unital subalgebra of $\End(\R^2)$.  Show
+that it is proper by giving an example of an endomorphism of $\R^2$ not in this
+subalgebra. 
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 326]
+Let $V$ be the space of all real-valued functions on the interval $[-1, 1]$
+which are infinitely differentiable, and let $\delta$ be the endomorphism of $V$
+which assigns to each function $f$ its derivative.  Find the kernel and image of
+$\delta$. 
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 338]
+Let $V$ be a vector space over a field $F$ which is not finitely generated, and
+let $\sigma_0 \neq \alpha \in \End(V)$.  Set 
+$A = \{\beta \in \End(V) \mid \alpha \beta = \sigma_1\}$.  Show that if $A$ has
+more than one element then it is infinite.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 340]
+Let $V$ be a vector space over a field $F$ satisfying the condition that
+$\alpha\beta = \beta\alpha$ for all $\alpha, \beta \in \End(V)$. Show that
+$\dim{V} = 1$.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 354]
+Let $V$ be a vector space over a field $F$ and let $\alpha \in \Aut(V)$.  Let
+$W_1, \dots, W_k$ be subspaces of $V$ satisfying $V = \bigoplus_{i=1}^k W_i$.
+For each $1\leq i \leq k$, let $Y_i = \{\alpha(w) \mid w \in W_i\}$.
+Is $V = \bigoplus_{i=1}^k Y_i$?
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+
+%\bibliographystyle{plainurl}
+%\bibliography{Math700}
+
+\end{document}

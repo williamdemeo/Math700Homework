@@ -1,0 +1,567 @@
+\documentclass[11pt]{paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[mathscr]{euscript}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{comment}
+\usepackage{url} % for url in bib entries
+%\usepackage{mathrsfs}
+
+
+\theoremstyle{remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{prop}{Proposition}
+\newtheorem{problem}{Problem}
+\newtheorem*{prob}{Problem}
+\newtheorem*{solution}{{\bf Solution}}
+\newtheorem*{hint}{{\it Hint}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Surround the problem and solution with 
+%% \begin{ProbBox}  and   \end{ProbBox}
+%% to prevent pagebreaks.
+\newenvironment{ProbBox}{\noindent\begin{minipage}{\linewidth}}{\end{minipage}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acronyms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[acronym, shortcuts]{glossaries}
+
+%% HERE IS HOW YOU DEFINE ACRONYMS:
+\newacronym{FTA}{FTA}{Fundamental Theorem of Algebra}
+\newacronym{CRT}{CRT}{Chinese Remainder Theorem}
+
+% Make \ac robust.
+\robustify{\ac}
+
+\usepackage{enumerate}
+
+\usepackage[
+top    = 3cm,
+bottom = 3cm,
+left   = 3.00cm,
+right  = 3.00cm]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fancy page style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\newcommand{\metadata}[2]{
+  \rhead{Midterm Exam}
+  \chead{}
+  \lhead{Math 700: Linear Algebra}
+%  \lfoot{#1}\cfoot{#2}
+  % \lfoot{}\cfoot{}
+  % \rfoot{\thepage}
+}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newrobustcmd*{\vocab}[1]{\emph{#1}}
+\newrobustcmd*{\latin}[1]{\textit{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Customize list enviroonments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% package to customize three basic list environments: enumerate, itemize and description.
+% \usepackage{enumitem}
+% \setitemize{noitemsep, topsep=0pt, leftmargin=*}
+% \setenumerate{noitemsep, topsep=0pt, leftmargin=*}
+% \setdescription{noitemsep, topsep=0pt, leftmargin=*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Space between problems
+\newrobustcmd*{\probskip}{\vskip5mm}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
+%% 
+         \newcommand\alg[1]{\ensuremath{\mathbf{#1}}}
+         \newcommand\0{\ensuremath{\mathbf{0}}}
+         \newcommand{\<}{\ensuremath{\langle}}
+         \renewcommand{\>}{\ensuremath{\rangle}}
+         \newcommand\fld[1]{\ensuremath{\mathbb{#1}}}
+         \newcommand\N{\ensuremath{\fld{N}}}
+         \newcommand\R{\ensuremath{\fld{R}}}
+         \newcommand\dom{\ensuremath{\operatorname{dom}}}
+         \newcommand\cod{\ensuremath{\operatorname{cod}}}
+         \newcommand\GF{\ensuremath{\operatorname{GF}}}
+         \newcommand\End{\ensuremath{\operatorname{End}}}
+         \newcommand\Hom{\ensuremath{\operatorname{Hom}}}
+         \newcommand{\Aff}{\ensuremath{\operatorname{Aff}}}
+         \newcommand{\ann}[1]{\ensuremath{\operatorname{ann}(#1)}}
+         \newcommand{\id}{\ensuremath{\operatorname{id}}}
+         \newcommand{\nulity}[1]{\ensuremath{\operatorname{null}(#1)}}
+         \renewcommand{\ker}[1]{\ensuremath{\operatorname{ker}(#1)}}
+         \renewcommand{\dim}[1]{\ensuremath{\operatorname{dim}(#1)}}
+         \newcommand\im[1]{\ensuremath{\operatorname{im}(#1)}}
+         \newcommand{\rank}[1]{\ensuremath{\operatorname{rank}(#1)}}
+         \newcommand{\trace}[1]{\ensuremath{\operatorname{trace}(#1)}}
+         \renewcommand{\phi}{\ensuremath{\varphi}}
+         \newcommand{\Sub}{\ensuremath{\operatorname{Sub}}}
+         \renewcommand{\leq}{\ensuremath{\leqslant}}
+         \renewcommand{\nleq}{\ensuremath{\nleqslant}}
+         \renewcommand{\geq}{\ensuremath{\geqslant}}
+         \renewcommand{\lneq}{\ensuremath{\lneqslant}}
+         \renewcommand{\gneq}{\ensuremath{\gneqslant}}
+         \renewcommand{\ngeq}{\ensuremath{\ngeqslant}}
+         \newcommand{\sD}{\ensuremath{\mathscr{D}}}
+         \newcommand{\sS}{\ensuremath{\mathscr{S}}}
+
+
+         \metadata{Math 700}{Midterm Exam -- 2014/03/07}
+         \author{}
+%%
+%%    8. Update the title and date as appropriate.
+         \title{Midterm Exam}
+         \subtitle{Math 700: Spring 2014}
+         \date{6 March 2014}
+
+
+
+\begin{document}
+
+\maketitle
+\vskip-1cm
+
+\noindent {\bf INSTRUCTIONS:} 
+\begin{itemize}
+\item 
+Solve the problems below. Write up your solutions (neatly!),
+giving complete justifications for all arguments, and turn in a hard copy of your
+solutions in class on the\\[4pt]
+Due Date: {\bf Wednesday, March 19}
+
+\medskip
+
+\item The questions are meant to test your understanding of elementary concepts, and
+you should write down definitions of any technical terms you use, even if these
+terms are mentioned in the statement of the problem. Of course, you must use
+your best judgment about which definitions to state.  (You probably don't want
+to define the integers or real numbers, for example.)
+
+\medskip
+
+\item It will help me (and probably your grade) if you do the following:
+\begin{enumerate}
+\item 
+State what you are trying to prove.
+\item 
+Mention informally how you plan to prove it before giving the details.
+\item If you believe your proof is complete, use an end-of-proof symbol (like
+  QED or \qedsymbol); on the other hand, if you believe your proof is
+  incomplete, say so.
+\end{enumerate}
+\end{itemize}
+
+\noindent {\bf HONOR CODE:} You are expected to solve the exam problems on your own
+  with no outside help.  You may consult the lecture notes and textbook for this
+  course only.  No other books or internet usage is allowed.
+  If you get stuck, please ask \emph{me} for help, and I may post hints on our wiki page. 
+
+
+\medskip
+
+\noindent When you finish the exam, please sign the following pledge:\\
+\\
+``On my honor as a student I,
+\underline{\phantom{XXXXXXXXXXXXXXXX}}, have neither
+given nor received unauthorized aid on this exam.''
+\hbox{} \hskip .5in {\small (Print Name)}\\[4pt]
+\begin{flushright} Signature: \underline{\phantom{XXXXXXXXXXXXXXXXXXXX}}
+  Date: \underline{\phantom{XXXXXXXXXX}}
+\end{flushright}
+
+\medskip
+
+\noindent {\bf NOTATION:}
+For the most part, we follow the notation used in the textbook.
+Recall that if $V$ is a vector space over the field $F$ and if
+$c\in F$, then $\sigma_c v = cv$ for all $v \in V$.
+In particular, $\sigma_0$ and $\sigma_1$ denote the zero and identity maps,
+respectively. However, when $V$ and $W$ are vector spaces over the same field,
+it is clearer to denote their identity maps by $\id_V$ and $\id_W$, resp.
+We use $W\leq V$ to denote that $W$ is a subspace of $V$, 
+whereas $W\subseteq V$, means that $W$ is a subset of $V$ 
+(which may or may not be a subspace).  By an ``$F$-vector space'' we mean a
+vector space over the field $F$. If $\phi : V \rightarrow W$, then
+$\im{\phi} := \phi(V)$, $\ker{\phi} := \{v \in V : \phi(v) = 0_W\}$,
+$\rank{\alpha} := \dim{\im{\alpha}}$, and $\nulity{\alpha} := \dim{\ker{\alpha}}$.
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $V$ and $W$ be finite dimensional vector spaces over the field $F$, and
+suppose $\alpha \in \Hom(V,W)$.
+Circle true or false, where true means ``always true'' (no proof required):
+\begin{enumerate}[(a)]
+\item If $\alpha(v) = 0_W$ only when $v=0_V$, then $\dim{V} = \dim{W}$.
+ \hfill true \hskip1cm false
+\item If $\im{\alpha} = \{0_W\}$, then $\alpha = \sigma_0$.
+ \hfill true \hskip1cm false
+\item If $\dim{V} = \rank{\alpha}$, then $\ker{\alpha} = \{0_V\}$.
+ \hfill true \hskip1cm false
+\item $\ker{\alpha}\leq \ker{\alpha^2}$
+ \hfill true \hskip1cm false
+\item $\im{\alpha}\geq \im{\alpha^2}$
+ \hfill true \hskip1cm false
+\item $\nulity{\alpha} \leq \rank{\alpha}$
+ \hfill true \hskip1cm false
+\item $\nulity{\alpha} \leq \dim{V}$
+ \hfill true \hskip1cm false
+\item $\alpha$ is a one-to-one if and only if $\ker{\alpha} = \{0_V\}$.
+ \hfill true \hskip1cm false
+\item $\alpha$ is a one-to-one if and only if $\dim{V} \leq \dim{W}$.
+ \hfill true \hskip1cm false
+\item $\alpha$ is a one-to-one if and only if $\nulity{\alpha} = 0$.
+ \hfill true \hskip1cm false
+\item $\alpha$ is a onto if and only if $\dim{V} \geq \dim{W}$.
+ \hfill true \hskip1cm false
+\item $\alpha$ is a onto if and only if $\rank{\alpha} =\dim{W}$.
+ \hfill true \hskip1cm false
+\end{enumerate}
+\end{problem}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Prove that the lattice of subspaces of a vector space
+is modular but not necessarily distributive, as follows:
+Let $U$, $Y$, and $W$ be subspaces of a vector space $V$. 
+\begin{enumerate}[(a)]
+\item Show that $U\cap (Y + (U \cap W)) = (U \cap Y) + (U \cap W)$.
+\item Show that $U \cap (Y + W) = (U \cap Y) + (U \cap W)$ is not always valid.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+To prove (a), we show the right hand side is contained in the left and
+vice-versa.
+First note that
+$U \cap Y \subseteq U\cap (Y + (U \cap W))$ and 
+$U \cap W \subseteq U\cap (Y + (U \cap W))$.
+Therefore, since $(U \cap Y) + (U \cap W)$ is the smallest subspace containing both 
+$U \cap Y$ and $U \cap W$, we see that the right hand side is contained in the left.
+On the other hand, suppose $x \in U\cap (Y + (U \cap W))$.
+Then $x = u = y + z$ with $u \in U$, $y\in Y$, and $z\in U \cap W$.
+Whence, $y = u-z \in U \cap Y$, so $x = y+z$ belongs to the right hand side.
+The equation in part (a) is called the \emph{modular law}, and we have
+just shown that, for any vector space $V$, the lattice 
+$\<\Sub(V), \cap, +\>$ of subspaces of
+$V$ is a \emph{modular lattice}.
+
+To prove (b), consider the following subspaces of $\R^2$:
+\[
+U = \left\{
+\begin{pmatrix} a\\ 0 \end{pmatrix} : a\in \R \right\}, \quad 
+Y = \left\{
+\begin{pmatrix} b\\ b \end{pmatrix} : b\in \R \right\}, \quad 
+W = \left\{
+\begin{pmatrix} 0\\ c \end{pmatrix} : c\in \R \right\}.
+\]
+Let us denote the zero vector of $\R^2$ by 
+$\0 = (0, 0)$.
+Note that any pair of (distinct) subspaces chosen from the set
+$\{U, Y, W\}$ intersects at $\{\0\}$ and sums to $\R^2$.
+Therefore, the left hand side of the equation in (b) is
+$U \cap (Y + W) = U \cap \R^2 = \R^2$, while the right hand side is 
+\[
+(U\cap Y) + (U\cap W) = \{\0\} + \{\0\}
+= \{\0\}.
+\]
+The equation in part (b) is called the \emph{distributive law} and we have just shown
+that the lattice $\<\Sub(V), \cap, +\>$ of subspaces of a vector space is not
+always a \emph{distributive lattice}.
+
+\end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+\label{prob:zorn}
+Prove that every nontrivial vector space $V$ has a basis.\\[4pt]
+[{\it Hint:} First prove that
+every linearly independent subset of $V$ is contained in a basis.
+As we did in class, let $S$ be a linearly independent subset and
+  let $\sS$ be the set of all linearly independent subsets that contain $S$. 
+  Partially order $\sS$ by inclusion $\subseteq$ and apply
+  Zorn's Lemma.\footnote{{\bf Zorn's Lemma:} 
+    If a partially ordered set $(\sS, \subseteq)$ has the property that every
+    chain $S_1 \subseteq S_2 \subseteq \cdots$ has an upper bound in $\sS$, 
+    then $\sS$ contains a maximal element.}
+  Finally, say why if follows from this that every vector space has a basis.]
+\end{problem}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $V$ be a vector space over the field $F$, and suppose the subset 
+$S \subseteq V$ satisfies $FS = V$. Prove that $S$ contains a basis.
+\end{problem}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $V$ be a vector space over the field $F$ and let $\Omega$ be a (possibly
+uncountable) set.  Describe $V^\Omega$.  Can you make 
+$V^\Omega$ into an  $F$-vector space?  An $F$-algebra? Explain.
+\end{problem}
+\begin{solution}
+The set $V^\Omega$ is the set of all functions from $\Omega$ into $V$. 
+That is, $V^\Omega = \{f : \Omega \rightarrow V\}$. We can make $V^\Omega$ into a
+vector space by defining
+%  a binary addition operation, 
+% $+ : V^\Omega  \times  V^\Omega  \rightarrow V^\Omega$, and, for each $r \in F$, 
+% a unary scalar multiplication, $r : V^\Omega \rightarrow V^\Omega$, as follows:
+\begin{itemize}
+\item {\it addition:} 
+  $\forall \,f, g \in V^\Omega$, define 
+  $f + g \in V^\Omega$ to be the map $(f+g):\omega \mapsto f(\omega) +^V
+  g(\omega)$.
+(Here $f(\omega) +^V g(\omega)$ means addition in $V$, which is available by the initial assumption that $V$ is a vector space.)
+\item {\it additive identity:}
+  $\sigma_0 \in V^\Omega$ is the map $\sigma_0:\omega \mapsto 0_V$.
+\item   {\it additive inverse:}
+  $\forall \, f\in V^\Omega$, define $-f \in V^\Omega$ by
+  $(-f)(\omega) = - f(\omega)$. (Again,
+  interpret $-f(\omega)$ as additive inverse in the vector space $V$.)
+\item {\it scalar multiplication:} $\forall \, r\in F, \; \forall \,f\in V^\Omega$ 
+  define $rf \in V^\Omega$ to be the map  $(rf): \omega \mapsto r
+  f(\omega)$ (where $r f(\omega)$ is scalar multiplication in
+  $V$).
+\end{itemize}
+
+It is easy to see that $\<V^\Omega, +, -, \sigma_0\>$ is an abelian group,
+since $+$ is a commutative and associative by virtue $+^V$ having these
+properties, and since every $f \in V^\Omega$ has an inverse, namely $-f$, 
+since $f + (-f) = \sigma_0$. % Explicitly, for every $\omega\in \Omega$
+ % $(f + (-f))(\omega) = f(\omega) - f(\omega) = 0_v$.
+Therefore, $V^\Omega$ is given the following vector space structure:
+$\<V^\Omega, +, -, \sigma_0, \{r : r \in F\}\>$.  (Technically, we should also
+check that scalar multiplication distributes over addition, but this is also
+easy.)
+
+There's no obvious or ``natural'' way to make  $V^\Omega$ into an
+$F$-algebra, unless we have more assumptions about $V$.   For example, we might
+want to define a binary multiplication as  the ``pointwise'' product, 
+$(f\circ g)(\omega) = f(\omega) \cdot g(\omega)$. However, it's unclear what
+we mean by $f(\omega) \cdot g(\omega)$?  We need some 
+notion of product $\cdot$ in the underlying vector space, $V$.  This would be
+available if, 
+for instance, we assumed $V$ itself were an $F$-algebra.  Alternatively, we
+might consider defining multiply by function composition: $(f\circ g)(\omega) =
+f(g(\omega))$. But for this to make sense, we need the domain of $f$ to contain
+the range of $g$. If we assume $\Omega = V$ (e.g., 
+$\Omega = V = F$), then we can
+make $V^V$ into an $F$-algebra by defining product to be funciton composition.
+
+\end{solution}
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $V$ and $W$ be vector spaces over the field $F$, and let 
+$\phi : V \rightarrow W$ be a linear transformation. Give details and proof of
+the following: $\phi$ is injective (respectively, surjective) if and only if 
+there is a linear transformation $\psi: W \rightarrow V$ such that the
+composition of $\phi$ with $\psi$ is the identity map.\\[4pt]
+[{\it Hint:} There are two claims to prove, (a) ``$\phi$
+  is injective iff...'', and (b) ``$\phi$ is surjective
+  iff...'' There are two ways to form the composition, 
+$\phi \psi = \id_W$ and $\psi \phi = \id_V$. Figure out which composition
+you need to prove each claim.]
+\end{problem}
+\begin{solution} We prove the following claims 
+  \begin{enumerate}[(a)]
+  \item $\phi\in \Hom(V,W)$ is injective iff there exists $\psi: W\rightarrow V$ such that $\psi \phi = \id_V$.
+  \item $\phi\in \Hom(V,W)$ is surjective iff there exists $\psi: W\rightarrow V$ such that $\phi \psi = \id_W$.
+  \end{enumerate}
+  \begin{enumerate}[(a)]
+  \item ($\Leftarrow$) Assume there exists $\psi: W\rightarrow V$ such that
+    $\psi \phi = \id_V$, and fix $v_1, v_2 \in V$. 
+    If $\phi(v_1) = \phi(v_2)$, then $v_1 =  \id_V(v_1) = \psi \phi(v_1) =\psi \phi(v_2) =
+    \id_V(v_2) =  v_2$. This proves that $\phi$ is one-to-one.
+
+($\Rightarrow$) Assume $\phi$ is one-to-one.  Let $A$ be a basis for
+    $V$.  Then, since $V$ is a homomorphism, $\phi(A) = B$ is a basis for the
+    subspace $\im \phi \leq W$.  Extend $B$ to a basis $B\cup C$ for $W$.
+    Define $\tilde{\psi}: B\cup C \rightarrow V$ as follows: for $w\in B\cup C$,
+\[
+\tilde\psi (w) =
+\begin{cases}
+  \phi^{-1}(w), & \text{ if $w \in B$,}\\
+0_V, & \text{ if $w \in C$.}
+\end{cases}
+\]
+Define $\psi: W \rightarrow V$ by linear extension of $\tilde \psi$.  That is,
+given an arbitrary $w \in W$, which has a basis decomposition 
+$w = \sum_B w(b) b +\sum_C w(c) c$, define $\psi \in V^W$ by 
+\[
+\psi(w) = \sum_{b\in B} w(b) \tilde{\psi}(b) +\sum_{c\in C} w(c)\tilde{\psi}(c)
+ = \sum_{b\in B} w(b) \phi^{-1}(b) + 0_V.
+\]
+We claim $\psi \phi = \id_V$. Indeed, fix an arbitrary $v \in V$, which has
+a unique basis decomposition as $v = \sum_A v(a) a$.  Then, $\phi(v)
+= \sum_A v(a) \phi(a)$, so 
+\[
+\psi\phi(v) = 
+\sum_{a\in A} v(a)\psi \phi(a) = 
+\sum_{a\in A} v(a)\tilde{\psi} \phi(a) =
+\sum_{a\in A} v(a)\phi^{-1}\phi(a)=
+\sum_{a\in A} v(a)a = v.
+\]
+Therefore, $\psi \phi = \id_V$.
+
+%Notice that, for this (or any other) $w\in W$, we have $\psi
+
+  \item ($\Leftarrow$) Assume there exists $\psi: W\rightarrow V$ such that
+    $\phi \psi = \id_W$.  Fix $w\in W$. We want to show there is a $v\in V$ such
+    that $\phi(v) = w$.  Indeed, take $v = \psi(w)$. Then, 
+    $\phi(v) = \phi(\psi(w)) = \id_W(w) = w$.
+
+($\Rightarrow$) Assume $\phi$ is surjective.  Let $D$ be a basis for
+    $W$.  Define $\tilde{\psi}: D\rightarrow V$ by $\tilde{\psi}(d) = v \in
+    \phi^{-1}(d)$.  That is, for each $d \in D$, we simply pick our favorite
+    element $v\in \phi^{-1}(d)$.\footnote{We
+    must appeal to the Axiom of Choice here, since $\{\phi^{-1}(d) : d \in D\}$
+    may be an infinite collection of inifinite sets.} Note that 
+    $\phi\tilde{\psi}(d) = d$.  Extend $\tilde{\psi}$ to all of $W$ in the usual
+    way: each $w\in W$ has a basis decomposition $w = \sum_D w(d) d$ and we
+    define $\psi(w) = \sum_D w(d) \tilde{\psi}(d)$.  Then,
+\[
+\phi\psi(w) = \phi \sum_{d\in D} w(d) \tilde{\psi}(d)
+=\sum_{d\in D} w(d)  \phi \tilde{\psi}(d)
+=\sum_{d\in D} w(d)  d = w.
+\]
+Therefore, $ \phi \psi = \id_W(w)$.
+
+  \end{enumerate}
+
+\end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem} Let $V$ and $W$ be vector spaces over the field $F$.
+Recall that $W^V$ denotes the set of maps $\{f : V \rightarrow W\}$.
+For fixed $\alpha \in \Hom(V,W)$ and $w \in W$, define the 
+\emph{affine transformation} $\zeta_{\alpha, w}: V \rightarrow W$ to be the map 
+$v \mapsto \alpha(v) + w$.
+Denote by $\Aff (V, W)$ the set of all such affine transformations.  That is,
+$\Aff (V, W) := \{\zeta_{\alpha, w} : \alpha \in \Hom(V,W) \text{ and } w \in W\}$.
+\begin{enumerate}[(a)]
+\item Can you make $W^V$ into an $F$-vector space? An $F$-algebra? Explain.
+\item Prove or disprove: $\Hom(V,W) \leq \Aff (V, W) \leq W^{V}$. 
+(Interpret $\leq$ here as you see fit.)
+\item Note that $\zeta$ (without subscripts) may be viewed as a map from 
+$\Hom(V,W)$ to $\Aff(V,W)^W$. Is $\zeta$ a vector space
+  homomorphism?  An $F$-algebra homomorphism? Prove.
+\end{enumerate}
+
+\end{problem}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+\item Let $V$ be a finite dimensional vector space over the field $F$ and 
+suppose $T \in \End(V)$.\\
+Prove the following:
+  \begin{enumerate}[(a)]
+  \item
+$\{0_V\} \leq \ker{T} \leq \ker{T^2} \leq \cdots$
+\item
+$V \geq \im{T} \geq \im{T^2} \geq \cdots$
+\item $\dim{V} = \rank{T^k} + \nulity{T^k}$, for each $k= 0, 1, \dots$
+\item The sets
+    $V_1 := \bigcap\limits_{k=1}^\infty \im{T^k}$ and
+    $V_2 := \bigcup\limits_{k=1}^\infty \ker{T^k}$ are $T$-invariant subspaces.
+  \item $V = V_1 \oplus V_2$.
+  \item If $T_i$ is the restriction of $T$ to $V_i$, then 
+    $T_1$ is an isomorphism and $T_2$ is
+    \emph{nilpotent}.\footnote{$\alpha\in \End(V)$ is called \emph{nilpotent} if
+      there is a positive integer $k$ such that $\alpha^k = \sigma_0$.} 
+  \end{enumerate}
+\end{problem}
+\begin{solution}
+  \begin{enumerate}[(a)]
+  \item If $T \in \End(V)$, then $T(0_V) = 0_V$, so $0_v\in \ker{T}$, so 
+    $\{0_v\}\leq \ker{T}$.  Fix $n \in \N$.  We want to show 
+    $\ker{T^n} \leq \ker{T^{n+1}}$. If $v\in \ker{T^n}$, then $T^nv = 0_V$, so 
+    $T^{n+1}v = T(T^nv) = T(0_V) = 0_V$, so $v\in \ker{T^{n+1}}$.
+\item  Fix $n \in \N$.  We must show $\im{T^n} \geq \im{T^{n+1}}$. 
+If $w \in \im{T^{n+1}}$, then $w = T^{n+1}v$ for some $v\in V$. Let $v' =  Tv$.
+Then $w =  T^n (Tv) = T^nv'$, so  $w \in \im{T^n}$.
+
+\item Fix an arbitrary $k \in \{0, 1, \dots\}$, and let $N = \ker{T^k}$.  Let
+  $W$ be a complement of $N$ in $V$.  Then, by Grassman's Theorem, 
+\[
+\dim{V} = \dim{N} + \dim{W}-\dim{K\cap W} = \nulity{T^k} + \dim{W} - 0.
+\]
+It remains to show $\dim{W} = \rank{T^k}$, which would follow from
+$W \cong \im{T^k}$, so we prove the latter.  Consider $T^k|_W$, the restriction
+of $T^k$ to $W$. This is a homomorphism from $W$ into $\im{T^k}$.  We will show it is an
+isomorphism by proving that it is one-to-one and onto.  It's one-to-one because 
+$T^k|_W(v) = 0_V$ implies $v \in W \cap \ker{T^k} =  W \cap N = \{0_V\}$;
+that is, $T^k|_W(v) = 0_V$ implies $v = 0_V$. To see that $T^k|_W$ is onto, fix
+$u \in \im{T^k}$. Then there exists $v\in V$ with $T^k(v) = u$.  Let $v = z+y$,
+where $z \in N$ and $y\in W$. (Recall, $N$ and $W$ are complementary
+subspaces). Then $u = T^k(v) = T^k(z+y) =  T^k(z)+ T^k(y) = T^k(y)$, since $z
+\in N = \ker{T^k}$. Finally, since  $y\in W$, we have $u = T^k(y) = T^k|_W(y)$.
+This proves that $T^k|_W$ is a bijective homomorphism from $W$ onto $\im{T^k}$,
+as desired.
+\item (it's easy)
+\item In light of parts (a) and (b), and the finite dimensionality of $V$, there
+  exists $n\in \N$ such that $\ker{T^{n+k}} = \ker{T^{n}}$ for all $k =0, 1, \dots$.
+Similarly, there exists $m\in \N$ such that 
+$\im{T^{m+k}} = \im{T^{m}}$ for all $k =0, 1, \dots$. Let $N = \max\{n, m\}$. Then,
+\[
+V_1 := \bigcap\limits_{k=1}^\infty \im{T^k}= \im{T^N} \quad \text{ and } \quad
+V_2 := \bigcup\limits_{k=1}^\infty \ker{T^k}= \ker{T^N}.
+\]
+So, the goal is to prove 
+$V = \im{T^N} \oplus \ker{T^N}$. First we show that 
+$\im{T^N} \cap \ker{T^N} = \{0_V\}$. 
+Suppose $w \in \im{T^N} \cap \ker{T^N}$.  Then $w = T^Nv$ for some $v\in V$,
+and 
+\[
+0_V = T^Nw = T^N (T^Nv) = T^{2N}v,
+\]
+so $v \in \ker{T^{2N}} =
+\ker{T^{N}}$.
+Therefore, $w = T^N(v) = 0_V$. 
+
+It remains to show $V = \im{T^N} +
+\ker{T^N}$. Indeed, by (c), we have 
+\begin{equation}
+  \label{eq:1}
+\dim{V} = \dim{\im{T^N}} +\dim{\ker{T^N}} = \dim{\im{T^N} + \ker{T^N}}.
+\end{equation}
+If $A$ is a basis for $\im{T^N}$ and $B$ is a basis for $\ker{T^N}$, then since
+these subspaces intersect at $0_V$, the set $A\cup B$ is a basis for
+$V$. Otherwise there would be a vector $u\notin F(A\cup B)$ so that
+$A\cup B \cup\{u\}$ is linearly independent; but then
+\[
+\dim{V} \geq \dim{F(A\cup B \cup\{u\})} > \dim{F(A\cup B)} =
+ \dim{\im{T^N}} +\dim{\ker{T^N}},
+\]
+which would violate~\ref{eq:1}.
+
+  \end{enumerate}
+\end{solution}
+\probskip
+
+
+
+\end{document}

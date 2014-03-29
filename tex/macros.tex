@@ -19,8 +19,6 @@ right  = 3.00cm]{geometry}
 \usepackage{etoolbox}
 \usepackage{fancyhdr}
  \usepackage{xcolor}
-% \usepackage{hyperref}
-%\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
 \usepackage{xspace}
 \usepackage{comment}
@@ -42,9 +40,9 @@ right  = 3.00cm]{geometry}
 %% to prevent pagebreaks.
 \newenvironment{ProbBox}{\noindent\begin{minipage}{\linewidth}}{\end{minipage}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Acronyms
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+% Acronyms     %
+%%%%%%%%%%%%%%%%
 \usepackage[acronym, shortcuts]{glossaries}
 
 %% HERE IS HOW YOU DEFINE ACRONYMS:
@@ -54,9 +52,9 @@ right  = 3.00cm]{geometry}
 % Make \ac robust.
 \robustify{\ac}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Fancy page style
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Fancy page style     %
+%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
 \newcommand{\metadata}[2]{
   \lhead{}
@@ -73,17 +71,38 @@ right  = 3.00cm]{geometry}
 \newrobustcmd*{\vocab}[1]{\emph{#1}}
 \newrobustcmd*{\latin}[1]{\textit{#1}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Customize list enviroonments
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Customize list enviroonments   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % package to customize three basic list environments: enumerate, itemize and description.
 \usepackage{enumitem}
 \setitemize{noitemsep, topsep=0pt, leftmargin=*}
 \setenumerate{noitemsep, topsep=0pt, leftmargin=*}
 \setdescription{noitemsep, topsep=0pt, leftmargin=*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Space between problems
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Space between problems  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newrobustcmd*{\probskip}{\vskip1cm}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%    Math shortcuts     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\join{\ensuremath{\vee}}
+\newcommand\meet{\ensuremath{\wedge}}
+\newcommand\R{\fld{R}}
+\newcommand\End{\ensuremath{\operatorname{End}}}
+\newcommand\Aut{\ensuremath{\operatorname{Aut}}}
+\newcommand\Hom{\ensuremath{\operatorname{Hom}}}
+\newcommand{\Aff}{\ensuremath{\operatorname{Aff}}}
+\newcommand{\ann}[1]{\ensuremath{\operatorname{ann}(#1)}}
+\newcommand{\id}{\ensuremath{\operatorname{id}}}
+\newcommand{\nulity}[1]{\ensuremath{\operatorname{null}(#1)}}
+\renewcommand{\ker}[1]{\ensuremath{\operatorname{ker}(#1)}}
+\renewcommand{\dim}[1]{\ensuremath{\operatorname{dim}(#1)}}
+\newcommand\im[1]{\ensuremath{\operatorname{im}(#1)}}
+\newcommand{\rank}[1]{\ensuremath{\operatorname{rank}(#1)}}
+\newcommand{\trace}[1]{\ensuremath{\operatorname{trace}(#1)}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
 
