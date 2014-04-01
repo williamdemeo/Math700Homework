@@ -41,7 +41,7 @@
          \newcommand\GF{\ensuremath{\operatorname{GF}}}
 %%
 %%    7. Replace these names with yours!!!
-         \metadata{Michael and Taylor}{Homework 2 -- 2014/04/09}
+         \metadata{Michael and Taylor}{Homework 4 -- 2014/04/09}
          \author{Michael Laughlin and Taylor Short}
 %%
 %%    8. Update the title and date as appropriate.
@@ -52,7 +52,10 @@
 
 \maketitle
 
+\noindent The label ``Problem'' is used for required problems. ``Exercise''
+is for suggested exercises.
 
+\medskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}[Golan 199]
@@ -80,12 +83,12 @@ proper subspaces of $V$ satisfying $\bigcup_{i=1}^\infty W_i = V$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}[Golan 239]
+\begin{ex}[Golan 239]
 Let $V$ and $W$ be a vector space over $\fld{Q}$ and let 
 $\alpha: V \rightarrow W$ be a function satisfying 
 $\alpha(x+y) = \alpha(x) + \alpha(y)$ for all $x, y \in V$.
 Is $\alpha$ necessarily a linear transformation?
-\end{problem}
+\end{ex}
 % \smallskip
 % \begin{solution}
 % \end{solution}
@@ -93,11 +96,11 @@ Is $\alpha$ necessarily a linear transformation?
 \probskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}[Golan 240]
+\begin{ex}[Golan 240]
 Let $\alpha: \R \rightarrow \R$ be a continuous function satisfying
 $\alpha (x + y) = \alpha(x) + \alpha(y)$ for all $a, b \in \R$.  Show that
 $\alpha$ is a linear transformation.
-\end{problem}
+\end{ex}
 % \smallskip
 % \begin{solution}
 % \end{solution}
@@ -140,14 +143,14 @@ dimension.
 \probskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}[Golan 253]
+\begin{ex}[Golan 253]
 Let $V$ and $W$ be vector spaces over a field $F$ and assume that there are
 subspaces $V_1$ and $V_2$ of $V$, both of positive dimension, satisfying
 $V = V_1 \bigoplus V_2$.  For  $i=1, 2$, let 
 $U_i = \{\alpha \in \Hom(V,W) \mid V_i \subseteq \ker{\alpha}\}$.
 Show that $\{U_1, U_2\}$ is an independent set of subspaces of $\Hom(V,W)$.
 Is it necessarily true that $\Hom(V,W) = U_1 \bigoplus U_2$?
-\end{problem}
+\end{ex}
 % \smallskip
 % \begin{solution}
 % \end{solution}
@@ -224,95 +227,6 @@ $\beta = \sum_{i=1}^n \gamma_i \alpha_i$.
 
 \probskip
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}[Golan 307]
-Let $V$ be a vector space over a field $F$ and let $W$ be a subspace of $V$.  
-For each $v \in V$, let $v + W = \{v+w \mid w \in W\}$.  Let 
-$V/W = \{v+W \mid v \in V\}$ be the collection of all sets of the form $v+W$,
-and define operations of addition and scalar multiplication on $V/W$ by 
-setting $(v+W) + (v'+W) = (v+v')+W$ and $c(v+W) = (cv)+W$ for all $v, v' \in V$
-and $c\in F$.  Show that
-\begin{enumerate}
-\item $v+W = v'+W$ if and only if $v-v'\in W$;
-\item $V/W$, with the given operations, is a vector space over $F$;
-\item The function $v\mapsto v+W$ is an epimorphism from $V$ to $W$,
-the kernel of which equals $W$;
-\item Every complement of $W$ in $V$ is isomorphic to $V/W$;
-\item If $(v+W)\cap (v'+W) \neq \emptyset$, then $v+W = v'+W$.
-\end{enumerate}
-The space $V/W$ is called the \emph{factor space} of $V$ by $W$.
-\end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
-
-\probskip
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}[Golan 325]
-Let $\alpha \in \Aut(\R^2)$ be defined by 
-$\alpha: 
-\begin{bmatrix} a\\ b \end{bmatrix} 
-\mapsto 
-\begin{bmatrix} -b\\ a \end{bmatrix}$.
-Show that $\R\{\alpha, \sigma_1\}$ is a unital subalgebra of $\End(\R^2)$.  Show
-that it is proper by giving an example of an endomorphism of $\R^2$ not in this
-subalgebra. 
-\end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
-
-\probskip
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}[Golan 326]
-Let $V$ be the space of all real-valued functions on the interval $[-1, 1]$
-which are infinitely differentiable, and let $\delta$ be the endomorphism of $V$
-which assigns to each function $f$ its derivative.  Find the kernel and image of
-$\delta$. 
-\end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
-
-\probskip
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}[Golan 338]
-Let $V$ be a vector space over a field $F$ which is not finitely generated, and
-let $\sigma_0 \neq \alpha \in \End(V)$.  Set 
-$A = \{\beta \in \End(V) \mid \alpha \beta = \sigma_1\}$.  Show that if $A$ has
-more than one element then it is infinite.
-\end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
-
-\probskip
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}[Golan 340]
-Let $V$ be a vector space over a field $F$ satisfying the condition that
-$\alpha\beta = \beta\alpha$ for all $\alpha, \beta \in \End(V)$. Show that
-$\dim{V} = 1$.
-\end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
-
-\probskip
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}[Golan 354]
-Let $V$ be a vector space over a field $F$ and let $\alpha \in \Aut(V)$.  Let
-$W_1, \dots, W_k$ be subspaces of $V$ satisfying $V = \bigoplus_{i=1}^k W_i$.
-For each $1\leq i \leq k$, let $Y_i = \{\alpha(w) \mid w \in W_i\}$.
-Is $V = \bigoplus_{i=1}^k Y_i$?
-\end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
 
 
 %\bibliographystyle{plainurl}

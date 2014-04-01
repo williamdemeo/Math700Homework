@@ -1,0 +1,150 @@
+\input{macros}
+%%test This is the Homework LaTeX template.  Use this file to fill in your solutions. 
+%%
+%% Notes: 
+%%    1. Write your answers inside a \begin{solution}...\end{solution} environment.
+%%
+%%    2. If you will use references, insert bibtex reference entries in the file
+%%       Math700.bib.  (Create that file if it doesn't yet exist.)
+%%
+%%    3. If you will use acronyms, please define them in the macros.tex file.
+%%
+%%    4. Please try to check that your file compiles:
+%%
+%%       Mac OS X users: you might try MacTeX. 
+%%       Windows users: you might try proTeXt. 
+%%       Linux users: most come with TeX; otherwise do a full install of TeXLive.
+%%
+%%       There is a Makefile in this directory, so on Linux you could just 
+%%       enter `make` to compile all the Homework*.tex files at once.
+%%
+%%    5. Please don't hesitate to inform the prof if you have trouble, or open
+%%       a ``New issue'' or create a new ``Wiki page'' on GitHub.  Otherwise,
+%%       send an email to williamdemeo@gmail.com.
+%%
+%%    6. It will probably be hard to keep everyone's notation consistent.
+%%       For the most basic symbols, we should have some conventions and use
+%%       LaTeX macros to keep the conventions consistent and easy to remember.
+%%       For example, to denote an algebra,
+         \newcommand\alg[1]{\ensuremath{\mathbf{#1}}}
+         \newcommand{\<}{\ensuremath{\langle}}
+         \renewcommand{\>}{\ensuremath{\rangle}}
+%%       So, an algebra in LaTeX is typed as $\alg{A} = \<A, F\>$.
+%%       Similarly, for a field, let's use:
+         \newcommand\fld[1]{\ensuremath{\mathbb{#1}}}
+%%       So, a field in LaTeX is typed as $\fld{F}$.
+%%       Example: We denote the integers by \fld{Z}. 
+%%                This comes up often enough that it's useful to define
+         \newcommand\Z{\fld{Z}}
+%%
+%%       For the Galois field, we use:
+         \newcommand\GF{\ensuremath{\operatorname{GF}}}
+%%
+%%    7. Replace these names with yours!!!
+         \metadata{Karl and Sonya}{Homework 5 -- 2014/04/21}
+         \author{Sonya Kovalevsky and Karl Weierstrass}
+%%
+%%    8. Update the title and date as appropriate.
+         \title{Homework 5}
+         \date{due date: 2014/04/21}
+
+\begin{document}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 307]
+Let $V$ be a vector space over a field $F$ and let $W$ be a subspace of $V$.  
+For each $v \in V$, let $v + W = \{v+w \mid w \in W\}$.  Let 
+$V/W = \{v+W \mid v \in V\}$ be the collection of all sets of the form $v+W$,
+and define operations of addition and scalar multiplication on $V/W$ by 
+setting $(v+W) + (v'+W) = (v+v')+W$ and $c(v+W) = (cv)+W$ for all $v, v' \in V$
+and $c\in F$.  Show that
+\begin{enumerate}
+\item $v+W = v'+W$ if and only if $v-v'\in W$;
+\item $V/W$, with the given operations, is a vector space over $F$;
+\item The function $v\mapsto v+W$ is an epimorphism from $V$ to $W$,
+the kernel of which equals $W$;
+\item Every complement of $W$ in $V$ is isomorphic to $V/W$;
+\item If $(v+W)\cap (v'+W) \neq \emptyset$, then $v+W = v'+W$.
+\end{enumerate}
+The space $V/W$ is called the \emph{factor space} of $V$ by $W$.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 325]
+Let $\alpha \in \Aut(\R^2)$ be defined by 
+$\alpha: 
+\begin{bmatrix} a\\ b \end{bmatrix} 
+\mapsto 
+\begin{bmatrix} -b\\ a \end{bmatrix}$.
+Show that $\R\{\alpha, \sigma_1\}$ is a unital subalgebra of $\End(\R^2)$.  Show
+that it is proper by giving an example of an endomorphism of $\R^2$ not in this
+subalgebra. 
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 326]
+Let $V$ be the space of all real-valued functions on the interval $[-1, 1]$
+which are infinitely differentiable, and let $\delta$ be the endomorphism of $V$
+which assigns to each function $f$ its derivative.  Find the kernel and image of
+$\delta$. 
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 338]
+Let $V$ be a vector space over a field $F$ which is not finitely generated, and
+let $\sigma_0 \neq \alpha \in \End(V)$.  Set 
+$A = \{\beta \in \End(V) \mid \alpha \beta = \sigma_1\}$.  Show that if $A$ has
+more than one element then it is infinite.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 340]
+Let $V$ be a vector space over a field $F$ satisfying the condition that
+$\alpha\beta = \beta\alpha$ for all $\alpha, \beta \in \End(V)$. Show that
+$\dim{V} = 1$.
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 354]
+Let $V$ be a vector space over a field $F$ and let $\alpha \in \Aut(V)$.  Let
+$W_1, \dots, W_k$ be subspaces of $V$ satisfying $V = \bigoplus_{i=1}^k W_i$.
+For each $1\leq i \leq k$, let $Y_i = \{\alpha(w) \mid w \in W_i\}$.
+Is $V = \bigoplus_{i=1}^k Y_i$?
+\end{problem}
+% \smallskip
+% \begin{solution}
+% \end{solution}
+
+
+%\bibliographystyle{plainurl}
+%\bibliography{Math700}
+
+\end{document}
