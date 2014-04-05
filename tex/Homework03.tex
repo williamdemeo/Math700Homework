@@ -70,17 +70,34 @@ Is $(V, \bullet)$ a $\GF(2)$-algebra?  If so, is it associative?  Is it unital?
 \end{problem}
 \smallskip
 \begin{solution}
-Let $u,v,w,x \in V$. The first two conditions we need to satisfy, 
+We will define symmetric difference as vector addition on $V$. $**$That is, define vector addition in $V$ by adding strings ``bitwise'' modulo 2.  That is
+\begin{align*}
+i+ j &= (i_0, i_1, \dots, i_{n-1}) + (j_1, \dots, j_{n-1})\\
+&= (i_0, i_1, \dots, i_{n-1}) + (j_1, \dots, j_{n-1})\\
+&= (i_0+j_0, i_1+j_1, \dots, i_{n-1}+j_{n-1})
+\end{align*}
+where for each $0\leq k < n$, the $k$-th element of $i+j$ is
+\[
+i_k + j_k =
+\begin{cases}
+  0, &i_k = j_k\\
+  1, &i_k \neq j_k.
+\end{cases}
+\]
+Clearly the latter addition is commutative, and therefore, the vector addition is
+commutative: $i+j = j+i$.  The zero vector $\mathbf{0} = (0, \dots, 0)$ 
+is the additive identity, and each vector is its own additive inverse, that is, 
+$-v = v$.$**$ \\ \\
+Let $u,v,w,x \in V$. The conditions we need to satisfy in order to show that $(V,\dot)$ is a associative unital GF(2)-algebra are as follows: \\
 \begin{enumerate}
-  \item $u \bullet (v+w) = u \bullet v + u \bullet w$, and
-  \item $(u+v) \bullet w = u \bullet w + v \bullet w$ 
+  \item $u \bullet (v+w) = u \bullet v + u \bullet w$, 
+  \item $(u+v) \bullet w = u \bullet w + v \bullet w$, 
+  \item $a(v \bullet w) = (av) \bullet w = v \bullet (aw)$, 
+  \item $v \bullet (w \bullet y) = (v \bullet w) \bullet y$, (associative)
+  \item $v \bullet 1_F = v = 1_F \bullet v$. (unital) \\
 \end{enumerate}
-come from the fact that $(K, \bullet)$ is an associative F-algebra. The third condition, \\
-3. $a(v \bullet w) = (av) \bullet w = v \bullet (aw)$, \\
-is satisfied since $a\in\{0_F,1_F\}$. (This works in either case). It is indeed associative from the definition of $\bullet$ given: \\
-4. $v \bullet (w \bullet y) = (v \bullet w) \bullet y$ \\
-And it is also unital: \\
-5. $v \bullet 1_F = v = 1_F \bullet v$
+The information between the two $**$'s at the beginning of this problem was taken directly from Matthew Corley and Melissa Murphy's write-up of Homework 2.
+
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -94,7 +111,7 @@ subspace of $F[X]$?
 \end{problem}
 \smallskip
 \begin{solution}
-$L$ is the set of odd polynomials (i.e. only odd powers of $x$). To show that $L$ is a subspace of $F[X]$, we need to show that $L$ is a vector space in its own right with respect to the addition and scalar multiplication defined on $F$. Let $f,g \in L$, then $f(X)+g(X)=\sum\limits_{i=0}^\infty a_{2i+1}X^{2i+1} + \sum\limits_{i=0}^\infty b_{2i+1}X^{2i+1} = \sum\limits_{i=0}^\infty (a_{2i+1} + b_{2i+1})X^{2i+1} = \sum\limits_{i=0}^\infty c_{2i+1}X^{2i+1} \in L$. Let $c \in F$, then $cf(X) = c\sum\limits_{i=0}^\infty a_{2i+1}X^{2i+1} = \sum\limits_{i=0}^\infty ca_{2i+1}X^{2i+1} = \sum\limits_{i=0}^\infty b_{2i+1}X^{2i+1} \in L$. Thus, $L$ is a subspace of $F[X]$.
+$L$ is the set of odd polynomials (i.e. only odd powers of $x$). To show that $L$ is a subspace of $F[X]$, we need to show that $L$ is a vector space in its own right with respect to the addition and scalar multiplication defined on $F$. Let the additive identity be the zero polynomial. To show that $L$ is closed under vector (i.e.,polynomial) addition, let $f,g \in L$. Then $f(X)+g(X)=\sum\limits_{i=0}^\infty a_{2i+1}X^{2i+1} + \sum\limits_{i=0}^\infty b_{2i+1}X^{2i+1} = \sum\limits_{i=0}^\infty (a_{2i+1} + b_{2i+1})X^{2i+1} = \sum\limits_{i=0}^\infty c_{2i+1}X^{2i+1} \in L$. Let $c \in F$, then $cf(X) = c\sum\limits_{i=0}^\infty a_{2i+1}X^{2i+1} = \sum\limits_{i=0}^\infty ca_{2i+1}X^{2i+1} = \sum\limits_{i=0}^\infty b_{2i+1}X^{2i+1} \in L$. Thus, $L$ is a subspace of $F[X]$.
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -107,7 +124,7 @@ satisfying the condition that $\deg(f)$ is even.  Is $L$ a subspace of $F[X]$?
 \end{problem}
 \smallskip
 \begin{solution}
-$L$ is the set of polynomials with the highest power of even order. To show that $L$ is a subspace of $F[X]$, we need to show that $L$ is a vector space in its own right with respect to the addition and scalar multiplication defined on $F$. Let $f,g \in L$, then $f(X)+g(X)=\sum\limits_{i=0}^\infty a_{2i}X^{2i} + \sum\limits_{i=0}^\infty b_{2i}X^{2i} = \sum\limits_{i=0}^\infty (a_{2i} + b_{2i})X^{2i} = \sum\limits_{i=0}^\infty c_{2i}X^{2i} \in L$. Let $c \in F$, then $cf(X) = c\sum\limits_{i=0}^\infty a_{2i}X^{2i} = \sum\limits_{i=0}^\infty ca_{2i}X^{2i} = \sum\limits_{i=0}^\infty b_{2i}X^{2i} \in L$. Thus, $L$ is a subspace of $F[X]$.
+$L$ is the set of polynomials with the highest power of even order. To show that $L$ is a subspace of $F[X]$, we need to show that $L$ is a vector space in its own right with respect to the addition and scalar multiplication defined on $F$. This is not the case as we can see with the following counterexample. Let $f(X)=1+X-3X^2$ and let $g(X)=3X^2$. Both $f$ and $g$ are in $L$ since their highest power is even. However, $f(X)+g(X)=1+X$ is not in $L$ since its highest power is odd. Thus, $L$ is not a subspace of $F[X]$.
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -144,7 +161,7 @@ To show that $K$ is an associative commutative unital F-algebra, we want to show
   \item $v \bullet 1_F = \sum\limits_{j=i} v(j) 1_F = v(i) = v = \sum\limits_{k=i} 1_F v(k) = 1_F \bullet v$
   \item $v \bullet w = \sum\limits_{j+k=i} v(j)w(k) = \sum\limits_{k+j=i} w(k)v(j) = w \bullet v$,
 \end{enumerate}
- If $v,w \neq 0$, then $v \bullet w = \sum\limits_{j+k=i} v(j)w(k)$ could be equal to $0$ if the vectors $v$ and $w$ are orthogonal. Therefore, $K$ is not entire.
+ We can see from the simplest case where $i=0$ that $K$ is entire. For $v,w \in K$, $(v \bullet w)(0) = \sum\limits_{j+k=0} v(0)w(0) = 0$ only when $v(0)$ or $w(0)$ equals 0, or both. Therefore, $K$ is entire.
 \end{solution}
 \end{ProbBox}
 \probskip
@@ -274,7 +291,7 @@ We proceed as follows:
 \end{array} \right]
 \]
 
-Thus, the subset is linearly independent.
+Thus, the subset is linearly independent. If $F=GF(5)$, we see that the subset is not linearly independent. If we add 3 times row 3 to row two, we get a row of zeros. 
 
 \end{solution}
 \end{ProbBox}
@@ -405,10 +422,10 @@ W_3 = \left\{\begin{bmatrix}  0 \\ c\end{bmatrix} : a\in \R\right\}.
 \smallskip
 \begin{solution}
 \begin{enumerate} 
-  \item Our book would not describe $\{W_1, W_2, W_3\}$ as ``pairwise disjoint'' since $W_1 \cap W_2 \neq 0_V$ and $W_2 \cap W_3 \neq 0_V$.
+  \item Our book would describe $\{W_1, W_2, W_3\}$ as ``pairwise disjoint'' since $W_1 \cap W_2 = 0_V$ and $W_2 \cap W_3 = 0_V$.
   \item $W_1 + W_2 + W_3 =  \left\{\begin{bmatrix}  d \\ e\end{bmatrix} : d,e \in \R \right\}$
   \item $W_1 + W_2 = \left\{\begin{bmatrix}  d \\ b\end{bmatrix} : d,b \in \R \right\} = W_2 + W_3 = \left\{\begin{bmatrix}  b \\ d\end{bmatrix} : b,d \in \R \right\} = W_1 + W_3 = \left\{\begin{bmatrix}  a \\ c\end{bmatrix} : a,c \in \R \right\}$.
-  \item The set $\{W_1, W_2, W_3\}$ is independent since it obeys the definition of independence. If we choose elements $w_h \in \{W_h : h \in \{1, 2, 3\}\}$, then for every $h$ in a finite sbuset of $\Lambda = \{1, 2, 3\}$ we get $\sum_{h \in \Lambda} w_h = 0_V$ when and only when $w_h = 0_V$ for each $h \in \Lambda$.
+  \item The set $\{W_1, W_2, W_3\}$ is not independent. Consider the example where $a=1$ in $W_1$, $c=1$ in $W_3$, and $b=-1$ in $W_2$. Then, their sum is zero and they are therefore dependent. 
 \end{enumerate}
 \end{solution}
 
@@ -436,7 +453,7 @@ $\sum_{\omega \in \Omega}W_\omega$.
 \end{prop}
 \smallskip
 
-The proof of Proposition 5.12 in the book covers $(1) \Rightarrow (2), (2) \Rightarrow (3),$ and $(3) \Rightarrow (1)$. As for showing that $(4)$ is equivalent to any of $(1), (2),$ or $(3)$, we will show that $(3) \Rightarrow (4)$. From $(3)$, we see that the set $\{W_i : i \in \Omega\}$ is a pairwise disjoint collection of subspaces of $V$. For each $i \in \Omega$, let $B_i$ be a basis of $W_i$. Then $V=\sum_{\omega \in \Omega}W_\omega \Rightarrow B = \bigcup_{\omega \in \Omega} B_\omega$ is a basis for $\sum_{\omega \in \Omega}W_\omega$, as can be seen in the book's proof of Proposition 5.13. 
+The proof of Proposition 5.12 in the book covers $(1) \Rightarrow (2)$ and $(2) \Rightarrow (3)$, so we will leave it up to the reader to look those up. As for showing $(3) \Rightarrow (4)$, we see that the set $\{W_i : i \in \Omega\}$ is a pairwise disjoint collection of subspaces of $V$. For each $i \in \Omega$, let $B_i$ be a basis of $W_i$. Then $V=\sum_{\omega \in \Omega}W_\omega \Rightarrow B = \bigcup_{\omega \in \Omega} B_\omega$ is a basis for $\sum_{\omega \in \Omega}W_\omega$, as can be seen in the book's proof of Proposition 5.13. Finally, to show that $(4) \Rightarrow (1)$, we need the added assumption that the bases do not intersect. Now, we can see that since every element of $V$ can be written in a unique way as $\sum_{i \in \Lambda}w_i$, where $\Lambda$ is some finite subset of $\Omega$, which says that $V=\bigoplus_{i \in \Omega} W_i$, meaning the set $\{W_\omega : \omega \in \Omega\}$ is independent.
 \end{problem}
 
 \probskip
