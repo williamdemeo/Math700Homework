@@ -41,12 +41,12 @@
          \newcommand\GF{\ensuremath{\operatorname{GF}}}
 %%
 %%    7. Replace these names with yours!!!
-         \metadata{Michael and Taylor}{Homework 4 -- 2014/04/09}
+         \metadata{Michael and Taylor}{Homework 4 -- 2014/04/14}
          \author{Michael Laughlin and Taylor Short}
 %%
 %%    8. Update the title and date as appropriate.
          \title{Homework 4}
-         \date{due date: 2014/04/09}
+         \date{due date: 2014/04/14}
 
 \begin{document}
 
@@ -175,15 +175,15 @@ Is $\phi$ a linear transformation of vector spaces over $F$? Is it a monomorphis
 \probskip
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}[Golan 293 \& 294]
-Let $V$, $W$ and $Y$ be vector spaces over a field $F$, let 
-$\alpha \in \Hom(V, W)$, and 
+Let $V$, $W$ and $Y$ be vector spaces over a field $F$, and
 let $\beta \in \Hom(V,Y)$. Prove the following:
 \begin{enumerate}
-\item  If $\alpha$ is an epimorphism, then 
-there exists $\theta \in \Hom(W,Y)$ such that $\beta = \alpha \theta$.
-\item  If $\alpha$ is a monomorphism, then 
+\item  If $\alpha \in \Hom(W, Y)$ is an epimorphism, then 
+there exists $\theta \in \Hom(V,W)$ such that $\beta = \alpha \theta$.
+\item  If $\alpha \in \Hom(V, W)$ is a monomorphism, then 
 there exists $\theta \in \Hom(W,Y)$ such that $\beta = \theta \alpha$.
 \end{enumerate}
 \end{problem}
@@ -226,6 +226,15 @@ $\beta = \sum_{i=1}^n \gamma_i \alpha_i$.
 
 \probskip
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}[Golan 266]
+Let $A$ and $B$ be nonempty sets.  Let $V$ be the collection of all subsets of
+$A$ and let $W$ be the collection of all subsets of $B$, both of which are
+vector spaces over $\GF(2)$.  Any function $f: A\rightarrow B$ defines a
+function $\alpha_f : W \rightarrow V$ by setting 
+$\alpha_f: D \mapsto \{a \in A : f(a) \in D\}$.  Show that each such function
+$\alpha_f$ defines a linear transformation, and find its kernel.
+\end{problem}
 
 
 %\bibliographystyle{plainurl}
