@@ -203,6 +203,33 @@ there exists $\theta \in \Hom(W,Y)$ such that $\beta = \theta \alpha$.
 
 \end{enumerate}
 
+\noindent \emph{Note to students:} Here is an alternative statement of the problem, with
+naming conventions that agree with Golan. You may solve whichever version you prefer. 
+
+\begin{enumerate}
+\item  
+If $\alpha \in \Hom(V,W)$ is an epimorphism, then for every 
+$\beta \in \Hom(Y,W)$ there exists $\theta \in \Hom(Y,V)$ such that $\beta = \alpha \theta$.
+
+\begin{center}
+\begin{tikzcd}
+{} & Y \arrow[dashed]{dl}[swap]{\exists \theta} \arrow{d}[swap]{\beta} & \\
+V \arrow{r}{\alpha} & W \arrow{r} & 0
+\end{tikzcd}
+\end{center}
+
+\item  If $\alpha \in \Hom(V, W)$ is a monomorphism, then 
+ for every $\beta \in \Hom(V,Y)$ there exists $\theta \in \Hom(W,Y)$ such that $\beta = \theta \alpha$.
+
+\begin{center}
+\begin{tikzcd}
+0 \arrow{r} & V \arrow{d}[swap]{\beta} \arrow{r}{\alpha} & W \\ 
+ & Y\arrow[dashed]{ur}[swap]{\exists \theta} &
+\end{tikzcd}
+\end{center}
+
+\end{enumerate}
+
 
 
 %% \begin{center}
