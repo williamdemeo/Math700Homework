@@ -184,22 +184,22 @@ let $\beta \in \Hom(V,Y)$. Prove the following:
 \item  If $\alpha \in \Hom(W, Y)$ is an epimorphism, then 
 there exists $\theta \in \Hom(V,W)$ such that $\beta = \alpha \theta$.
 
-%% \begin{center}
-%% \begin{tikzcd}
-%% 0 \arrow{r} & V \arrow{d}[swap]{\beta} \arrow{r}{\alpha} & W \\ 
-%%  & Y\arrow[dashed]{ur}[swap]{\exists \theta} &
-%% \end{tikzcd}
-%% \end{center}
+\begin{center}
+\begin{tikzcd}
+{} & V \arrow[dashed]{dl}[swap]{\exists \theta} \arrow{d}[swap]{\beta} & \\
+W \arrow{r}{\alpha} & Y \arrow{r} & 0
+\end{tikzcd}
+\end{center}
 
 \item  If $\alpha \in \Hom(V, W)$ is a monomorphism, then 
 there exists $\theta \in \Hom(W,Y)$ such that $\beta = \theta \alpha$.
 
-%% \begin{center}
-%% \begin{tikzcd}
-%% {} & V \arrow[dashed]{dl}[swap]{\exists \theta} \arrow{d}[swap]{\beta} & \\
-%% W \arrow{r}{\alpha} & Y \arrow{r} & 0
-%% \end{tikzcd}
-%% \end{center}
+\begin{center}
+\begin{tikzcd}
+0 \arrow{r} & V \arrow{d}[swap]{\beta} \arrow{r}{\alpha} & W \\ 
+ & Y\arrow[dashed]{ur}[swap]{\exists \theta} &
+\end{tikzcd}
+\end{center}
 
 \end{enumerate}
 
