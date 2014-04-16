@@ -41,12 +41,12 @@
          \newcommand\GF{\ensuremath{\operatorname{GF}}}
 %%
 %%    7. Replace these names with yours!!!
-         \metadata{Michael and Taylor}{Homework 4 -- 2014/04/14}
+         \metadata{Michael and Taylor}{Homework 4 -- 2014/04/09}
          \author{Michael Laughlin and Taylor Short}
 %%
 %%    8. Update the title and date as appropriate.
          \title{Homework 4}
-         \date{due date: 2014/04/14}
+         \date{due date: 2014/04/09}
 
 \begin{document}
 
@@ -63,9 +63,18 @@ Let $V$ be a vector space of finite dimension $n>0$ over $\R$ and, for each
 positive integer $i$, let $U_i$ be a proper subspace of $V$.  
 Show that $V \neq \bigcup_{i=1}^\infty U_i$.
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+ \smallskip
+ \begin{solution}
+ We proceed by induction on $n$. For the base case $n=1$ the claim is obviously true, $V$ cannot be written as a union of proper subspaces as the only subspaces are $V$ and $\emptyset$. Assume the claim holds for vector spaces with dimension $n \geq 1$ and consider $V$ with $\dim{V} = n+1$. Now for $\bigcup_{i=1}^\infty U_i$ a union of proper subspaces of $V$, take $0 \neq u \in U_1$ and consider the span $\mathbb{R}\{u\}$. Since $\mathbb{R}$ is uncountable, the subspace $\mathbb{R}\{u\}$ is uncountable. Then by Proposition 5.15 in \cite{Golan:2012} there exists uncountably many, distinct complements $\{W_\alpha \}_{\alpha \in A}$ of $\mathbb{R}\{u\}$. Furthermore each $W_\alpha$ has dimension $n$, since by Grassman's Theorem
+ $$
+n+1 = \dim{V} = \dim{\mathbb{R}\{u\}} + \dim{W_\alpha} - \dim{\mathbb{R}\{u\}\cap W_\alpha} = 1 + \dim{W_\alpha} - 0.
+ $$
+ Now the collection $\{U_i\}_{i=1}^\infty$ of subspaces is countable and $\{W_\alpha \}_{\alpha \in A}$ is uncountable, so there exists some $W_{\alpha _0} \in \{W_\alpha \}_{\alpha \in A}$ that is distinct from all $U_i$. Moreover since $W_{\alpha _0}$ has dimension $n$, $W_{\alpha _0}$ is distinct from the $U_i$, and being proper the $U_i$ can have dimension at most $n$, then we must have $\dim{W_{\alpha _0} \cap U_i} < n$ for all $i$, that is, $W_{\alpha _0} \cap U_i$ is a proper subspace of $W_{\alpha _0}$. But now by the induction hypothesis, 
+ $$
+W_{\alpha _0} \neq \bigcup _{i=1}^\infty (W_{\alpha _0} \cap U_i).
+ $$
+ So there are elements of $W_{\alpha _0}$ a subspace of $V$ that do not belong to $\bigcup_{i=1}^\infty U_i$ and hence we must have $V \neq \bigcup_{i=1}^\infty U_i$, finishing the proof by induction.
+ \end{solution}
 
 \probskip
 
@@ -75,9 +84,13 @@ Let $V$ be a vector space over a field $F$ and assume $V$ is not finitely
 generated.  Show that there exists an infinite sequence $W_1, W_2, \dots$ of
 proper subspaces of $V$ satisfying $\bigcup_{i=1}^\infty W_i = V$.
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+There exists a basis $B = \{b_1,b_2,b_3,\dots\}$ for $V$. Let $W_i = F\{b_1,b_2,\dots,b_i\}$.  Then 
+each subspace $W_i$ is properly contained in $V$, and $\bigcup_{i=1}^\infty W_i = V$, since for every 
+$v\in V$, $v$ is representable as a finite linear combination of elements in $B$, and if $b_n$ is the maximum 
+indexed among these basis elements, $v\in W_n$.
+\end{solution}
 
 \probskip
 
@@ -89,9 +102,10 @@ $\alpha: V \rightarrow W$ be a function satisfying
 $\alpha(x+y) = \alpha(x) + \alpha(y)$ for all $x, y \in V$.
 Is $\alpha$ necessarily a linear transformation?
 \end{ex}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+Let $c\in\mathbb{Q}$ be arbitrary. We need only verify that $\alpha(cv) = c\alpha(v)$. Suppose $c = \frac{p}{q}$ for $p,q\in\mathbb{Z}$.  By supposition, for any $z\in\mathbb{Z}$, $\alpha(zv) = z\alpha(v)$.  Then we have $q\alpha(cv) = q\alpha(\frac{p}{q}v) = \alpha(q\frac{p}{q}v) = \alpha(pv) = p\alpha(v)$.  Hence, $\alpha(cv) = \frac{p}{q}\alpha(v) = c\alpha(v)$ and $\alpha$ is a linear transformation.
+\end{solution}
 
 \probskip
 
@@ -101,9 +115,10 @@ Let $\alpha: \R \rightarrow \R$ be a continuous function satisfying
 $\alpha (x + y) = \alpha(x) + \alpha(y)$ for all $a, b \in \R$.  Show that
 $\alpha$ is a linear transformation.
 \end{ex}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+Let $c\in\mathbb{R}$ be arbitrary. We need only verify that $\alpha(cx) = c\alpha(x)$.  Let $r\in\mathbb{Q}$.  Since $\alpha$ is continuous, we have by the results of the previous exercise $c\alpha(x) = \lim\limits_{r\to c}r\alpha(x) = \lim\limits_{r\to c}\alpha(rx) = \alpha(cx)$.  
+\end{solution}
 
 \probskip
 
@@ -118,9 +133,43 @@ for all $v \in W_1 \cap W_2$.  Find a linear transformation
 $\theta: W_1 + W_2 \rightarrow V$ such that the restriction of $\theta$ to $W_i$
 equals $\alpha_i$ $(i=1, 2)$, or show why no such linear transformation exists.
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+Let $\theta(v)$ be defined by $\theta(v) = \theta(w_1 + w_2) = \alpha_1(w_1) + \alpha_2(w_2)$ 
+for all $v = w_1 + w_2 \in W_1 + W_2$.  First we check that $\theta$ is well-defined.  Suppose 
+that $v = w_1 + w_2 = w_1^{\prime} + w_2^{\prime}$.  Then we have that $w_1^{\prime} - w_1 = 
+w_2 - w_2^{\prime}$ and for some $u\in V$, $u + \alpha_1(w_1) + \alpha_2(w_2) = 
+\alpha_1(w_1^{\prime}) + \alpha_2(w_2^{\prime})$.  But then
+
+\begin{align*}
+u &= \alpha_1(w_1^{\prime}) - \alpha_1(w_1) + \alpha_2(w_2^{\prime}) - \alpha_2(w_2) \\
+  &= \alpha_1(w_1^{\prime}-w_1) + \alpha_2(w_2^{\prime}-w_2) \\
+  &= \alpha_2(w_2 - w_2^{\prime}) + \alpha_2(w_2^{\prime}-w_2) \\
+  &= \alpha_2(0) \\
+  &= 0
+\end{align*}
+
+Since $\theta$ is well-defined, it suffices to check that $\theta$ is linear and satisfies the restriction property.  Let $w_1,w_1^{\prime}\in W_1$ and $w_2,w_2^{\prime}\in W_2$.  Then we have, for $v_1 = w_1+w_2$, $v_2 = w_1^{\prime}+w_2^{\prime}$, and $c\in F$ 
+
+\begin{align*}
+\theta(v_1 + v_2) &= \theta(w_1+w_2+w_1^{\prime}+w_2^{\prime}) \\
+                  &= \alpha_1(w_1 + w_1^{\prime}) + \alpha_2(w_2 + w_2^{\prime}) \\
+                  &= \alpha_1(w_1) + \alpha_2(w_2) + \alpha_1(w_1^{\prime}) + \alpha_2(w_2^{\prime})\\
+                  &= \theta(w_1 + w_2) + \theta(w_1^{\prime} + w_2^{\prime})\\
+                  &= \theta(v_1) + \theta(v_2) \\[0.3cm]
+\theta(cv_1)      &= \theta(c(w_1+w_2))\\
+                  &= \theta(cw_1 + cw_2)\\
+                  &= \alpha_1(cw_1) + \alpha_2(cw_2)\\
+                  &= c(\alpha_1(w_1) + \alpha_2(w_2))\\
+                  &= c\theta(v_1)\\[0.3cm]
+\theta(w_1)       &= \theta(w_1 + 0)\\
+                  &= \alpha_1(w_1) + \alpha_2(0)\\
+                  &= \alpha_1(w_1)\\[0.3cm]
+\theta(w_2)       &= \theta(0+w_2)\\
+                  &= \alpha_1(0) + \alpha_2(w_2)\\
+                  &= \alpha_2(w_2)
+\end{align*}
+\end{solution}
 
 \probskip
 
@@ -133,12 +182,29 @@ That is,
 \[
 \ann{\alpha} = \{ \beta\in \Hom(W,Y) \mid \forall v \in V \; \beta\alpha(v) = 0_Y\}.
 \]
-Prove that $\ann{\alpha}$ is a subspace of  $\Hom(W,Y)$ and compute its
+Prove that $\ann{\alpha}$ is a subspace of $\Hom(W,Y)$ and compute its
 dimension.
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+ \smallskip
+ \begin{solution}
+ First we show that $\ann{\alpha}$ is a subspace of $\Hom(W,Y)$ by showing it is closed under addition and scalar multiplication. Letting $\beta, \gamma \in \ann{\alpha}$ and $a\in F$, then
+ $$
+ (\beta + \gamma)\alpha = \beta \alpha + \gamma \alpha = 0+0
+ $$
+ so $\ann{\alpha}$ is closed under addition. Also
+ $$
+ (a\beta)\alpha = a(\beta\alpha) = a\cdot 0 = 0
+ $$
+ so $\ann{\alpha}$ is closed under scalar multiplication and hence, a subspace of $\Hom(W,Y)$. 
+
+ To compute the dimension of $\ann{\alpha}$, first recall by Proposition 8.1 $\dim{\Hom(W,Y)} = \dim{W}\cdot \dim{Y}$. Also since any $\beta \in \ann{\alpha}$ maps everything in the image of $\alpha$ to $0_Y$, we must have $\dim{\ann{\alpha}} = \dim{\Hom(W/\im{\alpha}, Y}$. It follows that
+\begin{align*}
+\dim{\ann{\alpha}} &= \dim{\Hom(W/\im{\alpha}, Y} \\
+&= \dim{\Hom(W/\im{\alpha}}\cdot \dim{Y} \\
+&= (\dim{W} - \dim{\im{\alpha}})\cdot \dim{Y}.
+\end{align*}
+ 
+ \end{solution}
 
 \probskip
 
@@ -151,9 +217,17 @@ $U_i = \{\alpha \in \Hom(V,W) \mid V_i \subseteq \ker{\alpha}\}$.
 Show that $\{U_1, U_2\}$ is an independent set of subspaces of $\Hom(V,W)$.
 Is it necessarily true that $\Hom(V,W) = U_1 \bigoplus U_2$?
 \end{ex}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+ \smallskip
+ \begin{solution}
+ To show $\{U_1, U_2\}$ is an independent set of subspaces of $\Hom(V,W)$, we wish to show for any $\alpha _i \in U_i$ that $\alpha_1 + \alpha _2 = \sigma _0$ ($\sigma _0$ being the zero map) if, and only if, $\alpha _i = \sigma _0$. The direction $\alpha _i = \sigma _0$ implying $\alpha_1 + \alpha _2 = \sigma _0$ is obvious, so we only consider the remaining.
+
+ So suppose that $\alpha_1 + \alpha _2 = \sigma _0$. Then letting $v \in V$ be arbitrary, since $V = V_1 \bigoplus V_2$ we can write $v = v_1 + v_2$ uniquely where $v_i\in V_i$. Now by assumption
+ $$
+0 = (\alpha_1 + \alpha _2)(v) = \alpha_1(v_1+v_2) + \alpha _2(v_1+v_2) = \alpha _1(v_1) + \alpha_1(v_2) + \alpha _2(v_1) + \alpha_2(v_2)
+ $$
+ where $\alpha _i(v_i) = 0$ since $V_i \subseteq \ker{\alpha_i}$. Thus we must have $0 = \alpha_1(v_2) + \alpha _2(v_1)$. As long as $\alpha_1(v_2) = -\alpha _2(v_1)$ is not possible (I don't see why this is), then we must have
+ $0 = \alpha _1 (v_2) = \alpha _2 (v_1)$. Since $v$ was arbitrary, then $\alpha _1$ maps everything in $V_2$ to 0 and similarly for $\alpha _2$ on $V_1$. Hence $\alpha _i = \sigma _0$ as desired.
+ \end{solution}
 
 \probskip
 
@@ -168,93 +242,52 @@ $\phi(\alpha):
 \begin{bmatrix} 0_V\\ \alpha(v) \end{bmatrix}$.
 Is $\phi$ a linear transformation of vector spaces over $F$? Is it a monomorphism?
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+We verify that $\phi$ is a monomorphism as follows: let $\alpha,\beta\in \Hom(V,W)$ and let $c\in F$.  Then we have
+
+\begin{align*}
+\phi(\alpha + \beta)\begin{bmatrix}v\\w\end{bmatrix} 
+    &= \begin{bmatrix}0_V\\(\alpha + \beta)(v)\end{bmatrix}\\
+    &= \begin{bmatrix}0_V\\\alpha(v)\end{bmatrix} + \begin{bmatrix}0_V\\\beta(v)\end{bmatrix}\\
+    &= \phi(\alpha)\begin{bmatrix}v\\w\end{bmatrix} + \phi(\beta)\begin{bmatrix}v\\w\end{bmatrix}\\[0.3cm]
+\phi(c\alpha)\begin{bmatrix}v\\w\end{bmatrix} 
+    &= \begin{bmatrix}0_V\\(c\alpha)(v)\end{bmatrix}\\
+    &= \begin{bmatrix}0_V\\c\alpha(v)\end{bmatrix}\\
+    &= c\begin{bmatrix}0_V\\\alpha(v)\end{bmatrix}\\
+    &= c\phi(\alpha)\begin{bmatrix}v\\w\end{bmatrix}
+\end{align*}
+
+Now suppose that $\phi(\alpha) = \phi(\beta)$.  Then we have $\begin{bmatrix}0_V\\\alpha(v)\end{bmatrix} = \phi(\alpha)\begin{bmatrix}v\\w\end{bmatrix} = \phi(\beta)\begin{bmatrix}v\\w\end{bmatrix} = \begin{bmatrix}0_V\\\beta(v)\end{bmatrix}$.  Hence, $\alpha(v) = \beta(v)$ for all $v\in V$, and $\alpha = \beta$.  Therefore, $\phi$ is a monomorphism.
+\end{solution}
 
 \probskip
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}[Golan 293 \& 294]
-Let $V$, $W$ and $Y$ be vector spaces over a field $F$, and
-let $\beta \in \Hom(V,Y)$. Prove the following:
-\begin{enumerate}
-\item  If $\alpha \in \Hom(W, Y)$ is an epimorphism, then 
-there exists $\theta \in \Hom(V,W)$ such that $\beta = \alpha \theta$.
-
-\begin{center}
-\begin{tikzcd}
-{} & V \arrow[dashed]{dl}[swap]{\exists \theta} \arrow{d}[swap]{\beta} & \\
-W \arrow{r}{\alpha} & Y \arrow{r} & 0
-\end{tikzcd}
-\end{center}
-
-\item  If $\alpha \in \Hom(V, W)$ is a monomorphism, then 
-there exists $\theta \in \Hom(W,Y)$ such that $\beta = \theta \alpha$.
-
-\begin{center}
-\begin{tikzcd}
-0 \arrow{r} & V \arrow{d}[swap]{\beta} \arrow{r}{\alpha} & W \arrow[dashed]{dl}{\exists \theta} \\ 
- & Y&
-\end{tikzcd}
-\end{center}
-
-\end{enumerate}
-
-\noindent \emph{Note to students:} Here is an alternative statement of the problem, with
-naming conventions that agree with Golan. You may solve whichever version you prefer. 
+Let $V$, $W$ and $Y$ be vector spaces over a field $F$. Prove the following:
 
 \begin{enumerate}
 \item  
 If $\alpha \in \Hom(V,W)$ is an epimorphism, then for every 
 $\beta \in \Hom(Y,W)$ there exists $\theta \in \Hom(Y,V)$ such that $\beta = \alpha \theta$.
-
-\begin{center}
-\begin{tikzcd}
-{} & Y \arrow[dashed]{dl}[swap]{\exists \theta} \arrow{d}[swap]{\beta} & \\
-V \arrow{r}{\alpha} & W \arrow{r} & 0
-\end{tikzcd}
-\end{center}
-
 \item  If $\alpha \in \Hom(V, W)$ is a monomorphism, then 
  for every $\beta \in \Hom(V,Y)$ there exists $\theta \in \Hom(W,Y)$ such that $\beta = \theta \alpha$.
-
-\begin{center}
-\begin{tikzcd}
-0 \arrow{r} & V \arrow[swap]{d}{\beta} \arrow{r}{\alpha} & W \arrow[dashed]{dl}{\exists \theta}\\ 
- & Y&
-\end{tikzcd}
-\end{center}
-
-
-
 \end{enumerate}
 
 
-
-%% \begin{center}
-%% \begin{tikzpicture}[baseline= (a).base]
-%% \node[scale=1] (a) at (0,0){
-%% \begin{tikzcd}
-%% 0 \arrow{r} & V \arrow{d}[swap]{\beta} \arrow{r}{\alpha} & W \\ 
-%%  & Y\arrow[dashed]{ur}[swap]{\exists \theta} &
-%% \end{tikzcd}
-%% };
-%% (a) at (0,0){
-%% \begin{tikzcd}
-%% 0 \arrow{r} & V \arrow{d}[swap]{\beta} \arrow{r}{\alpha} & W \\ 
-%%  & Y\arrow[dashed]{ur}[swap]{\exists \theta} &
-%% \end{tikzcd}
-%% };
-%% \end{tikzpicture}
-%% \end{center}
-
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+(1) For $v_1$ and $v_2$ in $V$, consider $v_1$ and $v_2$ equivalent ($v_1\sim v_2$) if $v_1-v_2\in\ker\alpha$.  As the name implies, this is an equivalence relation, which is easily verified.  For each equivalence class, pick exactly one representative, so that the equivalence class may be represented $[v]$ for some $v\in V$. 
+
+Take $\theta:y\mapsto v$ such that $\alpha(v) = \beta(y)$, and $v$ is the representative of some equivalence class.  This map is well-defined, for if $v_1 = \theta(y) = v_2$, then $\alpha(v_1) = \alpha(v_2)$, so $\alpha(v_1-v_2) = 0$, $v_1-v_2\in\ker\alpha$, and $v_1$ and $v_2$ have the same equivalence class representative.  Further, $\alpha$ is still surjective over the equivalence class representatives, for if $v_1\sim v_2$, then $\alpha(v_1-v_2) = 0$, and $\alpha(v_1) = \alpha(v_2)$.
+
+We verify that $\theta$ is a homomorphism.  Let $y_1,y_2\in Y$, suppose that $\theta(y_1) = v_1$, $\theta(y_2) = v_2$, and let $c\in F$.  Then we have $\beta(y_1 + y_2) = \beta(y_1) + \beta(y_2) = \alpha(v_1) + \alpha(v_2) = \alpha(v_1 + v_2)$.  Hence, $\theta(y_1) + \theta(y_2) = \theta(y_1 + y_2)$ (allowing for representing vectors by their representatives).  Also, $\alpha(cv_1) = c\alpha(v_1) = c\beta(y_1) = \beta(cy_1)$, so $c\theta(y_1) = cv_1 = \theta(cy_1)$.  Hence, $\theta$ is the desired homomorphism.\vspace{0.2cm}
+
+(2) Take $\theta:\alpha(v)\mapsto\beta(v)$.  This map is well-defined since $\alpha$ is injective.  We verify that $\theta$ is a homomorphism.  Let $v_1,v_2\in V$ and let $c\in F$.  Then we have $\theta(\alpha(v_1) + \alpha(v_2)) = \theta(\alpha(v_1+v_2)) = \beta(v_1+v_2) = \beta(v_1) + \beta(v_2) = \theta(\alpha(v_1))+\theta(\alpha(v_2))$. Also, $\theta(c\alpha(v_1)) = \theta(\alpha(cv_1)) = \beta(cv_1) = c\beta(v_1) = c\theta(\alpha(v_1))$. Hence, $\theta$ is the desired homomorphism. 
+\end{solution}
 
 
 \probskip
@@ -270,9 +303,22 @@ $\alpha \in \Hom(V, W)$, and let $D$ be a nonempty linearly independent subset
 of $\im{\alpha}$.  Show that there exists a basis $B$ of $V$ satisfying
 $\{\alpha(v)\mid v \in B\} = D$.
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+ \smallskip
+ \begin{solution}
+ The claim is incorrect, consider $V=W=\mathbb{R}^2$ over $\mathbb{R}$, the identity homomorphism $\alpha: \mathbb{R}^2 \rightarrow \mathbb{R}^2$, and take $D=\{(1,0)\}$. Then $D$ is linearly independent, but the image of any basis for $\mathbb{R}^2$ will have at least two elements and $D$ only has one, so we cannot have $\{\alpha(v)\mid v \in B\} = D$. We modify the claim as follows:\\
+
+ \emph{Claim:} Let $V$, $W$ be vector spaces over a field $F$, let 
+$\alpha \in \Hom(V, W)$, and let $D$ be a nonempty linearly independent subset
+of $\im{\alpha}$.  Show that there exists a basis $B$ of $V$ satisfying
+$\{\alpha(v)\mid v \in B\} \supseteq D$.\\
+
+To prove this, suppose $D = \{w_1, w_2, \ldots, w_n\}$ is the linearly independent subset in the claim. Since $D$ is in the image of $\alpha$, for each $w_i$ there exists $v_i$ such that $\alpha (v_i) = w_i$. We claim the $v_i$ are linearly independent and to show this, suppose they are not. Then there exists $c_i \in F$ such that $\sum _{i=1}^nc_iv_i = 0$. But then 
+$$
+0 = \alpha\left( \sum _{i=1}^nc_iv_i \right) = \sum _{i=1}^nc_i \alpha(v_i) = \sum _{i=1}^nc_iw_i
+$$
+which is a contradiction to the fact that the $w_i$ are linearly independent. Hence the $v_i$ are linearly independent, so by Proposition 5.8 in \cite{Golan:2012} they are contained in some basis $B$ and hence $\alpha(B) \supseteq D$.
+
+ \end{solution}
 
 \probskip
 
@@ -285,9 +331,15 @@ $\bigcap_{i=1}^n \ker{\alpha_i} \subseteq \ker{\beta}$.  Show that there exist
 linear transformations $\gamma_1, \dots, \gamma_n$ in $\Hom(W,Y)$ satisfying
 $\beta = \sum_{i=1}^n \gamma_i \alpha_i$.
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+We shall use the facts that a homomorphism of spaces is uniquely determined by what it does to the basis elements and that a homomorphism of spaces always maps basis elements to basis elements (or to zero).  
+
+First note that since $\bigcap_{i=1}^n \ker{\alpha_i} \subseteq \ker{\beta}$, not all of the $\alpha_k$s are zero on any basis element of $V$ for which $\beta$ is not also zero.  Let $B = \{b_i\}_i$ and consider the collection of basis elements for which $\alpha_1$ is nonzero.  For each of these basis elements $b$, let $\gamma_1\alpha_1(b) = \beta(b)$. Now consider for all the remaining basis elements ($B$ not including those basis elements for which $\gamma_1\alpha_1$ was nonzero) those on which $\alpha_2$ is nonzero.  For each of these basis elements $b$, let $\gamma_2\alpha_2(b) = \beta(b)$, and take $\gamma_2\alpha_2(b) = 0_Y$ for all other basis elements.  Consider for all the remaining basis elements those on which $\alpha_3$ is nonzero.  For each of these basis elements $b$, let $\gamma_3\alpha_3(b) = \beta(b)$, and take $\gamma_3\alpha_3(b) = 0_Y$ for all other basis elements.  Repeat this process to construct the collection of $\gamma_i$s.  
+
+Each $\gamma_i$ is a homomorphism, as they are being constructed from the basis elements $\alpha_j(b)$ in $W$.  On the other hand, the sum of homomorphisms is a homomorphism, so $\sum_{i=1}^n \gamma_i \alpha_i$ is one, and it suffices to check that $\beta$ and $\sum_{i=1}^n \gamma_i \alpha_i$ agree on all of $B$.  This is trivial however, as for each $b\in B$, $b$ is mapped to a nonzero element in $Y$ for precisely one $\gamma_k\alpha_k$, and $\gamma_k\alpha_k(b) = \beta(b)$.  Hence, the theorem holds.
+\end{solution}
+
 
 \probskip
 
@@ -300,9 +352,36 @@ function $\alpha_f : W \rightarrow V$ by setting
 $\alpha_f: D \mapsto \{a \in A : f(a) \in D\}$.  Show that each such function
 $\alpha_f$ defines a linear transformation, and find its kernel.
 \end{problem}
+ \smallskip
+ \begin{solution}
+ Recall $V$ and $W$ are vector spaces over $\GF(2)$ by taking vector addition to be symmetric difference and for a subset $A$ we have $0\cdot A = \emptyset$ and $1\cdot A = A$. Then for each $\alpha _f$ and any $D,E\in W$ we see that
+ \begin{align*}
+ \alpha_f (D+E) &= \{a \in A : f(a) \in D+E\}\\
+ &= \{a \in A : f(a) \in (D\setminus E)\cup (E\setminus D) \}\\
+&= \{a \in A : f(a) \in (D\setminus E)\} \cup \{a \in A : f(a) \in (E\setminus D) \}\\
+&= \{a \in A : f(a) \in D\} \setminus \{a \in A : f(a) \in E\} \cup \{a \in A : f(a) \in E\} \setminus \{a \in A : f(a) \in D\}\\
+&= \alpha_f (D) + \alpha_f(E).
+ \end{align*}
+Also we have
+$$
+\alpha_f (0 \cdot D) = \emptyset_V = 0 \cdot \alpha_f(D)
+$$
+and
+$$
+\alpha_f (1 \cdot D) = 1 \cdot \alpha_f(D)
+$$
+so indeed each $\alpha_f$ defines a linear transformation and we complete this problem by finding their kernel.
+
+Now for some fixed $\alpha_f$, we see that
+\begin{align*}
+\ker{\alpha_f} &= \{D\in W : \alpha_f(D) = \emptyset _V\} \\
+&= \{D\in W : f(a)\not \in D \text{ for all } a \in A \} \\
+&= \{D\subseteq B : D\cap \im{f} = \emptyset \}.
+\end{align*}
+ \end{solution}
 
 
-%\bibliographystyle{plainurl}
-%\bibliography{Math700}
+\bibliographystyle{plainurl}
+\bibliography{Math700}
 
 \end{document}
