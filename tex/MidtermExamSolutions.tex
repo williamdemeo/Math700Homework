@@ -12,6 +12,7 @@
 \usepackage{hyperref}
 \usepackage{xspace}
 \usepackage{comment}
+%\usepackage{ulem}
 \usepackage{url} % for url in bib entries
 %\usepackage{mathrsfs}
 
@@ -29,18 +30,6 @@
 %% \begin{ProbBox}  and   \end{ProbBox}
 %% to prevent pagebreaks.
 \newenvironment{ProbBox}{\noindent\begin{minipage}{\linewidth}}{\end{minipage}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Acronyms
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[acronym, shortcuts]{glossaries}
-
-%% HERE IS HOW YOU DEFINE ACRONYMS:
-\newacronym{FTA}{FTA}{Fundamental Theorem of Algebra}
-\newacronym{CRT}{CRT}{Chinese Remainder Theorem}
-
-% Make \ac robust.
-\robustify{\ac}
 
 \usepackage{enumerate}
 
@@ -65,8 +54,8 @@ right  = 3.00cm]{geometry}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
-\newrobustcmd*{\vocab}[1]{\emph{#1}}
-\newrobustcmd*{\latin}[1]{\textit{#1}}
+% \newrobustcmd*{\vocab}[1]{\emph{#1}}
+% \newrobustcmd*{\latin}[1]{\textit{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Customize list enviroonments
@@ -88,6 +77,7 @@ right  = 3.00cm]{geometry}
          \newcommand\0{\ensuremath{\mathbf{0}}}
          \newcommand{\<}{\ensuremath{\langle}}
          \renewcommand{\>}{\ensuremath{\rangle}}
+         \renewcommand{\emptyset}{\ensuremath{\varnothing}}
          \newcommand\fld[1]{\ensuremath{\mathbb{#1}}}
          \newcommand\N{\ensuremath{\fld{N}}}
          \newcommand\R{\ensuremath{\fld{R}}}
@@ -115,13 +105,15 @@ right  = 3.00cm]{geometry}
          \renewcommand{\ngeq}{\ensuremath{\ngeqslant}}
          \newcommand{\sD}{\ensuremath{\mathscr{D}}}
          \newcommand{\sS}{\ensuremath{\mathscr{S}}}
+         \newcommand{\sC}{\ensuremath{\mathscr{C}}}
+         \newcommand{\sA}{\ensuremath{\mathscr{A}}}
 
 
          \metadata{Math 700}{Midterm Exam -- 2014/03/07}
          \author{}
 %%
 %%    8. Update the title and date as appropriate.
-         \title{Midterm Exam}
+         \title{Midterm Exam: Solutions}
          \subtitle{Math 700: Spring 2014}
          \date{6 March 2014}
 
@@ -197,43 +189,50 @@ $\im{\phi} := \phi(V)$, $\ker{\phi} := \{v \in V : \phi(v) = 0_W\}$,
 $\rank{\alpha} := \dim{\im{\alpha}}$, and $\nulity{\alpha} := \dim{\ker{\alpha}}$.
 \probskip
 
+\newcommand{\btrue}{\boxed{\mathrm{true}}}
+\newcommand{\bfalse}{\boxed{\mathrm{false}}}
+% \newcommand{\strue}{\sout{true}}
+% \newcommand{\sfalse}{\sout{false}}
+\newcommand{\strue}{true}
+\newcommand{\sfalse}{false}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}
+\begin{problem} % Problem 1
 Let $V$ and $W$ be finite dimensional vector spaces over the field $F$, and
 suppose $\alpha \in \Hom(V,W)$.
 Circle true or false, where true means ``always true'' (no proof required):
 \begin{enumerate}[(a)]
 \item If $\alpha(v) = 0_W$ only when $v=0_V$, then $\dim{V} = \dim{W}$.
- \hfill true \hskip1cm false
+ \hfill \strue \hskip1cm \bfalse
 \item If $\im{\alpha} = \{0_W\}$, then $\alpha = \sigma_0$.
- \hfill true \hskip1cm false
+ \hfill \btrue \hskip1cm \sfalse
 \item If $\dim{V} = \rank{\alpha}$, then $\ker{\alpha} = \{0_V\}$.
- \hfill true \hskip1cm false
-\item $\ker{\alpha}\leq \ker{\alpha^2}$
- \hfill true \hskip1cm false
-\item $\im{\alpha}\geq \im{\alpha^2}$
- \hfill true \hskip1cm false
+ \hfill \btrue \hskip1cm \sfalse
+\item $\ker{\alpha}\leq \ker{\alpha^2}$ (assuming $W=V$)
+ \hfill \btrue \hskip1cm \sfalse
+\item $\im{\alpha}\geq \im{\alpha^2}$ (assuming $W=V$)
+ \hfill \btrue \hskip1cm \sfalse
 \item $\nulity{\alpha} \leq \rank{\alpha}$
- \hfill true \hskip1cm false
+ \hfill \strue \hskip1cm \bfalse
 \item $\nulity{\alpha} \leq \dim{V}$
- \hfill true \hskip1cm false
+ \hfill \btrue \hskip1cm \sfalse
 \item $\alpha$ is a one-to-one if and only if $\ker{\alpha} = \{0_V\}$.
- \hfill true \hskip1cm false
+ \hfill \btrue \hskip1cm \sfalse
 \item $\alpha$ is a one-to-one if and only if $\dim{V} \leq \dim{W}$.
- \hfill true \hskip1cm false
+ \hfill \strue \hskip1cm \bfalse
 \item $\alpha$ is a one-to-one if and only if $\nulity{\alpha} = 0$.
- \hfill true \hskip1cm false
+ \hfill \btrue \hskip1cm \sfalse
 \item $\alpha$ is a onto if and only if $\dim{V} \geq \dim{W}$.
- \hfill true \hskip1cm false
+ \hfill \strue \hskip1cm \bfalse
 \item $\alpha$ is a onto if and only if $\rank{\alpha} =\dim{W}$.
- \hfill true \hskip1cm false
+ \hfill \btrue \hskip1cm \sfalse
 \end{enumerate}
 \end{problem}
 
 \probskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}
+\begin{problem} % Problem 2
 Prove that the lattice of subspaces of a vector space
 is modular but not necessarily distributive, as follows:
 Let $U$, $Y$, and $W$ be subspaces of a vector space $V$. 
@@ -272,7 +271,7 @@ $\0 = (0, 0)$.
 Note that any pair of (distinct) subspaces chosen from the set
 $\{U, Y, W\}$ intersects at $\{\0\}$ and sums to $\R^2$.
 Therefore, the left hand side of the equation in (b) is
-$U \cap (Y + W) = U \cap \R^2 = \R^2$, while the right hand side is 
+$U \cap (Y + W) = U \cap \R^2 = U$, while the right hand side is 
 \[
 (U\cap Y) + (U\cap W) = \{\0\} + \{\0\}
 = \{\0\}.
@@ -286,7 +285,7 @@ always a \emph{distributive lattice}.
 \probskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}
+\begin{problem}  % Problem 3
 \label{prob:zorn}
 Prove that every nontrivial vector space $V$ has a basis.\\[4pt]
 [{\it Hint:} First prove that
@@ -301,10 +300,39 @@ As we did in class, let $S$ be a linearly independent subset and
   Finally, say why if follows from this that every vector space has a basis.]
 \end{problem}
 
+\begin{solution}
+Let $S$ be a linearly independent subset of $V$ and
+  let $\sS$ be the set of all linearly independent subsets that contain $S$. 
+ Partially order $\sS$ by set inclusion to obtain a poset 
+ $(\sS, \subseteq)$.  To apply
+  Zorn's Lemma, we must check that 
+every chain in $\sS$ has an upper bound in $\sS$.
+Fix a chain $\sC = \{S_\alpha : \alpha \in \sA \}$ in 
+$\sS$.  Let $B = \bigcup \sC$. Since every $S_\alpha \in \sC$ is contained in  
+$B$, it's clear that $B$ is an upper bound for $\sC$, with respect to
+$\subseteq$.
+We must show that $B$ belongs to $\sS$. Since $S \subseteq B$ is obvious, we
+just need to check that $B$ is linearly independent.  Let 
+$b_1, \dots, b_n$ be elements of 
+$B$. Then there exist $\alpha(1), \dots, \alpha(n)$ such that 
+$b_i \in S_{\alpha(i)}$.  Let $N = \max\{\alpha(i) : 1\leq i \leq n\}$. 
+Since $\sC$ is a chain, all the elements $b_1, \dots, b_n$ belong to $S_N$.
+Since $S_N$ is linearly independent, the $b_1, \dots, b_n$ are linearly
+independent. Now $b_1, \dots, b_n$ was an arbitrary finite collection of vectors
+from $B$, so $B$ is linearly independent.
+Thus, the hypotheses of Zorn's Lemma are satisfied, and we see that $\sS$
+has a maximal element; that is, a maximal linearly independent set that contains
+$S$. 
+Finally, note that $\emptyset$ is a linearly
+idependent subset of every vector space.  So, by the foregoing argument with $S$
+replaced by $\emptyset$, we see that every vector space contains a maximal linearly
+independent set (i.e., a basis).
+\end{solution}
+
 \probskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}
+\begin{problem}  % Problem 4
 Let $V$ be a vector space over the field $F$, and suppose the subset 
 $S \subseteq V$ satisfies $FS = V$. Prove that $S$ contains a basis.
 \end{problem}
@@ -312,7 +340,7 @@ $S \subseteq V$ satisfies $FS = V$. Prove that $S$ contains a basis.
 \probskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}
+\begin{problem}  % Problem 5
 Let $V$ be a vector space over the field $F$ and let $\Omega$ be a (possibly
 uncountable) set.  Describe $V^\Omega$.  Can you make 
 $V^\Omega$ into an  $F$-vector space?  An $F$-algebra? Explain.
@@ -349,8 +377,8 @@ since $f + (-f) = \sigma_0$. % Explicitly, for every $\omega\in \Omega$
  % $(f + (-f))(\omega) = f(\omega) - f(\omega) = 0_v$.
 Therefore, $V^\Omega$ is given the following vector space structure:
 $\<V^\Omega, +, -, \sigma_0, \{r : r \in F\}\>$.  (Technically, we should also
-check that scalar multiplication distributes over addition, but this is also
-easy.)
+check that scalar multiplication distributes over addition, and the other
+vector space properties, but this is also straight forward.)
 
 There's no obvious or ``natural'' way to make  $V^\Omega$ into an
 $F$-algebra, unless we have more assumptions about $V$.   For example, we might
@@ -370,7 +398,7 @@ make $V^V$ into an $F$-algebra by defining product to be funciton composition.
 \probskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}
+\begin{problem}  % Problem 6
 Let $V$ and $W$ be vector spaces over the field $F$, and let 
 $\phi : V \rightarrow W$ be a linear transformation. Give details and proof of
 the following: $\phi$ is injective (respectively, surjective) if and only if 
@@ -384,8 +412,12 @@ you need to prove each claim.]
 \end{problem}
 \begin{solution} We prove the following claims 
   \begin{enumerate}[(a)]
-  \item $\phi\in \Hom(V,W)$ is injective iff there exists $\psi: W\rightarrow V$ such that $\psi \phi = \id_V$.
-  \item $\phi\in \Hom(V,W)$ is surjective iff there exists $\psi: W\rightarrow V$ such that $\phi \psi = \id_W$.
+\item
+    $\phi\in \Hom(V, W)$ is injective iff 
+    there exists $\psi \in \Hom(W, V)$ such that $\psi \phi = \id_V$.
+  \item 
+    $\phi\in \Hom(V, W)$ is surjective iff 
+    there exists $\psi \in \Hom(W, V)$ such that $\phi \psi = \id_W$.
   \end{enumerate}
   \begin{enumerate}[(a)]
   \item ($\Leftarrow$) Assume there exists $\psi: W\rightarrow V$ such that
@@ -453,7 +485,8 @@ Therefore, $ \phi \psi = \id_W(w)$.
 \probskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem} Let $V$ and $W$ be vector spaces over the field $F$.
+\begin{problem}  % Problem 7
+Let $V$ and $W$ be vector spaces over the field $F$.
 Recall that $W^V$ denotes the set of maps $\{f : V \rightarrow W\}$.
 For fixed $\alpha \in \Hom(V,W)$ and $w \in W$, define the 
 \emph{affine transformation} $\zeta_{\alpha, w}: V \rightarrow W$ to be the map 
@@ -474,7 +507,7 @@ $\Hom(V,W)$ to $\Aff(V,W)^W$. Is $\zeta$ a vector space
 \probskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{problem}
+\begin{problem}  % Problem 8
 \item Let $V$ be a finite dimensional vector space over the field $F$ and 
 suppose $T \in \End(V)$.\\
 Prove the following:
@@ -504,8 +537,15 @@ $V \geq \im{T} \geq \im{T^2} \geq \cdots$
 If $w \in \im{T^{n+1}}$, then $w = T^{n+1}v$ for some $v\in V$. Let $v' =  Tv$.
 Then $w =  T^n (Tv) = T^nv'$, so  $w \in \im{T^n}$.
 
-\item Fix an arbitrary $k \in \{0, 1, \dots\}$, and let $N = \ker{T^k}$.  Let
-  $W$ be a complement of $N$ in $V$.  Then, by Grassman's Theorem, 
+\item 
+There are two ways we could proceed.
+First, note that for each $k= 0, 1, \dots$ we have $T^k\in \End(V)$, so 
+$\dim{V} = \rank{T^k} + \nulity{T^k}$ follows from Proposition 6.10.
+
+Alternatively, we can verify it directly (essentially reproving
+Proposition 6.10), as follows: Fix an arbitrary $k \in \{0, 1, \dots\}$, and let
+$N = \ker{T^k}$  Let $W$ be a complement of $N$ in $V$.  Then, by Grassman's
+Theorem,
 \[
 \dim{V} = \dim{N} + \dim{W}-\dim{K\cap W} = \nulity{T^k} + \dim{W} - 0.
 \]
@@ -543,7 +583,8 @@ so $v \in \ker{T^{2N}} =
 Therefore, $w = T^N(v) = 0_V$. 
 
 It remains to show $V = \im{T^N} +
-\ker{T^N}$. Indeed, by (c), we have 
+\ker{T^N}$. This can be seen in at least two ways.
+One way is to notice that, by (c), we have 
 \begin{equation}
   \label{eq:1}
 \dim{V} = \dim{\im{T^N}} +\dim{\ker{T^N}} = \dim{\im{T^N} + \ker{T^N}}.
@@ -556,8 +597,18 @@ $A\cup B \cup\{u\}$ is linearly independent; but then
 \dim{V} \geq \dim{F(A\cup B \cup\{u\})} > \dim{F(A\cup B)} =
  \dim{\im{T^N}} +\dim{\ker{T^N}},
 \]
-which would violate~\ref{eq:1}.
+which would violate~(\ref{eq:1}).
 
+As an alternative way to prove $V = \im{T^N} + \ker{T^N}$, we fix an arbitrary
+$v \in V$ and show that $v = x + y$ for some $x \in \ker{T^N}$ and 
+$y\in \im{T^N}$. Indeed, since $\im{T^N} = \im{T^{2N}}$, we have 
+$T^N(v) =T^{2N}(w)$, for some $w \in V$.  Therefore, 
+$T^N(v - T^N(w)) = 0$, that is,
+$v - T^N(w) \in \ker{T^N}$.  Thus,
+\[
+v = (v - T^N(w)) + T^N(w) =  x + y,
+\]
+where $x \in \ker{T^N}$ and $y\in \im{T^N}$.
   \end{enumerate}
 \end{solution}
 \probskip
