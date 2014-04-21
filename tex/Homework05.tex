@@ -41,8 +41,8 @@
          \newcommand\GF{\ensuremath{\operatorname{GF}}}
 %%
 %%    7. Replace these names with yours!!!
-         \metadata{Karl and Sonya}{Homework 5 -- 2014/04/21}
-         \author{Sonya Kovalevsky and Karl Weierstrass}
+         \metadata{Alexander}{Homework 5 -- 2014/04/21}
+         \author{Alexander Brylev}
 %%
 %%    8. Update the title and date as appropriate.
          \title{Homework 5}
@@ -52,6 +52,8 @@
 
 \maketitle
 
+\noindent The label ``Problem'' is used for required problems. ``Exercise''
+is for suggested exercises.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{problem}[Golan 307]
@@ -144,6 +146,38 @@ Is $V = \bigoplus_{i=1}^k Y_i$?
 % \begin{solution}
 % \end{solution}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ex}[Golan 415]
+Let $V$ be the subspace of $\R[X]$ consisting of all polynomials of degree less
+than 3 and choose the basis $B = \{1, X, X^2\}$ for $V$. Let $\alpha \in \End(V)$ satisfy
+\[
+\Phi_{BB}(\alpha) = 
+\begin{bmatrix} 
+1 & 1 & 1\\ 
+0 & 2 & 2\\
+0 & 0 & 3
+\end{bmatrix}.
+\]
+Let $D$ be the basis $\{1, X+1, 2X^2 + 4X + 3\}$ for $V$.  What is $\Phi_{DD}(\alpha)$?
+\end{ex}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ex}[Golan 467]
+Let $n$ be a positive integer and let $F$ be a field.  Let 
+$A, B\in \mathcal{M}_{n\times n}(F)$ satisfy $A + B = I$.  Show that $AB = \mathbf{0}$
+if and only if $A$ and $B$ are idempotent.
+\end{ex}
+
+\probskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ex}[Golan 530]
+Let $n$ be a positive integer and let $F$ be a field.  If
+$A \in \mathcal{M}_{n\times n}(F)$ is nonsingular, is the same necessarily true
+of $A + A^T$?
+\end{ex}
 
 %\bibliographystyle{plainurl}
 %\bibliography{Math700}
