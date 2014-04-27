@@ -218,9 +218,22 @@ $W_1, \dots, W_k$ be subspaces of $V$ satisfying $V = \bigoplus_{i=1}^k W_i$.
 For each $1\leq i \leq k$, let $Y_i = \{\alpha(w) \mid w \in W_i\}$.
 Is $V = \bigoplus_{i=1}^k Y_i$?
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+
+Let $y \in V$. Since $\alpha \in Aut(V)$, then $\alpha$ is surjective and hence 
+there exists $x \in V$ such that $\alpha(x)=y$. Since $x \in V$ and 
+$V = \bigoplus_{i=1}^k W_i$, then $x=w_1+w_2+...w_k$ for some $w_i \in W_i, 1 \le i \le k$. 
+Then $y=\alpha(x)=\alpha(w_1+w_2+...+w_k)=\alpha(w_1)+\alpha(w_2)+...+\alpha(w_k) \in Y_1 + Y_2 + ... + Y_k$.
+
+\smallskip
+
+Let $v \in Y_i \cap Y_j$ for some $i \ne j$. Then $v=\alpha(w_i)=\alpha(w_j)$ 
+for some $w_i \in W_i$ and $w_j \in W_j$. Since $\alpha \in Aut(V)$, then $\alpha$ 
+is injective, and so $w_i=w_j \in W_i \cap W_j$. From $V = \bigoplus_{i=1}^k W_i$, 
+it follows that $W_i \cap W_j = \{0\}$, and hence $w_i=w_j=0$. So $v=\alpha(w_i)=\alpha(0)=0$.
+
+\end{solution}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{ex}[Golan 415]
