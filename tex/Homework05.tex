@@ -94,16 +94,34 @@ The space $V/W$ is called the \emph{factor space} of $V$ by $W$.
 \smallskip
 
 \begin{enumerate}
-\item Let $v + W = v' + W$ for some $v, v' \in V$. Then $v = v + 0_W = v' + w$ for some $w \in W$, so that $v - v' = w \in W$.
+\item Let $v + W = v' + W$ for some $v, v' \in V$. Then $v = v + 0_W = v' + w$ 
+for some $w \in W$, so that $v - v' = w \in W$.
 \smallskip
-Now let $v - v' \in W$. Then $v - v' = w'$ for some $w' \in W$, so that for any $w \in W$ we have $v + w = (v' + w') + w = v' + (w' + w) \in v'+W$, which shows $v + W \in v' + W$. Due to symmetry, we must also have $v'+ W \in v + W$. Hence $v + W = v' + W$.
-\item First, let's check that the given operations are well-defined, i.e. if $u + W = v + W$ for some $u,v \in W$ and $u' + W = v' + W$ for some $u',v' \in W$, then $(u + u') + W = (v + v') + W$ and $cu + W = cv + W$ for all $c \in F$.
+Now let $v - v' \in W$. Then $v - v' = w'$ for some $w' \in W$, so that for 
+any $w \in W$ we have $v + w = (v' + w') + w = v' + (w' + w) \in v'+W$, which 
+shows $v + W \in v' + W$. Due to symmetry, we must also have $v'+ W \in v + W$. 
+Hence $v + W = v' + W$.
+\item First, let's check that the given operations are well-defined, i.e. if 
+$u + W = v + W$ for some $u,v \in W$ and $u' + W = v' + W$ for some $u',v' \in W$, 
+then $(u + u') + W = (v + v') + W$ and $cu + W = cv + W$ for all $c \in F$.
 \smallskip
-If $u + W = v + W$ and $u' + W = v' + W$ for some $u,v,u',v' \in W$, then, by 1), $u - v = w$ and $u' - v' = w'$ for some $w, w' \in W$. So $(u + u') - (v + v') = w + w' \in W$, and, using 1), we get $(u + u') + W = (v + v') + W$. Also, $cu - cv = c(u - v) = cw \in W$, so that $cu + W = cv + W$, by 1) as well. Thus, the given operations are indeed well-defined.
+If $u + W = v + W$ and $u' + W = v' + W$ for some $u,v,u',v' \in W$, then, by 1), 
+$u - v = w$ and $u' - v' = w'$ for some $w, w' \in W$. So $(u + u') - (v + v') = w + w' \in W$,
+and, using 1), we get $(u + u') + W = (v + v') + W$. Also, $cu - cv = c(u - v) = cw \in W$, 
+so that $cu + W = cv + W$, by 1) as well. Thus, the given operations are indeed well-defined.
 \smallskip
-To show $V/W$, with the given operations, is a vector space, we first need to prove $V/W$ is an abelian group.
+To show $V/W$, with the given operations, is a vector space, we first need to prove $V/W$ 
+is an abelian group.
 \smallskip
-Let $u + W, u_1 + W, u_2 + W, u_3 + W \in V/W$. Then $((u_1 + W) + (u_2 + W)) + (u_3 + W) = ((u_1 + u_2) + W) + (u_3 + W) = ((u_1 + u_2) + u_3) + W = (u_1 + (u_2 + u_3)) + W = (u_1 + W) + ((u_2 + u_3) + W) = (u_1 + W) + ((u_2 + W) + (u_3 + W))$, so the sum operation in $V/W$ is associative. Also, $(0 + W) + (u + W) = (0 + u) + W = u + W = (u + 0) + W = (u + W) + (0 + W)$, so $0 + W$ is an identity element in $(V/W,+)$. Finally, $(-u + W) + (u + W) = (-u + u) + W = 0 + W$, which shows $-u + W$ is an inverse for $u + W$. Hence $V/W$, with the given addition operation, is a group. Since $(u_1 + W) + (u_2 + W) = (u_1 + u_2) + W = (u_2 + u_1) + W = (u_2 + W) + (u_1 + W)$, then it is abelian.
+Let $u + W, u_1 + W, u_2 + W, u_3 + W \in V/W$. Then 
+$((u_1 + W) + (u_2 + W)) + (u_3 + W) = ((u_1 + u_2) + W) + (u_3 + W) = 
+((u_1 + u_2) + u_3) + W = (u_1 + (u_2 + u_3)) + W = (u_1 + W) + ((u_2 + u_3) + W) = 
+(u_1 + W) + ((u_2 + W) + (u_3 + W))$, so the sum operation in $V/W$ is associative. 
+Also, $(0 + W) + (u + W) = (0 + u) + W = u + W = (u + 0) + W = (u + W) + (0 + W)$, 
+so $0 + W$ is an identity element in $(V/W,+)$. 
+Finally, $(-u + W) + (u + W) = (-u + u) + W = 0 + W$, which shows $-u + W$ is an inverse 
+for $u + W$. Hence $V/W$, with the given addition operation, is a group. 
+Since $(u_1 + W) + (u_2 + W) = (u_1 + u_2) + W = (u_2 + u_1) + W = (u_2 + W) + (u_1 + W)$, then it is abelian.
 \end{enumerate}
 
 \end{solution}
@@ -149,6 +167,7 @@ more than one element then it is infinite.
 \end{problem}
 \smallskip
 \begin{solution}
+
 Suppose $A$ has two elements, $\beta_1$ and $\beta_2$. Then there exists a basis 
 vector $v$ of $V$ such that $\beta_1(v) \ne \beta_2(v)$. For $n \ge 3$, define 
 $\beta_n \in \End(V)$ via $\beta_n(v)=(n-1)\beta_1(v)-(n-2)\beta_2(v)$ and 
@@ -158,6 +177,7 @@ and $\alpha\beta_n(u)=\alpha\beta_1(u)=u$ for a basis vector $u$ of $V$ such tha
 $u \ne v$. Thus, $\beta_n \in A$ for all $n$. 
 For $n \ne k$, $\beta_n(v)-\beta_k(v)=(n-k)(\beta_1(v)-\beta_2(v)) \ne 0$, which 
 shows $\beta_n \ne \beta_k$ for $n \ne k$. Hence $A$ contains infinitely many elements.
+
 \end{solution}
 
 \probskip
@@ -168,9 +188,16 @@ Let $V$ be a vector space over a field $F$ satisfying the condition that
 $\alpha\beta = \beta\alpha$ for all $\alpha, \beta \in \End(V)$. Show that
 $\dim{V} = 1$.
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+
+Suppose $\dim{V}>1$. Then there exist two linearly independent vectors $e_1$ and 
+$e_2$ in $V$. Define $\alpha \in End(V)$ via $\alpha(e_1)=e_2$ and $\alpha(v)=0$ 
+if $v \notin span(e_1)$. Define $\beta \in End(V)$ via $\beta(e_2)=e_1$ and 
+$\beta(v)=0$ if $v \notin span(e_2)$. Then $\alpha\beta(e_1)=\alpha(0)=0$, which 
+does not equal $\beta\alpha(e_1)=\beta(e_2)=e_1$, a contradiction.
+
+\end{solution}
 
 \probskip
 
