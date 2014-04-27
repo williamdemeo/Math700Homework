@@ -73,10 +73,40 @@ the kernel of which equals $W$;
 \end{enumerate}
 The space $V/W$ is called the \emph{factor space} of $V$ by $W$.
 \end{problem}
-%\smallskip
-%\begin{solution}
-%\item Let $v+W = v'+W$.
-%\end{solution}
+\smallskip
+\begin{solution}
+
+Let $V$ be a vector space over a field $F$ and let $W$ be a subspace of $V$.
+For each $v \in V$, let $v + W = \{v+w \mid w \in W\}$. Let
+$V/W = \{v+W \mid v \in V\}$ be the collection of all sets of the form $v+W$,
+and define operations of addition and scalar multiplication on $V/W$ by
+setting $(v+W) + (v'+W) = (v+v')+W$ and $c(v+W) = (cv)+W$ for all $v, v' \in V$
+and $c\in F$. Show that
+\begin{enumerate}
+\item $v+W = v'+W$ if and only if $v-v'\in W$;
+\item $V/W$, with the given operations, is a vector space over $F$;
+\item The function $v\mapsto v+W$ is an epimorphism from $V$ to $W$,
+the kernel of which equals $W$;
+\item Every complement of $W$ in $V$ is isomorphic to $V/W$;
+\item If $(v+W)\cap (v'+W) \neq \emptyset$, then $v+W = v'+W$.
+\end{enumerate}
+The space $V/W$ is called the \emph{factor space} of $V$ by $W$.
+\smallskip
+
+\begin{enumerate}
+\item Let $v + W = v' + W$ for some $v, v' \in V$. Then $v = v + 0_W = v' + w$ for some $w \in W$, so that $v - v' = w \in W$.
+\smallskip
+Now let $v - v' \in W$. Then $v - v' = w'$ for some $w' \in W$, so that for any $w \in W$ we have $v + w = (v' + w') + w = v' + (w' + w) \in v'+W$, which shows $v + W \in v' + W$. Due to symmetry, we must also have $v'+ W \in v + W$. Hence $v + W = v' + W$.
+\item First, let's check that the given operations are well-defined, i.e. if $u + W = v + W$ for some $u,v \in W$ and $u' + W = v' + W$ for some $u',v' \in W$, then $(u + u') + W = (v + v') + W$ and $cu + W = cv + W$ for all $c \in F$.
+\smallskip
+If $u + W = v + W$ and $u' + W = v' + W$ for some $u,v,u',v' \in W$, then, by 1), $u - v = w$ and $u' - v' = w'$ for some $w, w' \in W$. So $(u + u') - (v + v') = w + w' \in W$, and, using 1), we get $(u + u') + W = (v + v') + W$. Also, $cu - cv = c(u - v) = cw \in W$, so that $cu + W = cv + W$, by 1) as well. Thus, the given operations are indeed well-defined.
+\smallskip
+To show $V/W$, with the given operations, is a vector space, we need to prove $V/W$ is an abelian group.
+\smallskip
+Let $u + W, u_1 + W, u_2 + W, u_3 + W \in V/W$. Then $((u_1 + W) + (u_2 + W)) + (u_3 + W) = ((u_1 + u_2) + W) + (u_3 + W) = ((u_1 + u_2) + u_3) + W = (u_1 + (u_2 + u_3)) + W = (u_1 + W) + ((u_2 + u_3) + W) = (u_1 + W) + ((u_2 + W) + (u_3 + W))$, so the sum operation in $V/W$ is associative. Also, $(0 + W) + (u + W) = (0 + u) + W = u + W = (u + 0) + W = (u + W) + (0 + W)$, so $0 + W$ is an identity element in $(V/W,+)$. Finally, $(-u + W) + (u + W) = (-u + u) + W = 0 + W$, which shows $-u + W$ is an inverse for $u + W$. Hence $V/W$, with the given addition operation, is a group. Since $(u_1 + W) + (u_2 + W) = (u_1 + u_2) + W = (u_2 + u_1) + W = (u_2 + W) + (u_1 + W)$, then it is abelian.
+\end{enumerate}
+
+\end{solution}
 
 \probskip
 
