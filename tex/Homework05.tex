@@ -101,7 +101,7 @@ Now let $v - v' \in W$. Then $v - v' = w'$ for some $w' \in W$, so that for any 
 \smallskip
 If $u + W = v + W$ and $u' + W = v' + W$ for some $u,v,u',v' \in W$, then, by 1), $u - v = w$ and $u' - v' = w'$ for some $w, w' \in W$. So $(u + u') - (v + v') = w + w' \in W$, and, using 1), we get $(u + u') + W = (v + v') + W$. Also, $cu - cv = c(u - v) = cw \in W$, so that $cu + W = cv + W$, by 1) as well. Thus, the given operations are indeed well-defined.
 \smallskip
-To show $V/W$, with the given operations, is a vector space, we need to prove $V/W$ is an abelian group.
+To show $V/W$, with the given operations, is a vector space, we first need to prove $V/W$ is an abelian group.
 \smallskip
 Let $u + W, u_1 + W, u_2 + W, u_3 + W \in V/W$. Then $((u_1 + W) + (u_2 + W)) + (u_3 + W) = ((u_1 + u_2) + W) + (u_3 + W) = ((u_1 + u_2) + u_3) + W = (u_1 + (u_2 + u_3)) + W = (u_1 + W) + ((u_2 + u_3) + W) = (u_1 + W) + ((u_2 + W) + (u_3 + W))$, so the sum operation in $V/W$ is associative. Also, $(0 + W) + (u + W) = (0 + u) + W = u + W = (u + 0) + W = (u + W) + (0 + W)$, so $0 + W$ is an identity element in $(V/W,+)$. Finally, $(-u + W) + (u + W) = (-u + u) + W = 0 + W$, which shows $-u + W$ is an inverse for $u + W$. Hence $V/W$, with the given addition operation, is a group. Since $(u_1 + W) + (u_2 + W) = (u_1 + u_2) + W = (u_2 + u_1) + W = (u_2 + W) + (u_1 + W)$, then it is abelian.
 \end{enumerate}
@@ -147,9 +147,18 @@ let $\sigma_0 \neq \alpha \in \End(V)$.  Set
 $A = \{\beta \in \End(V) \mid \alpha \beta = \sigma_1\}$.  Show that if $A$ has
 more than one element then it is infinite.
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+Suppose $A$ has two elements, $\beta_1$ and $\beta_2$. Then there exists a basis 
+vector $v$ of $V$ such that $\beta_1(v) \ne \beta_2(v)$. For $n \ge 3$, define 
+$\beta_n \in End(V)$ via $\beta_n(v)=(n-1)\beta_1(v)-(n-2)\beta_2(v)$ and 
+$\beta_n(u)=\beta_1(u)$, where $u$ is a basis vector of $\V$ such that $u \ne v$. 
+Then $\alpha\beta_n(v)=(n-1)\alpha\beta_1(v)-(n-2)\alpha\beta_2(v)=(n-1)v-(n-2)v=v$ 
+and $\alpha\beta_n(u)=\alpha\beta_1(u)=u$ for a basis vector $u$ of $V$ such that 
+$u \ne v$. Thus, $\beta_n \in A$ for all $n$. 
+For $n \ne k$, $\beta_n(v)-\beta_k(v)=(n-k)(\beta_1(v)-\beta_2(v)) \ne 0$, which 
+shows $\beta_n \ne \beta_k$ for $n \ne k$. Hence $A$ contains infinitely many elements.
+\end{solution}
 
 \probskip
 
