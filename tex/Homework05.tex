@@ -288,6 +288,18 @@ $A \in \mathcal{M}_{n\times n}(F)$ is nonsingular, is the same necessarily true
 of $A + A^T$?
 \end{ex}
 
+\smallskip
+\begin{solution}
+
+If $n=1$, then $A=(a)$ for some $a \in F$. If $A$ is nonsingular, then $a \ne 0_F$, and so 
+$A + A^T = (a) + (a) = (2a)$ is nonsingular, since $2a \ne 0_F$.
+\smallskip
+Now, let $n > 1$. Define $A = (a_{ij})$ via $a_{1n} = -1_F$, $a_{i,(n+1)-i} = 1_F$ for $2 \le i \le n$, 
+and $a_{ij} = 0_F$ elsewhere. Then $det(A) = -1_F \ne 0_F$, so that $A$ is nonsingular. 
+However, $A + A^T$ has a zero first row, and hence is singular.
+
+\end{solution}
+
 %\bibliographystyle{plainurl}
 %\bibliography{Math700}
 
