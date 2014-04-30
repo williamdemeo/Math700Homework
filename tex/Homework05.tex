@@ -73,70 +73,58 @@ the kernel of which equals $W$;
 \end{enumerate}
 The space $V/W$ is called the \emph{factor space} of $V$ by $W$.
 \end{problem}
-\smallskip
+
 \begin{solution}
 
 \begin{enumerate}
-
 \item Let $v+W = v'+W$ for some $v, v' \in V$. Then $v+0_W = v'+w$
 for some $w \in W$, so that $v-v' = w-0_W \in W$.
-\\[2mm]
+\vskip2mm
 Now let $v-v' \in W$. Then $v-v' = w'$ for some $w' \in W$, so that for
 any $w \in W$ we have $v+w = (v'+w')+w = v'+(w'+w) \in v'+W$, which
 shows $v+W \in v'+W$. Due to symmetry, we must also have $v'+W \in v+W$.
 Hence $v+W = v'+W$.
+\vskip2mm
 \item First, let's check that the given operations are well-defined, i.e. if
 $u+W = v+W$ for some $u,v \in W$ and $u'+W = v'+W$ for some $u',v' \in W$,
-then $(u+u')+W = (v+v')+W$ and $cu+W = cv+W$ for all $c \in F$.
-\\[2mm]
+then $(u+u')+W = (v+v')+W$ and $cu+W = cv+W$ for all $c \in F$. \\
 If $u+W = v+W$ and $u'+W = v'+W$ for some $u,v,u',v' \in W$, then, by part 1,
 $u-v = w$ and $u'-v' = w'$ for some $w, w' \in W$. So $(u+u')-(v+v') = w+w' \in W$,
 and, using part 1 again, we get $(u+u')+W = (v+v')+W$. Also, $cu-cv = c(u-v) = cw \in W$,
 so that $cu+W = cv+W$, by part 1 as well. Thus, the given operations are indeed well-defined.
-
+\vskip2mm
 To show $V/W$, with the given operations, is a vector space, we first need to prove $V/W$
 is an abelian group.
-
 \vskip2mm
-
-Let $u+W, u_1+W, u_2+W, u_3+W \in V/W$. Then
-\smallskip
+Let $u+W, u_1+W, u_2+W, u_3+W \in V/W$. Then \\
 i) $((u_1+W)+(u_2+W))+(u_3+W) = ((u_1+u_2)+W)+(u_3+W) =
 ((u_1+u_2)+u_3)+W = (u_1+(u_2+u_3))+W = (u_1+W)+((u_2+u_3)+ W) =
-(u_1+W)+((u_2+W)+(u_3+W))$;
-\smallskip
-ii) $(0_V+W)+(u+W) = (0_V+u)+W = u+W = (u+0_V)+W = (u+W)+(0_V+W)$;
-\smallskip
-iii) $(-u+W)+(u+W) = (-u+u)+W = 0_V+W$;
-\smallskip
-iv) $(u_1+W)+(u_2+W) = (u_1+u_2)+W = (u_2+u_1)+W = (u_2+W)+(u_1+W)$.
-\smallskip
+(u_1+W)+((u_2+W)+(u_3+W))$; \\
+ii) $(0_V+W)+(u+W) = (0_V+u)+W = u+W = (u+0_V)+W = (u+W)+(0_V+W)$; \\
+iii) $(-u+W)+(u+W) = (-u+u)+W = 0_V+W$; \\
+iv) $(u_1+W)+(u_2+W) = (u_1+u_2)+W = (u_2+u_1)+W = (u_2+W)+(u_1+W)$. \\
 Hence $\underline{V/W}=<V/W,+,-,0_V+W>$ is an abelian group.
-\smallskip
-For each $r \in F$ consider $f_r: \underline{V/W} \rightarrow \underline{V/W}$ by $f_r(v+W)=rv+W$. 
-\smallskip
-Let $r, r_1, r_2 \in F$ and $v+W, v_1+W, v_2+W \in V/W$. Then
-\smallskip
+\vskip2mm
+For each $r \in F$ consider $f_r: \underline{V/W} \rightarrow \underline{V/W}$ by $f_r(v+W)=rv+W$. \\
+Let $r, r_1, r_2 \in F$ and $v+W, v_1+W, v_2+W \in V/W$. Then \\
 i) $f_r((v_1+W)+(v_2+W))=f_r((v_1+v_2)+W)=r(v_1+v_2)+W=(rv_1+rv_2)+W=(rv_1+W)+(rv_2+W)=
-r(v_1+W)+r(v_2+W)=f_r(v_1+W)+f_r(v_2+W)$;
-\smallskip
+r(v_1+W)+r(v_2+W)=f_r(v_1+W)+f_r(v_2+W)$; \\
 ii) $f_{r_1+r_2}(v+W)=(r_1+r_2)v+W=(r_1v+r_2v)+W=(r_1v+W)+(r_2v+W)=r_1(v+W)+r_2(v+W)=
-f_{r_1}(v+W)+f_{r_2}(v+W)$;
-\smallskip
-iii) $f_{r_1}(f_{r_2}(v+W))=f_{r_1}(r_2v+W)=r_1r_2v+W=f_{r_1r_2}(v+W)$;
-\smallskip
+f_{r_1}(v+W)+f_{r_2}(v+W)$; \\
+iii) $f_{r_1}(f_{r_2}(v+W))=f_{r_1}(r_2v+W)=r_1r_2v+W=f_{r_1r_2}(v+W)$; \\
 iv) $f_1(v+W)=1v+W=v+W$.
-\smallskip
+\vskip2mm
 Therefore $V/W$ is a vector space over $F$.
+\vskip2mm
 \item The map $f:V \rightarrow V/W$ defined via $f(v)=v+W$ is obviously surjective and 
 $f(v+u)=(v+u)+W=(v+W)+(u+W)=f(v)+f(u)$ for all $u,v \in V$, which shows it is a homomorphism. 
 Using part 1, $f(v)=v+W=0+W$ if and only if $v=v-0 \in W$, which shows $Ker(f)=W$.
+\vskip2mm
 \item Using the first homomorphism theorem and part 3, $W^c=V/Ker(f) \cong Im(f)=V/W$.
+\vskip2mm
 \item Let $(v+W)\cap (v'+W) \neq \emptyset$. This means $v+w=v'+w'$ for some $w,w' \in W$, which yields 
 $v-v'=w'-w \in W$. By part 1, this implies $v+W=v'+W$.
-
 \end{enumerate}
-
 \end{solution}
 
 \probskip
@@ -148,13 +136,22 @@ $\alpha:
 \begin{bmatrix} a\\ b \end{bmatrix} 
 \mapsto 
 \begin{bmatrix} -b\\ a \end{bmatrix}$.
-Show that $\R\{\alpha, \sigma_1\}$ is a unital subalgebra of $\End(\R^2)$.  Show
+Show that $\R\{\alpha, \sigma_0\}$ is a unital subalgebra of $\End(\R^2)$.  Show
 that it is proper by giving an example of an endomorphism of $\R^2$ not in this
 subalgebra. 
 \end{problem}
-% \smallskip
-% \begin{solution}
-% \end{solution}
+\smallskip
+\begin{solution}
+
+Since $\alpha^4=\sigma_1$, then $\R\{\alpha, \sigma_0\}=\{c_0\sigma_1+c_1\alpha+c_2\alpha^2+c_3\alpha^3: c_0, c_1, c_2, c_3 \in \R\}$. Clearly this set is closed under addition, multiplication by scalars and compositions, and contains $\sigma_1$. Hence it is unital subalgebra of $\End(\R^2)$.
+\vskip2mm
+Define $\beta: \R^2 \rightarrow \R^2$ by $\beta: 
+\begin{bmatrix} a\\ b \end{bmatrix} 
+\mapsto 
+\begin{bmatrix} a\\ 0 \end{bmatrix}$.
+Since $\beta$ is a projection in $\R^2$, $\beta \in \End(\R^2)$. Suppose $\beta \in \R\{\alpha, \sigma_0\}$. Then there exist $c_0, c_1, c_2, c_3 \in \R$ such that $\begin{bmatrix} a\\ 0 \end{bmatrix}=\beta(\begin{bmatrix} a\\ b \end{bmatrix})=c_0\sigma_1(\begin{bmatrix} a\\ b \end{bmatrix})+c_1\alpha(\begin{bmatrix} a\\ b \end{bmatrix})+c_2\alpha^2(\begin{bmatrix} a\\ b \end{bmatrix})+c_3\alpha^3(\begin{bmatrix} a\\ b \end{bmatrix})=\begin{bmatrix} (c_0-c_2)a+(c_3-c_1)b\\ (c_1-c_3)a+(c_0-c_2)b \end{bmatrix}$ for all $a, b \in \R$. Choosing $a=1, b=0$, we get $c_0-c_2=1$. And, choosing $a=0, b=1$, we get $c_0-c_2=0$. A contradiction. Hence $\beta \notin \R\{\alpha, \sigma_0\}$ and our subalgebra is proper.
+
+\end{solution}
 
 \probskip
 
