@@ -77,34 +77,62 @@ The space $V/W$ is called the \emph{factor space} of $V$ by $W$.
 \begin{solution}
 
 \begin{enumerate}
-\item Let $v + W = v' + W$ for some $v, v' \in V$. Then $v = v + 0_W = v' + w$ 
-for some $w \in W$, so that $v - v' = w \in W$.
+
+\item Let $v+W = v'+W$ for some $v, v' \in V$. Then $v+0_W = v'+w$
+for some $w \in W$, so that $v-v' = w-0_W \in W$.
 \smallskip
-Now let $v - v' \in W$. Then $v - v' = w'$ for some $w' \in W$, so that for 
-any $w \in W$ we have $v + w = (v' + w') + w = v' + (w' + w) \in v'+W$, which 
-shows $v + W \in v' + W$. Due to symmetry, we must also have $v'+ W \in v + W$. 
-Hence $v + W = v' + W$.
-\item First, let's check that the given operations are well-defined, i.e. if 
-$u + W = v + W$ for some $u,v \in W$ and $u' + W = v' + W$ for some $u',v' \in W$, 
-then $(u + u') + W = (v + v') + W$ and $cu + W = cv + W$ for all $c \in F$.
+Now let $v-v' \in W$. Then $v-v' = w'$ for some $w' \in W$, so that for
+any $w \in W$ we have $v+w = (v'+w')+w = v'+(w'+w) \in v'+W$, which
+shows $v+W \in v'+W$. Due to symmetry, we must also have $v'+W \in v+W$.
+Hence $v+W = v'+W$.
+\item First, let's check that the given operations are well-defined, i.e. if
+$u+W = v+W$ for some $u,v \in W$ and $u'+W = v'+W$ for some $u',v' \in W$,
+then $(u+u')+W = (v+v')+W$ and $cu+W = cv+W$ for all $c \in F$.
 \smallskip
-If $u + W = v + W$ and $u' + W = v' + W$ for some $u,v,u',v' \in W$, then, by 1), 
-$u - v = w$ and $u' - v' = w'$ for some $w, w' \in W$. So $(u + u') - (v + v') = w + w' \in W$,
-and, using 1), we get $(u + u') + W = (v + v') + W$. Also, $cu - cv = c(u - v) = cw \in W$, 
-so that $cu + W = cv + W$, by 1) as well. Thus, the given operations are indeed well-defined.
+If $u+W = v+W$ and $u'+W = v'+W$ for some $u,v,u',v' \in W$, then, by part 1,
+$u-v = w$ and $u'-v' = w'$ for some $w, w' \in W$. So $(u+u')-(v+v') = w+w' \in W$,
+and, using part 1 again, we get $(u+u')+W = (v+v')+W$. Also, $cu-cv = c(u-v) = cw \in W$,
+so that $cu+W = cv+W$, by part 1 as well. Thus, the given operations are indeed well-defined.
 \smallskip
-To show $V/W$, with the given operations, is a vector space, we first need to prove $V/W$ 
+To show $V/W$, with the given operations, is a vector space, we first need to prove $V/W$
 is an abelian group.
 \smallskip
-Let $u + W, u_1 + W, u_2 + W, u_3 + W \in V/W$. Then 
-$((u_1 + W) + (u_2 + W)) + (u_3 + W) = ((u_1 + u_2) + W) + (u_3 + W) = 
-((u_1 + u_2) + u_3) + W = (u_1 + (u_2 + u_3)) + W = (u_1 + W) + ((u_2 + u_3) + W) = 
-(u_1 + W) + ((u_2 + W) + (u_3 + W))$, so the sum operation in $V/W$ is associative. 
-Also, $(0 + W) + (u + W) = (0 + u) + W = u + W = (u + 0) + W = (u + W) + (0 + W)$, 
-so $0 + W$ is an identity element in $(V/W,+)$. 
-Finally, $(-u + W) + (u + W) = (-u + u) + W = 0 + W$, which shows $-u + W$ is an inverse 
-for $u + W$. Hence $V/W$, with the given addition operation, is a group. 
-Since $(u_1 + W) + (u_2 + W) = (u_1 + u_2) + W = (u_2 + u_1) + W = (u_2 + W) + (u_1 + W)$, then it is abelian.
+Let $u+W, u_1+W, u_2+W, u_3+W \in V/W$. Then
+\smallskip
+i) $((u_1+W)+(u_2+W))+(u_3+W) = ((u_1+u_2)+W)+(u_3+W) =
+((u_1+u_2)+u_3)+W = (u_1+(u_2+u_3))+W = (u_1+W)+((u_2+u_3)+ W) =
+(u_1+W)+((u_2+W)+(u_3+W))$;
+\smallskip
+ii) $(0_V+W)+(u+W) = (0_V+u)+W = u+W = (u+0_V)+W = (u+W)+(0_V+W)$;
+\smallskip
+iii) $(-u+W)+(u+W) = (-u+u)+W = 0_V+W$;
+\smallskip
+iv) $(u_1+W)+(u_2+W) = (u_1+u_2)+W = (u_2+u_1)+W = (u_2+W)+(u_1+W)$.
+\smallskip
+Hence $\underline{V/W}=<V/W,+,-,0_V+W>$ is an abelian group.
+\smallskip
+For each $r \in F$ consider $f_r: \underline{V/W} \rightarrow \underline{V/W}$ by $f_r(v+W)=rv+W$. 
+\smallskip
+Let $r, r_1, r_2 \in F$ and $v+W, v_1+W, v_2+W \in V/W$. Then
+\smallskip
+i) $f_r((v_1+W)+(v_2+W))=f_r((v_1+v_2)+W)=r(v_1+v_2)+W=(rv_1+rv_2)+W=(rv_1+W)+(rv_2+W)=
+r(v_1+W)+r(v_2+W)=f_r(v_1+W)+f_r(v_2+W)$;
+\smallskip
+ii) $f_{r_1+r_2}(v+W)=(r_1+r_2)v+W=(r_1v+r_2v)+W=(r_1v+W)+(r_2v+W)=r_1(v+W)+r_2(v+W)=
+f_{r_1}(v+W)+f_{r_2}(v+W)$;
+\smallskip
+iii) $f_{r_1}(f_{r_2}(v+W))=f_{r_1}(r_2v+W)=r_1r_2v+W=f_{r_1r_2}(v+W)$;
+\smallskip
+iv) $f_1(v+W)=1v+W=v+W$.
+\smallskip
+Therefore $V/W$ is a vector space over $F$.
+\item The map $f:V \rightarrow V/W$ defined via $f(v)=v+W$ is obviously surjective and 
+$f(v+u)=(v+u)+W=(v+W)+(u+W)=f(v)+f(u)$ for all $u,v \in V$, which shows it is a homomorphism. 
+Using part 1, $f(v)=v+W=0+W$ if and only if $v=v-0 \in W$, which shows $Ker(f)=W$.
+\item Using the first homomorphism theorem and part 3, $W^c=V/Ker(f) \cong Im(f)=V/W$.
+\item Let $(v+W)\cap (v'+W) \neq \emptyset$. This means $v+w=v'+w'$ for some $w,w' \in W$, which yields 
+$v-v'=w'-w \in W$. By part 1, this implies $v+W=v'+W$.
+
 \end{enumerate}
 
 \end{solution}
