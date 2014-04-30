@@ -1,0 +1,509 @@
+\documentclass[11pt]{paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[mathscr]{euscript}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{xspace}
+\usepackage{comment}
+\usepackage{url} % for url in bib entries
+%\usepackage{mathrsfs}
+
+
+\theoremstyle{remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{prop}{Proposition}
+\newtheorem{problem}{Problem}
+\newtheorem*{prob}{Problem}
+\newtheorem*{solution}{{\bf Solution}}
+\newtheorem*{hint}{{\it Hint}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Surround the problem and solution with 
+%% \begin{ProbBox}  and   \end{ProbBox}
+%% to prevent pagebreaks.
+\newenvironment{ProbBox}{\noindent\begin{minipage}{\linewidth}}{\end{minipage}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acronyms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[acronym, shortcuts]{glossaries}
+
+%% HERE IS HOW YOU DEFINE ACRONYMS:
+\newacronym{FTA}{FTA}{Fundamental Theorem of Algebra}
+\newacronym{CRT}{CRT}{Chinese Remainder Theorem}
+
+% Make \ac robust.
+\robustify{\ac}
+
+\usepackage{enumerate}
+
+\usepackage[
+top    = 3cm,
+bottom = 3cm,
+left   = 3.00cm,
+right  = 3.00cm]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fancy page style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\newcommand{\metadata}[2]{
+  \rhead{Final Exam}
+  \chead{}
+  \lhead{Math 700: Linear Algebra}
+%  \lfoot{#1}\cfoot{#2}
+  % \lfoot{}\cfoot{}
+  % \rfoot{\thepage}
+}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newrobustcmd*{\vocab}[1]{\emph{#1}}
+\newrobustcmd*{\latin}[1]{\textit{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Customize list enviroonments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% package to customize three basic list environments: enumerate, itemize and description.
+% \usepackage{enumitem}
+% \setitemize{noitemsep, topsep=0pt, leftmargin=*}
+% \setenumerate{noitemsep, topsep=0pt, leftmargin=*}
+% \setdescription{noitemsep, topsep=0pt, leftmargin=*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Space between problems
+\newrobustcmd*{\probskip}{\vskip5mm}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
+%% 
+         \newcommand\alg[1]{\ensuremath{\mathbf{#1}}}
+         \newcommand{\<}{\ensuremath{\langle}}
+         \renewcommand{\>}{\ensuremath{\rangle}}
+         \newcommand\fld[1]{\ensuremath{\mathbb{#1}}}
+         \newcommand\N{\ensuremath{\fld{N}}}
+         \newcommand\R{\ensuremath{\fld{R}}}
+         \newcommand\C{\ensuremath{\fld{C}}}
+         \newcommand\spec{\ensuremath{\operatorname{spec}}}
+         \newcommand\Ann{\ensuremath{\operatorname{Ann}}}
+         \renewcommand\char{\ensuremath{\operatorname{char}}}
+         \newcommand\GF{\ensuremath{\operatorname{GF}}}
+         \newcommand\End{\ensuremath{\operatorname{End}}}
+         \newcommand\Hom{\ensuremath{\operatorname{Hom}}}
+         \newcommand{\Aff}{\ensuremath{\operatorname{Aff}}}
+         \newcommand{\ann}[1]{\ensuremath{\operatorname{ann}(#1)}}
+         \newcommand{\id}{\ensuremath{\operatorname{id}}}
+         \newcommand{\nulity}[1]{\ensuremath{\operatorname{null}(#1)}}
+         \renewcommand{\ker}[1]{\ensuremath{\operatorname{ker}(#1)}}
+         \renewcommand{\dim}[1]{\ensuremath{\operatorname{dim}(#1)}}
+         \newcommand\im[1]{\ensuremath{\operatorname{im}(#1)}}
+         \newcommand{\rank}[1]{\ensuremath{\operatorname{rank}(#1)}}
+         \newcommand{\trace}[1]{\ensuremath{\operatorname{trace}(#1)}}
+         \renewcommand{\phi}{\ensuremath{\varphi}}
+         \newcommand{\Sub}{\ensuremath{\operatorname{Sub}}}
+         \renewcommand{\leq}{\ensuremath{\leqslant}}
+         \renewcommand{\nleq}{\ensuremath{\nleqslant}}
+         \renewcommand{\geq}{\ensuremath{\geqslant}}
+         \renewcommand{\lneq}{\ensuremath{\lneqslant}}
+         \renewcommand{\gneq}{\ensuremath{\gneqslant}}
+         \renewcommand{\ngeq}{\ensuremath{\ngeqslant}}
+         \newcommand{\sB}{\ensuremath{\mathscr{B}}}
+         \newcommand{\sD}{\ensuremath{\mathscr{D}}}
+         \newcommand{\sS}{\ensuremath{\mathscr{S}}}
+
+
+         \metadata{Math 700}{Final Exam -- 2014/05/05}
+         \author{}
+%%
+%%    8. Update the title and date as appropriate.
+         \title{Final Exam}
+         \subtitle{Math 700: Spring 2014}
+         \date{5 May 2014}
+
+
+
+\begin{document}
+
+\maketitle
+\vskip-1cm
+
+\noindent Deadline: {\bf 5pm Monday, May 5}
+
+\vskip5mm
+
+\noindent {\bf INSTRUCTIONS:} 
+\begin{itemize}
+\item 
+Solve the problems below. Write up your solutions,
+giving complete justifications for all arguments.  When you have finished, 
+\begin{quote}
+\emph{turn in a hard copy of your solutions to my office by} {\bf 5pm Monday, May 5}. 
+\end{quote}
+If I am not in my office when you are ready to turn in your exam, 
+please slide it under my office door.
+
+\medskip
+
+\item The questions are meant to test your understanding of elementary concepts, and
+you should write down definitions of any technical terms you use, even if these
+terms are mentioned in the statement of the problem. Of course, you must use
+your best judgment about which definitions to state.  (You probably don't want
+to define the integers or real numbers, for example.)
+
+\medskip
+
+\item It will help me (and probably your grade) if you do the following:
+\begin{enumerate}
+\item 
+State what you are trying to prove.
+\item 
+Mention informally how you plan to prove it before giving the details.
+\item If you believe your proof is complete, use an end-of-proof symbol (like
+  QED or \qedsymbol); on the other hand, if you believe your proof is
+  incomplete, say so.
+\end{enumerate}
+\end{itemize}
+
+\noindent {\bf HONOR CODE:} You are expected to solve the exam problems on your own
+  with no outside help.  You may consult the lecture notes and textbook for this
+  course only.  No other books or internet usage is allowed.
+  If you get stuck, please ask \emph{me} for help, and I may post hints on our wiki page. 
+
+
+\medskip
+
+\noindent When you finish the exam, please sign the following pledge:\\
+\\
+``On my honor as a student I,
+\underline{\phantom{XXXXXXXXXXXXXXXX}}, have neither
+given nor received unauthorized aid on this exam.''
+\hbox{} \hskip .5in {\small (Print Name)}\\[4pt]
+\begin{flushright} Signature: \underline{\phantom{XXXXXXXXXXXXXXXXXXXX}}
+  Date: \underline{\phantom{XXXXXXXXXX}}
+\end{flushright}
+
+\newpage
+
+\noindent {\bf NOTATION:}
+For the most part, we follow the notation used in the textbook.
+Recall that if $V$ is a vector space over the field $F$, then 
+$W\leq V$ denotes that $W$ is a subspace of $V$, 
+whereas $W\subseteq V$ means that $W$ is a subset of $V$ 
+(which may or may not be a subspace).  If $\phi : V \rightarrow W$, then
+$\im{\phi} := \phi(V)$, $\ker{\phi} := \{v \in V : \phi(v) = 0_W\}$.
+Finally, if $\alpha$ belongs to $\End(V)$ or $\mathcal{M}_{n\times n}(F)$, then
+$\spec(\alpha)$ denotes the set of eigenvalues of $\alpha$.
+
+
+\probskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $F = \GF(q)$ be the finite field of order $q$, and let $V = F^n$.
+\begin{enumerate}[(a)]
+\item How many nonzero vectors are there in $V$?
+\item Given a nonzero vector $v_1\in V$, how many vectors $v_2\in V$ are 
+  such that $\{v_1, v_2\}$ is a linearly independent set?
+\item Let $S = \{v_1, v_2, \dots, v_k\}\subset V$ be a subset of $k$ 
+  linearly independent vectors.  Explain why there are exactly
+  $(q^n-1)(q^n-q)(q^n-q^2)\cdots (q^n-q^k)$ such subsets of $V$.
+\item Fix a subspace $W \leq V$ with $\dim{W} = k$.  How many distinct
+  bases does $W$ have?
+\item How many $k$-dimensional subspaces of $V$ are there?
+\end{enumerate}
+\end{problem}
+
+\probskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $F$ be  a field and let $(K, \bullet)$ be an associative unital
+$F$-algebra.  If $\alpha \in K$ and if $p(X) = \sum_{i=0}^k c_i X^i \in  F[X]$,
+then $p(\alpha) = \sum_{i=0}^k c_i \alpha^i \in  F[X]$.  Recall that 
+\[
+\Ann(\alpha) := \{p(X) \in F[X] \mid p(\alpha) = 0_K\}.
+\]
+\begin{enumerate}[(a)]
+\item State the definition of the \vocab{minimal polynomial}, $m_\alpha(X)$, of
+  $\alpha$, and explain why $m_\alpha(X)$ is unique, if it exists.
+\item Give a condition on $(K, \bullet)$ that guarantees existence of 
+ $m_\alpha(X)$. A detailed proof is not required, but you should give some
+  justification for your claim; e.g., by citing a result you learned in
+  lecture or from the text. 
+\item Suppose $A \in K = \mathcal{M}_{n\times n}(F)$. Is $m_A(X)$ guaranteed to
+  exist in this case? (Explain.)
+%% \end{enumerate}
+%% \end{problem}
+
+%% \probskip
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \begin{problem}
+\item  If $\alpha\in \End(\R^3)$ is given by 
+\[
+\alpha 
+\begin{pmatrix}
+x \\  y \\ z
+\end{pmatrix}
+  = 
+\begin{pmatrix}
+x +z \\  y+z \\ x+y
+\end{pmatrix},
+\]
+%\begin{enumerate}[(a)]
+find the matrix $\Phi_{BB}(\alpha)$ that represents $\alpha$ with
+  respect to the basis  
+\[
+B = \left\{ 
+\begin{pmatrix}1 \\  0 \\ 0\end{pmatrix},
+\begin{pmatrix}1 \\  1 \\ 0\end{pmatrix},
+\begin{pmatrix}1 \\  1 \\ 1\end{pmatrix}\right\}.
+\]
+\item What is the characteristic polynomial of $\alpha$? 
+\item What is the minimum polynomial of $\alpha$?
+\item What are the eigenvalues of $\alpha$?
+\end{enumerate}
+\end{problem}
+
+
+\probskip
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+  Let $F$ be a field. Recall that a linear transformation is \vocab{diagonalizable}
+  means there exists a basis of eigenvectors for the transformation. A pair of
+  linear transformations is \vocab{simultaneously diagonalizable} means that there
+  exists a basis consisting of vectors that are eigenvectors of both
+  transformations. Said another way, there exists a change of basis matrix that
+  diagonalizes both transformations. 
+  \begin{enumerate}[(a)]
+  \item Let $A \in \mathcal{M}_{n\times n}(F)$, let $W \subseteq F^n$ be a
+    nontrivial $A$-invariant subspace, and let $A{\mid_W}$ denote the restriction of
+    $A$ to $W$. Show that if $A$ is diagonalizable, then so is $A{\mid_W}$.\\
+    (Hint: consider the minimum polynomials of $A$ and $A{\mid_W}$.)
+  \item Let $\lambda \in F$ and let 
+    $W_\lambda = \{x \in F^n\mid Ax = \lambda x\}$
+    be the eigenspace of $A$ associated with $\lambda$. 
+    Let $A$ be diagonalizable and let $\lambda_1, \dots, \lambda_k$ 
+    be its distinct eigenvalues. Show that 
+    $F^n = W_{\lambda_1} \oplus \cdots \oplus W_{\lambda_k}$.
+  \item	Let $B \in \mathcal{M}_{n\times n} (F)$. Show that if $B$ commutes with $A$ 
+    (i.e., $A B = BA$), then $B W_\lambda \subseteq W_\lambda$.
+  \item Let $A, B \in \mathcal{M}_{n\times n}(F)$ and assume that both matrices
+    are individually diagonalizable. Use the previous parts to show that if $A B = B A$,
+    then $A$ and $B$ are simultaneously diagonalizable.
+    \item Prove the converse: If $A$ and $B$ are simultaneously 
+      diagonalizable, then $A B = B A$.%\\ (Hint: verify the condition for a basis.)
+
+  \end{enumerate}
+
+\end{problem}
+
+
+
+\probskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $V = \C_3[X]$ be the vector space of polynomials with complex
+coefficients and degree at most three. Define
+$\alpha \in \End(V)$ by $\alpha p(X) = p(X + 1)$. 
+Find the eigenvalues of $\alpha$ and, for each eigenvalue, 
+describe the corresponding eigenspace. \\
+(Hint: begin by finding $\Phi_{BB}(\alpha)$ for the basis $B = \{1, X, X^2,X^3\}$.)\\
+%{\bf Extra credit:} Find the rational canonical decomposition for $\alpha$.
+
+\end{problem}
+
+\probskip
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+  Let $V$ be a vector space over a field $F$. The \emph{dual space} of
+  $V$ is defined by $V^* := \Hom(V, F)$.
+  For a subspace $U\leq V$, the \emph{annihilator} of $U$ is
+  \[
+  \ann{U} := \{\theta \in V^* \mid \theta(u) = 0 \text{ for all } u \in U\}
+  = \{\theta \in V^* \mid U \subseteq \ker{\theta}\}.
+  \]
+  As we have seen, $\ann{U} \leq V^*\leq F^V$, a chain of subspaces.
+
+  \begin{enumerate}[(a)]
+  \item For this part, assume that $V$ is finitely generated over $F$. 
+    Show that if $\theta_1, \dots, \theta_r$ is a basis for $\ann{U}$,
+    then $U = \bigcap\limits_{i=1}^r \ker{\theta_i}$.
+
+\item If $W$ is another vector space over $F$, and if 
+  $\phi \in \Hom(V, W)$, then we define the \emph{dual} of $\phi$ to be the
+  linear transformation  $\phi^* \in \Hom(W^*, V^*)$ that takes each 
+  $\beta \in W^*$ to the composition $\beta\circ \phi$.  
+  That is, $\phi^*(\beta)  = \beta \circ \phi$. 
+  \begin{center}
+    \begin{tikzcd}
+      V \arrow{dr}[swap]{\beta \circ \phi} \arrow{rr}{\phi} && W \arrow{dl}{\beta} \\ 
+      &  F &
+    \end{tikzcd}
+  \end{center}
+  Prove that $\ker{\phi^*} = \ann{\im{\phi}}$ and that $\im{\phi^*} =
+  \ann{\ker{\phi}}$.
+  \end{enumerate}
+
+\end{problem}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\probskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+  Let $\alpha, \beta \in \End(V)$.
+  \begin{enumerate}[(a)]
+%  \item  Define what it means for $\lambda$ to be an eigenvalue of $\alpha$.
+  \item  Suppose $\lambda \in \spec(\alpha \beta)$ and $\lambda \neq 0$.
+    Show that $\lambda \in \spec(\beta \alpha)$. \\
+    (Hint: This can, and should, be done using the definitions of eigenvalue and
+    eigenvector; that is, without using determinants of ``$\lambda$-matrices.'')
+  \item Show that if $V$ is finitely generated and $0\in \spec(\alpha \beta)$,
+    then $0 \in \spec(\beta \alpha)$.
+  \item Give an example showing the previous part can be false if $V$ is
+    not finitely generated.
+  \end{enumerate}
+\end{problem}
+
+\probskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $J \in \mathcal{M}_{n\times n}(F)$ and suppose every entry of $J$ is 1 (the
+multiplicative identity of $F$).
+\begin{enumerate}[(a)]
+\item Find the kernel of $J$.
+\item Find the minimal polynomial of $J$. (Hint: Evaluate $J^2$.)
+\item Find the eigenvalues of $J$.
+%\item Find the Jordan normal form of $J$ both in the case $\char(F) \mid n$
+%and $\char(F) \nmid n$.
+\end{enumerate}
+\end{problem}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+ Let 
+\[
+A = 
+\begin{pmatrix}
+  1 & 1 & -1 \\
+  -1 & 3 & -1 \\
+  -1 & 2 & 0 
+\end{pmatrix}
+\]
+\begin{enumerate}[(a)]
+\item Find the characteristic polynomial and the minimal polynomial of $A$.
+\item What is the Jordan canonical form of $A$?
+\end{enumerate}
+\end{problem}
+
+\probskip
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+For each of the following statements, prove that it is true or give an example to
+show that it is false. Throughout, $A \in \mathcal{M}_{n \times n}(\C)$ and 
+$\spec(A)$ denotes the set of eigenvalues of $A$.
+\begin{enumerate}[(a)]
+\item 
+If $\lambda \in \spec(A)$ and $\mu \in \C$, then 
+$\lambda - \mu \in \spec(A - \mu I)$.
+\item If every entry of $A$ is real and $\lambda \in \spec(A)$, then $-\lambda \in \spec(A)$.
+\item If $\lambda \in \spec(A)$ and $A$ is nonsingular, then $\lambda^{-1}$ is
+  an eigenvalue of $A^{-1}$.
+\end{enumerate}
+\end{problem}
+
+\probskip
+
+
+\probskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $\alpha \in \End(V)$ and let $\lambda_1, \lambda_2, \dots, \lambda_k$ be
+distinct eigenvalues with corresponding eigenvectors $v_1, v_2, \dots, v_k$.
+Show that $v_1, v_2, \dots, v_k$ are linearly independent. (Hint: Use induction.)
+\end{problem}
+
+
+
+\probskip
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+Let $V$ be a vector space finitely generated over $F$ with basis 
+$B = \{b_1, \dots, b_n\}$. Let $\alpha \in \End(V)$, and let 
+$\sB := \Phi_{BB}(\alpha)$ be the matrix representation of $\alpha$ with respect to the
+basis $B$.
+\begin{enumerate}[(a)]
+\item Suppose $D = \{d_1, \dots, d_n\}$ is another basis for $V$, 
+and let $\sD:= \Phi_{DD}(\alpha)$.
+Prove that $m_{\sD}(X) = m_\alpha(X) = m_{\sB}(X)$.
+\item Define the \vocab{characteristic polynomial} of the matrix $\Phi_{BB}(\alpha)$.
+\item State the relationship between the characteristic polynomial of
+$\Phi_{BB}(\alpha)$ and the minimal polynomial $m_\alpha(X)$.  No proof is
+  required, but you should name the theorem that allows you to relate
+  these two polynomials. 
+\item Prove that the roots of $m_\sB(X)$ are the eigenvalues of $\sB$.
+\end{enumerate}
+\end{problem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{problem}
+  Let $V$ be a finitely generated vector space over $\C$, and suppose 
+  $\alpha \in \End(V)$ satisfies $\alpha^3 = \alpha$. (We call such $\alpha$ \vocab{tripotent}.) 
+  Show that $\alpha$ is diagonalizable. (Hint: $X^3 - X \in \Ann(\alpha)$.)
+  %% Let $A \in \mathcal{M}_{n\times n}(\C)$. Suppose $A^3 = A$ (i.e., $A$ is \vocab{tripotent}). 
+  %% Show that $A$ is diagonalizable. (Hint: $A$ is annihilated by
+  %% $p(X) =X^3 - X \in \C[X]$.)
+\end{problem}
+
+\probskip
