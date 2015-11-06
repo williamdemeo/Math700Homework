@@ -143,8 +143,7 @@ and $W$, and we will identify each $i\in V$ with its string representation in $W
 $i = (i_0, i_1, \dots, i_{n-1})$, where $i_k \in \{0,1\}$.
 Define vector addition in $V$ by adding strings ``bitwise'' modulo 2.  That is
 \begin{align*}
-i+ j &= (i_0, i_1, \dots, i_{n-1}) + (j_1, \dots, j_{n-1})\\
-&= (i_0, i_1, \dots, i_{n-1}) + (j_1, \dots, j_{n-1})\\
+i+ j &= (i_0, i_1, \dots, i_{n-1}) + (j_0, j_1, \dots, j_{n-1})\\
 &= (i_0+j_0, i_1+j_1, \dots, i_{n-1}+j_{n-1})
 \end{align*}
 where for each $0\leq k < n$, the $k$-th element of $i+j$ is
@@ -162,7 +161,7 @@ $-v = v$. Thus, we have an abelian group $\<2^n, +, -, \mathbf{0}\>$.
 To make this into a vector space over $\GF(2)$, take 
 the set of scalars $\{0, 1\}$ and define scalar multiplication
 as follows: $0 i = \mathrm{0}$ and $1 i = i$.  It is easily verified that 
-$\<2^n, +, \mathbf{0}, \{0, 1\}\>$ has the remaining ($\GF(2)$-module)
+$\<2^n, +, - \mathbf{0}, \{0, 1\}\>$ has the remaining ($\GF(2)$-module)
 properties that make it a vector space over $\GF(2)$.
 \end{solution}
 \probskip
